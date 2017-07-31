@@ -1,0 +1,66 @@
+﻿<?xml version="1.0"?>
+<QueryDO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Пикетные  столбы</Name>
+  <Description>Запрос выдает список пикетных столбов по всем главным путям в рамках указанной карты</Description>
+  <Params>
+    <QueryParam>
+      <Name>p1</Name>
+      <DisplayName>Карта</DisplayName>
+      <Category></Category>
+      <ParamType>SpecType</ParamType>
+      <SpecType>MapFragment.Id</SpecType>
+    </QueryParam>    
+  </Params>
+  <Use>true</Use>
+  <Interactive>true</Interactive>
+  <Sql>
+    <![CDATA[
+with sta as (
+select 
+row_number() over (order by mfa.map_fragment_gid, cai.axis_line_gids, cspi.distance) as rn,
+mfa.way_id_asup_putgl,
+mfa.map_fragment_gid,
+p.nom,
+cai.axis_line_gids,
+cspi.st_type, 
+cspi.km,  
+cspi.m,
+cspi.distance
+from REFDATA.STATIONING_CACHE_PICKET_INFO cspi
+join REFDATA.MAP_FRAGMENT_AXIS_LINE cai on cai.gid=cspi.AXIS_INFO_GID
+join REFDATA.MAP_FRAGMENT_AXIS mfa on mfa.gid=cai.map_fragment_axis_gid
+left outer join REFDATA.ASUP_PUTGL p on p.putgl_id=mfa.way_id_asup_putgl
+where mfa.map_fragment_gid = :p1
+order by mfa.map_fragment_gid, cai.axis_line_gids, cspi.distance
+)
+
+select 
+  a.way_id_asup_putgl as "Ид главного пути", 
+  a.axis_line_gids as "Ид линиии в карте",
+  decode (a.st_type,0,'Существующий', 1, 'Рассчитанный', '') as "Тип столба",
+  a.Km as "Км", 
+  a.m as "М",
+  Round(a.distance,3) as "Расстояние от начала линии, м",
+  Round(b.distance - a.distance,3) as "Расстояние до след. столба, м"
+ 
+from sta a left outer join sta b on a.rn + 1 = b.rn 
+                and a.axis_line_gids = b.axis_line_gids
+                and a.map_fragment_gid = b.map_fragment_gid
+order by a.rn
+  ]]>
+  </Sql>
+  <Fields>
+    <Field>
+      <Name>Тип</Name>
+      <SpecType>MapFragment.Id</SpecType>      
+    </Field>
+    <Field>
+      <Name>Ид главного пути</Name>      
+      <Group>true</Group>
+    </Field>    
+    <Field>
+      <Name>Ид линиии в карте</Name>      
+      <Group>true</Group>
+    </Field>    
+  </Fields>
+</QueryDO>

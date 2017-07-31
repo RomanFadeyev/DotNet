@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Same User (Ru-Board) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="FLC">
+		<xs:annotation>
+			<xs:documentation>Форматно-логический контроль файловой ГБД</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Version" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Версия проверямой ГБД</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Layers">
+					<xs:annotation>
+						<xs:documentation>Список слоев</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Layer" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Слой</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Наименование</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Geometry">
+											<xs:annotation>
+												<xs:documentation>Тип геометрии</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Polygon Features"/>
+													<xs:enumeration value="Line Features"/>
+													<xs:enumeration value="Point Features"/>
+													<xs:enumeration value="Multipoint Features"/>
+													<xs:enumeration value="MultiPatch Features"/>
+													<xs:enumeration value="Dimension Features"/>
+													<xs:enumeration value="Annotation Features"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ZValues" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Наличие Z-координат</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:boolean">
+														<xs:attribute name="MinZ" type="xs:double">
+															<xs:annotation>
+																<xs:documentation>Z мин</xs:documentation>
+															</xs:annotation>
+														</xs:attribute>
+														<xs:attribute name="MaxZ" type="xs:double">
+															<xs:annotation>
+																<xs:documentation>Z макс</xs:documentation>
+															</xs:annotation>
+														</xs:attribute>
+														<xs:attribute name="NaNZ" type="xs:double">
+															<xs:annotation>
+																<xs:documentation>Z недопустимое</xs:documentation>
+															</xs:annotation>
+														</xs:attribute>
+														<xs:attribute name="MaxRake" type="xs:double">
+															<xs:annotation>
+																<xs:documentation>Z макс.уклон</xs:documentation>
+															</xs:annotation>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="CheckSelfIntersect" type="xs:boolean" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Проверять самопересечение</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="NoCrossLayers" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Отсутствие пересечения с другими слоями</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Layer" type="xs:string" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Слой</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="CurvatureMinAngle" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Минимальный угол кривизны</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:integer">
+													<xs:minExclusive value="0"/>
+													<xs:maxInclusive value="180"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Checks" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Проверки на уровне слоя</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Check" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Проверка</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Name" type="xs:string">
+																	<xs:annotation>
+																		<xs:documentation>Наименование</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="JS" type="xs:string">
+																	<xs:annotation>
+																		<xs:documentation>Javascript code</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Fields">
+											<xs:annotation>
+												<xs:documentation>Список полей</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Field" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Поле</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Name" type="xs:string">
+																	<xs:annotation>
+																		<xs:documentation>Наименование</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="Type">
+																	<xs:annotation>
+																		<xs:documentation>Тип</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="Short Integer"/>
+																			<xs:enumeration value="Long Integer"/>
+																			<xs:enumeration value="Float"/>
+																			<xs:enumeration value="Double"/>
+																			<xs:enumeration value="Text"/>
+																			<xs:enumeration value="Date"/>
+																			<xs:enumeration value="Blob"/>
+																			<xs:enumeration value="Guid"/>
+																			<xs:enumeration value="Raster"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Length" type="xs:integer" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Длина</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="Unique" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Уникальность</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="References" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Описание ссылочной целостности</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Reference" maxOccurs="unbounded">
+																				<xs:annotation>
+																					<xs:documentation>Ссылочная целостность</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ParentLayer" type="xs:string">
+																							<xs:annotation>
+																								<xs:documentation>Слой</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="ParentField" type="xs:string">
+																							<xs:annotation>
+																								<xs:documentation>Столбец</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="Cardinality">
+																							<xs:annotation>
+																								<xs:documentation>Мощность</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="Min" type="xs:integer"/>
+																									<xs:element name="Max" type="xs:integer" minOccurs="0">
+																										<xs:annotation>
+																											<xs:documentation>Если Max отсутствует, то предполагается unbound</xs:documentation>
+																										</xs:annotation>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="CheckRegExp" type="xs:string" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Регулярное выражение для проверки</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ExternalCheckers" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Внешние обработчики (DLL)</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ExternalChecker" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Внешний обработчик</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Assembly" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Наименование DLL</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ClassName" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Наименование класса</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="CheckedByDefault" type="xs:boolean" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Помечено по-умолчанию</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GeoRadarDS" targetNamespace="http://tempuri.org/GeoRadarDS.xsd" xmlns:mstns="http://tempuri.org/GeoRadarDS.xsd" xmlns="http://tempuri.org/GeoRadarDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GeoRadarDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="GeoRadarDS" msprop:Generator_UserDSName="GeoRadarDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GEORADARIMAGE" msprop:Generator_TableClassName="GEORADARIMAGEDataTable" msprop:Generator_TableVarName="tableGEORADARIMAGE" msprop:Generator_TablePropName="GEORADARIMAGE" msprop:Generator_RowDeletingName="GEORADARIMAGERowDeleting" msprop:Generator_UserTableName="GEORADARIMAGE" msprop:Generator_RowChangingName="GEORADARIMAGERowChanging" msprop:Generator_RowEvHandlerName="GEORADARIMAGERowChangeEventHandler" msprop:Generator_RowDeletedName="GEORADARIMAGERowDeleted" msprop:Generator_RowEvArgName="GEORADARIMAGERowChangeEvent" msprop:Generator_RowChangedName="GEORADARIMAGERowChanged" msprop:Generator_RowClassName="GEORADARIMAGERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SURVEY_NAME" msdata:Caption="ID" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="SURVEY_NAME" msprop:Generator_ColumnVarNameInTable="columnSURVEY_NAME" msprop:Generator_ColumnPropNameInTable="SURVEY_NAMEColumn" msprop:Generator_UserColumnName="SURVEY_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="KM" msdata:Caption="Километр оси" msprop:Generator_ColumnVarNameInTable="columnKM" msprop:Generator_ColumnPropNameInRow="KM" msprop:Generator_ColumnPropNameInTable="KMColumn" msprop:Generator_UserColumnName="KM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="M" msdata:Caption="Метр оси" msprop:Generator_ColumnVarNameInTable="columnM" msprop:Generator_ColumnPropNameInRow="M" msprop:Generator_ColumnPropNameInTable="MColumn" msprop:Generator_UserColumnName="M" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LENGTH" msdata:Caption="Протяженность" msprop:Generator_ColumnVarNameInTable="columnLENGTH" msprop:Generator_ColumnPropNameInRow="LENGTH" msprop:Generator_ColumnPropNameInTable="LENGTHColumn" msprop:Generator_UserColumnName="LENGTH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMAGEFILE" msdata:Caption="Файл изображения" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="IMAGEFILE" msprop:Generator_ColumnVarNameInTable="columnIMAGEFILE" msprop:Generator_ColumnPropNameInTable="IMAGEFILEColumn" msprop:Generator_UserColumnName="IMAGEFILE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATAFILE" msdata:Caption="Файл данных" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DATAFILE" msprop:Generator_ColumnVarNameInTable="columnDATAFILE" msprop:Generator_ColumnPropNameInTable="DATAFILEColumn" msprop:Generator_UserColumnName="DATAFILE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REPORTFILE" msdata:Caption="Файл отчета" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="REPORTFILE" msprop:Generator_ColumnVarNameInTable="columnREPORTFILE" msprop:Generator_ColumnPropNameInTable="REPORTFILEColumn" msprop:Generator_UserColumnName="REPORTFILE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

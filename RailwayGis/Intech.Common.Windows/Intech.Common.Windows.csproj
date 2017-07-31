@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E0F6D80-5C47-43E2-B09A-D71CC748FBD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intech.Common.Windows</RootNamespace>
+    <AssemblyName>Intech.Common.Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Intech.Common.Windows.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Intech.Common.Windows.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationController\ApplicationControllerBase.cs" />
+    <Compile Include="ApplicationController\ApplicationControllerException.cs" />
+    <Compile Include="ApplicationController\ApplicationModel.cs" />
+    <Compile Include="ApplicationController\DockingApplicationControllerBase.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\DockWizardController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\ModelController.cs" />
+    <Compile Include="Docking\DockWindowBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindowBase.Designer.cs">
+      <DependentUpon>DockWindowBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\DockWindowChildBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindowParentBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWizardWindowBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\RibbonCommandManager.cs" />
+    <Compile Include="Forms\DialogBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogBase.designer.cs">
+      <DependentUpon>DialogBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogClose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogClose.designer.cs">
+      <DependentUpon>DialogClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogException.designer.cs">
+      <DependentUpon>DialogException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogOk.designer.cs">
+      <DependentUpon>DialogOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogOkCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogOkCancel.designer.cs">
+      <DependentUpon>DialogOkCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DialogOkCancelApply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DialogOkCancelApply.designer.cs">
+      <DependentUpon>DialogOkCancelApply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExceptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExceptionDialog.designer.cs">
+      <DependentUpon>ExceptionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBase.designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormBaseInternal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrameBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FrameBase.designer.cs">
+      <DependentUpon>FrameBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MsgBox.cs" />
+    <Compile Include="Forms\MsgBoxEx\MessageBoxEx.cs" />
+    <Compile Include="Forms\MsgBoxEx\MessageBoxExButton.cs" />
+    <Compile Include="Forms\MsgBoxEx\MessageBoxExButtons.cs" />
+    <Compile Include="Forms\MsgBoxEx\MessageBoxExForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MsgBoxEx\MessageBoxExIcon.cs" />
+    <Compile Include="Forms\MsgBoxEx\MessageBoxExManager.cs" />
+    <Compile Include="Forms\MsgBoxEx\MessageBoxExResult.cs" />
+    <Compile Include="Forms\MsgBoxEx\TimeoutResult.cs" />
+    <Compile Include="Forms\MsgBoxVista.cs" />
+    <Compile Include="Forms\MsgTextBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MsgTextBox.Designer.cs">
+      <DependentUpon>MsgTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserDefinedMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IController.cs" />
+    <Compile Include="INotifyHandler.cs" />
+    <Compile Include="Interfaces\ICustomReadOnlyImplementer.cs" />
+    <Compile Include="Interfaces\IPlaceHolder.cs" />
+    <Compile Include="Interfaces\IWindowClient.cs" />
+    <Compile Include="Interfaces\IWindowHost.cs" />
+    <Compile Include="IWindowController.cs" />
+    <Compile Include="MVC\Base\CompositeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Base\CompositeView.designer.cs">
+      <DependentUpon>CompositeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Base\CompositeViewBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MVC\Base\CompositeViewBase.designer.cs">
+      <DependentUpon>CompositeViewBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Base\CompositeViewStrong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVC\Base\CompositeViewStrong.designer.cs">
+      <DependentUpon>CompositeViewStrong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Base\ModelBase.cs" />
+    <Compile Include="MVC\Base\ViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVC\Base\ViewBase.designer.cs">
+      <DependentUpon>ViewBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Base\ViewDefaultBehavior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVC\Base\ViewDefaultBehavior.designer.cs">
+      <DependentUpon>ViewDefaultBehavior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Base\ViewStrong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVC\Base\ViewStrong.designer.cs">
+      <DependentUpon>ViewStrong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Exceptions.cs" />
+    <Compile Include="MVC\IBehavior.cs" />
+    <Compile Include="MVC\IModel.cs" />
+    <Compile Include="MVC\IModelController.cs" />
+    <Compile Include="MVC\IModelView.cs" />
+    <Compile Include="MVC\IPageNavigator.cs" />
+    <Compile Include="MVC\IView.cs" />
+    <Compile Include="MVC\IViewPageNavigator.cs" />
+    <Compile Include="MVC\ViewActivator.cs" />
+    <Compile Include="MVC\ViewAttributes.cs" />
+    <Compile Include="MVC\ViewPageNavigator.cs" />
+    <Compile Include="MVC\ViewProxy.cs" />
+    <Compile Include="MVC\ViewProxyDefaultBehavior.cs" />
+    <Compile Include="MVC\ViewProxyStrong.cs" />
+    <Compile Include="MVC\Wizards\AbstractWizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVC\Wizards\AbstractWizard.designer.cs">
+      <DependentUpon>AbstractWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Wizards\RandomInformationWizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVC\Wizards\RandomInformationWizard.designer.cs">
+      <DependentUpon>RandomInformationWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Wizards\RandomPendingWizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVC\Wizards\RandomPendingWizard.designer.cs">
+      <DependentUpon>RandomPendingWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MVC\Wizards\RandomWizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MVC\Wizards\RandomWizard.designer.cs">
+      <DependentUpon>RandomWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\LocalSettingsPathProviderExtensions.cs" />
+    <Compile Include="Settings\LocalSetting.cs" />
+    <Compile Include="Tasks\Logon\LogonDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tasks\Logon\LogonDialog.designer.cs">
+      <DependentUpon>LogonDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Logon\LogonInfo.cs" />
+    <Compile Include="Utils\WinUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Docking\DockWindowBase.resx">
+      <DependentUpon>DockWindowBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogBase.resx">
+      <DependentUpon>DialogBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogClose.resx">
+      <DependentUpon>DialogClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogOk.resx">
+      <DependentUpon>DialogOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogOkCancel.resx">
+      <DependentUpon>DialogOkCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DialogOkCancelApply.resx">
+      <DependentUpon>DialogOkCancelApply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExceptionDialog.resx">
+      <DependentUpon>ExceptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrameBase.resx">
+      <DependentUpon>FrameBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MsgBoxEx\MessageBoxExForm.resx">
+      <DependentUpon>MessageBoxExForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MsgTextBox.resx">
+      <DependentUpon>MsgTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Base\CompositeView.resx">
+      <DependentUpon>CompositeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Base\ViewBase.resx">
+      <DependentUpon>ViewBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Wizards\AbstractWizard.resx">
+      <DependentUpon>AbstractWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Wizards\RandomInformationWizard.resx">
+      <DependentUpon>RandomInformationWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Wizards\RandomPendingWizard.resx">
+      <DependentUpon>RandomPendingWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MVC\Wizards\RandomWizard.resx">
+      <DependentUpon>RandomWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\Logon\LogonDialog.resx">
+      <DependentUpon>LogonDialog.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common.Controls\Intech.Common.Controls.csproj">
+      <Project>{67B0A02A-E742-4ED8-8824-60CBE5F06B62}</Project>
+      <Name>Intech.Common.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common.DevX\Intech.Common.DevX.csproj">
+      <Project>{8120B478-19ED-419D-9130-DFCB25F4840A}</Project>
+      <Name>Intech.Common.DevX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

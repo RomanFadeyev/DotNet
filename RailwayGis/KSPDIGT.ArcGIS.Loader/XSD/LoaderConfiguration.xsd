@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="CorrelationConfiguration">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="LayerCorrelations">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="LayerCorrelation" type="LayerCorrelation" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="LayerCorrelation" mixed="false">
+		<xsd:sequence>
+			<xsd:element name="Source" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Destination" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FieldCorrelations" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="FieldCorrelation" type="FieldCorrelation" minOccurs="1" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FieldCorrelation" id="FieldCorrelation">
+		<xsd:sequence>
+			<xsd:element name="SourceField" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PostCalculation" type="PostCalculation" minOccurs="0"/>
+			<xsd:element name="DestinationField" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CheckRegExp" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PostCalculation">
+		<xsd:sequence>
+			<xsd:element name="Parameters" maxOccurs="unbounded" minOccurs="0">
+				<xsd:complexType mixed="false">
+					<xsd:attribute name="Name" use="required" type="xsd:string">
+					</xsd:attribute>
+					<xsd:attribute name="Value" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Type" type="PostCalculationType" use="required"/>
+	</xsd:complexType>
+	<xsd:simpleType name="PostCalculationType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="GID_NEW"/>
+			<xsd:enumeration value="GID_REF"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

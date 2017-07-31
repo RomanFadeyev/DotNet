@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ContactWireDS" targetNamespace="http://tempuri.org/ContactWireDS.xsd" xmlns:mstns="http://tempuri.org/ContactWireDS.xsd" xmlns="http://tempuri.org/ContactWireDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ContactWireDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ContactWireDS" msprop:Generator_UserDSName="ContactWireDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ContactWireTable" msprop:Generator_TableClassName="ContactWireTableDataTable" msprop:Generator_TableVarName="tableContactWireTable" msprop:Generator_TablePropName="ContactWireTable" msprop:Generator_RowDeletingName="ContactWireTableRowDeleting" msprop:Generator_UserTableName="ContactWireTable" msprop:Generator_RowChangingName="ContactWireTableRowChanging" msprop:Generator_RowEvHandlerName="ContactWireTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ContactWireTableRowDeleted" msprop:Generator_RowEvArgName="ContactWireTableRowChangeEvent" msprop:Generator_RowChangedName="ContactWireTableRowChanged" msprop:Generator_RowClassName="ContactWireTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="a_Position" msdata:Caption="Позиция" msprop:Generator_ColumnVarNameInTable="columna_Position" msprop:Generator_ColumnPropNameInRow="a_Position" msprop:Generator_ColumnPropNameInTable="a_PositionColumn" msprop:Generator_UserColumnName="a_Position" type="xs:string" minOccurs="0" />
+              <xs:element name="a_Height" msdata:Caption="Высота" msprop:Generator_ColumnVarNameInTable="columna_Height" msprop:Generator_ColumnPropNameInRow="a_Height" msprop:Generator_ColumnPropNameInTable="a_HeightColumn" msprop:Generator_UserColumnName="a_Height" type="xs:double" minOccurs="0" />
+              <xs:element name="a_Deviation" msdata:Caption="Отклонение" msprop:Generator_ColumnVarNameInTable="columna_Deviation" msprop:Generator_ColumnPropNameInRow="a_Deviation" msprop:Generator_ColumnPropNameInTable="a_DeviationColumn" msprop:Generator_UserColumnName="a_Deviation" type="xs:double" minOccurs="0" />
+              <xs:element name="a_ID" msdata:Caption="ID контактного провода" msprop:Generator_ColumnVarNameInTable="columna_ID" msprop:Generator_ColumnPropNameInRow="a_ID" msprop:Generator_ColumnPropNameInTable="a_IDColumn" msprop:Generator_UserColumnName="a_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="a_Num" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:Caption="Уникальный номер" msprop:Generator_ColumnVarNameInTable="columna_Num" msprop:Generator_ColumnPropNameInRow="a_Num" msprop:Generator_ColumnPropNameInTable="a_NumColumn" msprop:Generator_UserColumnName="a_Num" type="xs:int" />
+              <xs:element name="a_Simplify" msdata:Caption="Флаг Спрямления" msprop:Generator_ColumnVarNameInTable="columna_Simplify" msprop:Generator_ColumnPropNameInRow="a_Simplify" msprop:Generator_ColumnPropNameInTable="a_SimplifyColumn" msprop:Generator_UserColumnName="a_Simplify" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="a_Distance" msprop:Generator_ColumnVarNameInTable="columna_Distance" msprop:Generator_ColumnPropNameInRow="a_Distance" msprop:Generator_ColumnPropNameInTable="a_DistanceColumn" msprop:Generator_UserColumnName="a_Distance" type="xs:double" minOccurs="0" />
+              <xs:element name="a_LegendTitle" msprop:Generator_ColumnVarNameInTable="columna_LegendTitle" msprop:Generator_ColumnPropNameInRow="a_LegendTitle" msprop:Generator_ColumnPropNameInTable="a_LegendTitleColumn" msprop:Generator_UserColumnName="a_LegendTitle" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ContactWireTable" />
+      <xs:field xpath="mstns:a_Num" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

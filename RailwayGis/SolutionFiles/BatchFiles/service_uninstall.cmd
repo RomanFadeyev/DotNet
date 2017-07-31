@@ -1,0 +1,2 @@
+sc stop KSPDWindowsService
+sc delete KSPDWindowsService

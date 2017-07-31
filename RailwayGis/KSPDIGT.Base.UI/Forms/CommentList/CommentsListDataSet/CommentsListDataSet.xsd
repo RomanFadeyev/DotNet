@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CommentsListDataSet" targetNamespace="http://tempuri.org/CommentsListDataSet.xsd" xmlns:mstns="http://tempuri.org/CommentsListDataSet.xsd" xmlns="http://tempuri.org/CommentsListDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CommentsListDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CommentsListDataSet" msprop:Generator_UserDSName="CommentsListDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Comments" msprop:Generator_TableClassName="CommentsDataTable" msprop:Generator_TableVarName="tableComments" msprop:Generator_TablePropName="Comments" msprop:Generator_RowDeletingName="CommentsRowDeleting" msprop:Generator_UserTableName="Comments" msprop:Generator_RowChangingName="CommentsRowChanging" msprop:Generator_RowEvHandlerName="CommentsRowChangeEventHandler" msprop:Generator_RowDeletedName="CommentsRowDeleted" msprop:Generator_RowEvArgName="CommentsRowChangeEvent" msprop:Generator_RowChangedName="CommentsRowChanged" msprop:Generator_RowClassName="CommentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Object" msprop:Generator_ColumnVarNameInTable="columnObject" msprop:Generator_ColumnPropNameInRow="Object" msprop:Generator_ColumnPropNameInTable="ObjectColumn" msprop:Generator_UserColumnName="Object" type="xs:string" minOccurs="0" />
+              <xs:element name="CommentParam" msprop:Generator_ColumnVarNameInTable="columnCommentParam" msprop:Generator_ColumnPropNameInRow="CommentParam" msprop:Generator_ColumnPropNameInTable="CommentParamColumn" msprop:Generator_UserColumnName="CommentParam" type="xs:string" minOccurs="0" />
+              <xs:element name="Start" msprop:Generator_ColumnVarNameInTable="columnStart" msprop:Generator_ColumnPropNameInRow="Start" msprop:Generator_ColumnPropNameInTable="StartColumn" msprop:Generator_UserColumnName="Start" type="xs:string" minOccurs="0" />
+              <xs:element name="End" msprop:Generator_ColumnVarNameInTable="columnEnd" msprop:Generator_ColumnPropNameInRow="End" msprop:Generator_ColumnPropNameInTable="EndColumn" msprop:Generator_UserColumnName="End" type="xs:string" minOccurs="0" />
+              <xs:element name="NormValue" msprop:Generator_ColumnVarNameInTable="columnNormValue" msprop:Generator_ColumnPropNameInRow="NormValue" msprop:Generator_ColumnPropNameInTable="NormValueColumn" msprop:Generator_UserColumnName="NormValue" type="xs:double" minOccurs="0" />
+              <xs:element name="FactValue" msprop:Generator_ColumnVarNameInTable="columnFactValue" msprop:Generator_ColumnPropNameInRow="FactValue" msprop:Generator_ColumnPropNameInTable="FactValueColumn" msprop:Generator_UserColumnName="FactValue" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

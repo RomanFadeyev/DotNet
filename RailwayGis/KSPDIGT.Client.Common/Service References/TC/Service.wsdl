@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TCService.Interface" />
+      <xsd:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TCService" />
+      <xsd:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITCService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Calculate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Calculate" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Calculate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_CalculateRaw_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateRaw" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_CalculateRaw_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateRawResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_SetMark_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMark" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_SetMark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Draw_InputMessage">
+    <wsdl:part name="parameters" element="tns:Draw" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Draw_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DrawResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Print_InputMessage">
+    <wsdl:part name="parameters" element="tns:Print" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Print_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetEnginesMetaInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnginesMetaInfo" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetEnginesMetaInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnginesMetaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetRouteMetaInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteMetaInfo" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetRouteMetaInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteMetaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetPriceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceInfo" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetPriceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetCalculationResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalculationResult" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetCalculationResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalculationResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetCalculationResultExt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalculationResultExt" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetCalculationResultExt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalculationResultExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetCalculationResultSlim_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalculationResultSlim" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetCalculationResultSlim_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalculationResultSlimResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetWarningsInfluence_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWarningsInfluence" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetWarningsInfluence_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWarningsInfluenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_ParseMch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ParseMch" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_ParseMch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ParseMchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_ApplySpeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplySpeed" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_ApplySpeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplySpeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetAllOrderNWarnings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrderNWarnings" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetAllOrderNWarnings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrderNWarningsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetOrderNWarnings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderNWarnings" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_GetOrderNWarnings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderNWarningsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_InitWarnings_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitWarnings" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_InitWarnings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitWarningsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_InitRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitRoute" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_InitRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Debug_InputMessage">
+    <wsdl:part name="parameters" element="tns:Debug" />
+  </wsdl:message>
+  <wsdl:message name="ITCService_Debug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DebugResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITCService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/Login" message="tns:ITCService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/LoginResponse" message="tns:ITCService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/Logout" message="tns:ITCService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/LogoutResponse" message="tns:ITCService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Calculate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/Calculate" message="tns:ITCService_Calculate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/CalculateResponse" message="tns:ITCService_Calculate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRaw">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/CalculateRaw" message="tns:ITCService_CalculateRaw_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/CalculateRawResponse" message="tns:ITCService_CalculateRaw_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMark">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/SetMark" message="tns:ITCService_SetMark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/SetMarkResponse" message="tns:ITCService_SetMark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Draw">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/Draw" message="tns:ITCService_Draw_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/DrawResponse" message="tns:ITCService_Draw_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/Print" message="tns:ITCService_Print_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/PrintResponse" message="tns:ITCService_Print_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnginesMetaInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetEnginesMetaInfo" message="tns:ITCService_GetEnginesMetaInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetEnginesMetaInfoResponse" message="tns:ITCService_GetEnginesMetaInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRouteMetaInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetRouteMetaInfo" message="tns:ITCService_GetRouteMetaInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetRouteMetaInfoResponse" message="tns:ITCService_GetRouteMetaInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetPriceInfo" message="tns:ITCService_GetPriceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetPriceInfoResponse" message="tns:ITCService_GetPriceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalculationResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetCalculationResult" message="tns:ITCService_GetCalculationResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetCalculationResultResponse" message="tns:ITCService_GetCalculationResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalculationResultExt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetCalculationResultExt" message="tns:ITCService_GetCalculationResultExt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetCalculationResultExtResponse" message="tns:ITCService_GetCalculationResultExt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalculationResultSlim">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetCalculationResultSlim" message="tns:ITCService_GetCalculationResultSlim_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetCalculationResultSlimResponse" message="tns:ITCService_GetCalculationResultSlim_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWarningsInfluence">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetWarningsInfluence" message="tns:ITCService_GetWarningsInfluence_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetWarningsInfluenceResponse" message="tns:ITCService_GetWarningsInfluence_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ParseMch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/ParseMch" message="tns:ITCService_ParseMch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/ParseMchResponse" message="tns:ITCService_ParseMch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplySpeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/ApplySpeed" message="tns:ITCService_ApplySpeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/ApplySpeedResponse" message="tns:ITCService_ApplySpeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrderNWarnings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetAllOrderNWarnings" message="tns:ITCService_GetAllOrderNWarnings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetAllOrderNWarningsResponse" message="tns:ITCService_GetAllOrderNWarnings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderNWarnings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/GetOrderNWarnings" message="tns:ITCService_GetOrderNWarnings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/GetOrderNWarningsResponse" message="tns:ITCService_GetOrderNWarnings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitWarnings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/InitWarnings" message="tns:ITCService_InitWarnings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/InitWarningsResponse" message="tns:ITCService_InitWarnings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitRoute">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/InitRoute" message="tns:ITCService_InitRoute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/InitRouteResponse" message="tns:ITCService_InitRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Debug">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCService/Debug" message="tns:ITCService_Debug_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCService/DebugResponse" message="tns:ITCService_Debug_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicBindingConfig_ITCService" type="tns:ITCService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/ITCService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/ITCService/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Calculate">
+      <soap:operation soapAction="http://tempuri.org/ITCService/Calculate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateRaw">
+      <soap:operation soapAction="http://tempuri.org/ITCService/CalculateRaw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMark">
+      <soap:operation soapAction="http://tempuri.org/ITCService/SetMark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Draw">
+      <soap:operation soapAction="http://tempuri.org/ITCService/Draw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <soap:operation soapAction="http://tempuri.org/ITCService/Print" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnginesMetaInfo">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetEnginesMetaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRouteMetaInfo">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetRouteMetaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceInfo">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetPriceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalculationResult">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetCalculationResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalculationResultExt">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetCalculationResultExt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalculationResultSlim">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetCalculationResultSlim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWarningsInfluence">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetWarningsInfluence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseMch">
+      <soap:operation soapAction="http://tempuri.org/ITCService/ParseMch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplySpeed">
+      <soap:operation soapAction="http://tempuri.org/ITCService/ApplySpeed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrderNWarnings">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetAllOrderNWarnings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderNWarnings">
+      <soap:operation soapAction="http://tempuri.org/ITCService/GetOrderNWarnings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitWarnings">
+      <soap:operation soapAction="http://tempuri.org/ITCService/InitWarnings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitRoute">
+      <soap:operation soapAction="http://tempuri.org/ITCService/InitRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Debug">
+      <soap:operation soapAction="http://tempuri.org/ITCService/Debug" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicBindingConfig_ITCService" binding="tns:BasicBindingConfig_ITCService">
+      <soap:address location="http://10.144.13.156/TCService/Implementation.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

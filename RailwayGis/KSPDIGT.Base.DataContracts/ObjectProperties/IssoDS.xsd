@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IssoDS" targetNamespace="http://tempuri.org/IssoDS.xsd" xmlns:mstns="http://tempuri.org/IssoDS.xsd" xmlns="http://tempuri.org/IssoDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IssoDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="IssoDS" msprop:Generator_UserDSName="IssoDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ASUP_ISSO" msprop:Generator_TableClassName="ASUP_ISSODataTable" msprop:Generator_TableVarName="tableASUP_ISSO" msprop:Generator_TablePropName="ASUP_ISSO" msprop:Generator_RowDeletingName="ASUP_ISSORowDeleting" msprop:Generator_UserTableName="ASUP_ISSO" msprop:Generator_RowChangingName="ASUP_ISSORowChanging" msprop:Generator_RowEvHandlerName="ASUP_ISSORowChangeEventHandler" msprop:Generator_RowDeletedName="ASUP_ISSORowDeleted" msprop:Generator_RowEvArgName="ASUP_ISSORowChangeEvent" msprop:Generator_RowChangedName="ASUP_ISSORowChanged" msprop:Generator_RowClassName="ASUP_ISSORow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:Caption="Идентификатор объекта АСУ-П" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="TYPE_ID" msdata:Caption="Код типа объекта" msprop:Generator_ColumnVarNameInTable="columnTYPE_ID" msprop:Generator_ColumnPropNameInRow="TYPE_ID" msprop:Generator_ColumnPropNameInTable="TYPE_IDColumn" msprop:Generator_UserColumnName="TYPE_ID" type="xs:decimal" />
+              <xs:element name="PUTGL_ID" msdata:Caption="Идентификатор пути" msprop:Generator_ColumnVarNameInTable="columnPUTGL_ID" msprop:Generator_ColumnPropNameInRow="PUTGL_ID" msprop:Generator_ColumnPropNameInTable="PUTGL_IDColumn" msprop:Generator_UserColumnName="PUTGL_ID" type="xs:decimal" />
+              <xs:element name="NAME" msdata:Caption="Название типа объекта" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="254" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCR" msdata:Caption="Описание объекта" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DESCR" msprop:Generator_ColumnVarNameInTable="columnDESCR" msprop:Generator_ColumnPropNameInTable="DESCRColumn" msprop:Generator_UserColumnName="DESCR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OP_KM" msdata:Caption="Километр оси" msprop:Generator_ColumnVarNameInTable="columnOP_KM" msprop:Generator_ColumnPropNameInRow="OP_KM" msprop:Generator_ColumnPropNameInTable="OP_KMColumn" msprop:Generator_UserColumnName="OP_KM" type="xs:decimal" />
+              <xs:element name="OP_M" msdata:Caption="Метр оси" msprop:Generator_ColumnVarNameInTable="columnOP_M" msprop:Generator_ColumnPropNameInRow="OP_M" msprop:Generator_ColumnPropNameInTable="OP_MColumn" msprop:Generator_UserColumnName="OP_M" type="xs:decimal" />
+              <xs:element name="OP_START_KM" msdata:Caption="Километр начала" msprop:Generator_ColumnVarNameInTable="columnOP_START_KM" msprop:Generator_ColumnPropNameInRow="OP_START_KM" msprop:Generator_ColumnPropNameInTable="OP_START_KMColumn" msprop:Generator_UserColumnName="OP_START_KM" type="xs:decimal" />
+              <xs:element name="OP_START_M" msdata:Caption="Метр начала" msprop:Generator_ColumnVarNameInTable="columnOP_START_M" msprop:Generator_ColumnPropNameInRow="OP_START_M" msprop:Generator_ColumnPropNameInTable="OP_START_MColumn" msprop:Generator_UserColumnName="OP_START_M" type="xs:decimal" />
+              <xs:element name="OP_END_KM" msdata:Caption="Километр конца" msprop:Generator_ColumnVarNameInTable="columnOP_END_KM" msprop:Generator_ColumnPropNameInRow="OP_END_KM" msprop:Generator_ColumnPropNameInTable="OP_END_KMColumn" msprop:Generator_UserColumnName="OP_END_KM" type="xs:decimal" />
+              <xs:element name="OP_END_M" msdata:Caption="Метр конца" msprop:Generator_ColumnVarNameInTable="columnOP_END_M" msprop:Generator_ColumnPropNameInRow="OP_END_M" msprop:Generator_ColumnPropNameInTable="OP_END_MColumn" msprop:Generator_UserColumnName="OP_END_M" type="xs:decimal" />
+              <xs:element name="N_ISSO" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="N_ISSO" msprop:Generator_ColumnVarNameInTable="columnN_ISSO" msprop:Generator_ColumnPropNameInTable="N_ISSOColumn" msprop:Generator_UserColumnName="N_ISSO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

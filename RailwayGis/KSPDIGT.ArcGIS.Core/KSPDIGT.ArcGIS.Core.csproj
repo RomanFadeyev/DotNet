@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AFECBAE-C343-4D37-B5B6-539738AF7129}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.ArcGIS.Core</RootNamespace>
+    <AssemblyName>KSPDIGT.ArcGIS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\KSPDIGT.ArcGIS.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\KSPDIGT.ArcGIS.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.ADF.Connection.Local, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GISClient, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>..\..\Libraries\Actual\OpenTK\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="CalcLengthTasks\CalcLengthEngineClass.cs" />
+    <Compile Include="CalcLengthTasks\ContactWireDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactWireDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\MapFragmentExtension.cs" />
+    <Compile Include="Extensions\WayPartAttributeChangePointExtension.cs" />
+    <Compile Include="GeodatabaseObjects\FeatureObjectClassWithGeometry.cs" />
+    <Compile Include="Helpers\AxisLineHelper.cs" />
+    <Compile Include="Helpers\AxisLineHelper.PointsWalker.cs" />
+    <Compile Include="Helpers\AxisLineToObjectsDistanceStandards.cs" />
+    <Compile Include="Helpers\Calculation\GeometryInfo.cs" />
+    <Compile Include="Helpers\DatumMarksCoreHelper.cs" />
+    <Compile Include="Helpers\MultipatchIdentifyHelper.cs" />
+    <Compile Include="Helpers\RailwayCrossingVisibility\CrossParamsCoreHelper.cs" />
+    <Compile Include="Helpers\RailwayCrossingVisibility\DistanceCalculationTypes.cs" />
+    <Compile Include="Helpers\ShapeFileHelper.cs" />
+    <Compile Include="Helpers\TitleCreatorHelperClass.cs" />
+    <Compile Include="Helpers\WayPartAttributeChangePointHelperArcGIS.cs" />
+    <Compile Include="MapDocumentContent\MapDocumentContentClass.cs" />
+    <Compile Include="Stationing\AxisLineStationingInfoForArcGIS.cs" />
+    <Compile Include="Workspace\ConnectionParametersClass.cs" />
+    <Compile Include="Workspace\WorkspaceEngineClass.cs" />
+    <Compile Include="Exceptions\ArcGISExceptions.cs" />
+    <Compile Include="Extensions\ArcGISGeometryTypesExtension.cs" />
+    <Compile Include="Extensions\ArcGISSystemTypesExtension.cs" />
+    <Compile Include="Extensions\ArcGISGDBTypesExtension.cs" />
+    <Compile Include="Helpers\ArcGISHelperClass.cs" />
+    <Compile Include="Helpers\GeometryHelperClass.cs" />
+    <Compile Include="License\LicenseInitializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{d977c536-fe1f-431d-a17f-c358bf874dc2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1F06A782-AE33-4244-B3E3-6AE00252C1BF}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{B64AFE83-045B-4F8A-913C-D5AA2704640D}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.Geo\KSPDIGT.IL.Geo.csproj">
+      <Project>{0eaa9af9-61e5-4869-b8a1-248994dbbd54}</Project>
+      <Name>KSPDIGT.IL.Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts\KSPDIGT.IL.ServiceContracts.csproj">
+      <Project>{0c89cc33-21d1-48df-a043-d2437b7701e2}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CalcLengthTasks\ContactWireDS.xsc">
+      <DependentUpon>ContactWireDS.xsd</DependentUpon>
+    </None>
+    <None Include="CalcLengthTasks\ContactWireDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContactWireDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CalcLengthTasks\ContactWireDS.xss">
+      <DependentUpon>ContactWireDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

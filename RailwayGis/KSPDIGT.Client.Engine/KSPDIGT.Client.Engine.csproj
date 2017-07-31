@@ -1,0 +1,1525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{583DFF91-763D-42D2-A1A9-4FCA04AFB3C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Client.Engine</RootNamespace>
+    <AssemblyName>KSPDIGT.Client.Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.XtraVerticalGrid.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\ZedGraph\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\TierClient.cs">
+      <Link>TierClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="App\ApplicationController.cs" />
+    <Compile Include="App\ApplicationRights.cs" />
+    <Compile Include="CalcTasks\CalcResultControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalcTasks\CalcResultControl.designer.cs">
+      <DependentUpon>CalcResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalcTasks\CalcResultsType.cs" />
+    <Compile Include="CalcTasks\ChartWithTableControl\ChartRangeParametersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalcTasks\ChartWithTableControl\ChartRangeParametersDialog.Designer.cs">
+      <DependentUpon>ChartRangeParametersDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalcTasks\ChartWithTableControl\ChartWithTableControlTypes.cs" />
+    <Compile Include="CalcTasks\ChartWithTableControl\ChartWithTableRibbonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalcTasks\ChartWithTableControl\ChartWithTableRibbonControl.Designer.cs">
+      <DependentUpon>ChartWithTableRibbonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalcTasks\ChartWithTableControl\SaveResultParametersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalcTasks\ChartWithTableControl\SaveResultParametersDialog.Designer.cs">
+      <DependentUpon>SaveResultParametersDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chemas\DistanceObjectDS.cs">
+      <DependentUpon>DistanceObjectDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Chemas\DistanceObjectDS.Designer.cs">
+      <DependentUpon>DistanceObjectDS.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Chemas\GeoradarData\GeoradarDataXml.cs" />
+    <Compile Include="ClientFactoriesImpl\ClientMapDataProvider.cs" />
+    <Compile Include="Commands\ActionHelper.cs" />
+    <Compile Include="Commands\CommandInfoExtensions.cs" />
+    <Compile Include="Components\CalcDataComboTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ClsShortInfoComboTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\RailwayComboTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CoordinateSystemSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DistanceControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DocSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DocSelector.Designer.cs">
+      <DependentUpon>DocSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DrmProjectSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DrmProjectSelectionControl.Designer.cs">
+      <DependentUpon>DrmProjectSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\GeoradarDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Entities\GeoradarDataControl.Designer.cs">
+      <DependentUpon>GeoradarDataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\GeoradarImageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Entities\GeoradarImageControl.Designer.cs">
+      <DependentUpon>GeoradarImageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\GeoradarImageDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Entities\GeoradarImageDetailControl.Designer.cs">
+      <DependentUpon>GeoradarImageDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\LaserScanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Entities\LaserScanControl.Designer.cs">
+      <DependentUpon>LaserScanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\MeasureListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Entities\MeasureListControl.Designer.cs">
+      <DependentUpon>MeasureListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapFragmentSelectionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MapFragmentSelectionPanel.Designer.cs">
+      <DependentUpon>MapFragmentSelectionPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapFragmentSelectionSuitablePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MapFragmentSelectionSuitablePanel.Designer.cs">
+      <DependentUpon>MapFragmentSelectionSuitablePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RailroadSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SurveysSelectionControlEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SurveysSelectionControlEx.Designer.cs">
+      <DependentUpon>SurveysSelectionControlEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SurveysSelectionExPopupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SurveysSelectionExPopupControl.Designer.cs">
+      <DependentUpon>SurveysSelectionExPopupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TransformCoordinateSystemSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumCardReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumCardReport.Designer.cs">
+      <DependentUpon>DatumCardReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\CoordSystemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\CoordSystemControl.Designer.cs">
+      <DependentUpon>CoordSystemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ExportAxisLineDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ExportAxisLineDialog.Designer.cs">
+      <DependentUpon>ExportAxisLineDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\LogDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\LogDialog.Designer.cs">
+      <DependentUpon>LogDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MapFragmentSelectionDialogForTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MapFragmentSelectionDialogForTask.designer.cs">
+      <DependentUpon>MapFragmentSelectionDialogForTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectReportTypeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectReportTypeDialog.Designer.cs">
+      <DependentUpon>SelectReportTypeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SurveySelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SurveySelectionDialog.Designer.cs">
+      <DependentUpon>SurveySelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\WayFragmentSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WayFragmentSelectionDialog.Designer.cs">
+      <DependentUpon>WayFragmentSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\WayVisibilityBitmapDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WayVisibilityBitmapDialog.Designer.cs">
+      <DependentUpon>WayVisibilityBitmapDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\WayVisibilityParamsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WayVisibilityParamsDialog.Designer.cs">
+      <DependentUpon>WayVisibilityParamsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\DocListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\DocListControl.Designer.cs">
+      <DependentUpon>DocListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\RoadWayGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\RoadWayGridControl.Designer.cs">
+      <DependentUpon>RoadWayGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\WayComboControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\CardReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\CardReport.Designer.cs">
+      <DependentUpon>CardReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumAbrisReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumAbrisReport.Designer.cs">
+      <DependentUpon>DatumAbrisReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumCoordGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumCoordGridControl.Designer.cs">
+      <DependentUpon>DatumCoordGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumDetailWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumDetailWindow.Designer.cs">
+      <DependentUpon>DatumDetailWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumHistoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumHistoryControl.Designer.cs">
+      <DependentUpon>DatumHistoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumHistoryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumHistoryDialog.Designer.cs">
+      <DependentUpon>DatumHistoryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumImageReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumImageReport.Designer.cs">
+      <DependentUpon>DatumImageReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumMarkControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumMarkControl.Designer.cs">
+      <DependentUpon>DatumMarkControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumMarksForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumMarksForm.Designer.cs">
+      <DependentUpon>DatumMarksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumMarksImportCsvWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumMarksImportCsvWizard.Designer.cs">
+      <DependentUpon>DatumMarksImportCsvWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumMarksImportXmlWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumMarksImportXmlWizard.Designer.cs">
+      <DependentUpon>DatumMarksImportXmlWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DatumStatusWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DatumStatusWindow.Designer.cs">
+      <DependentUpon>DatumStatusWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DeleteDatumDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DeleteDatumDialog.Designer.cs">
+      <DependentUpon>DeleteDatumDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\DocBaseListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\DocBaseListControl.Designer.cs">
+      <DependentUpon>DocBaseListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\EditDatumDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\EditDatumDialog.Designer.cs">
+      <DependentUpon>EditDatumDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\Import\DatumMarksClientHelper.cs" />
+    <Compile Include="DatumMarks\Import\DatumMarksImportHelper.cs" />
+    <Compile Include="DatumMarks\Import\DatumMarksImportHelper.CsvPart.cs" />
+    <Compile Include="DatumMarks\Import\DatumMarksImportHelper.XmlPart.cs" />
+    <Compile Include="DatumMarks\Import\XmlImport\DatumSchema.cs" />
+    <Compile Include="DatumMarks\KiVPOGS\KiVPOGSData\KiVPOGSDataSet.cs">
+      <DependentUpon>KiVPOGSDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\KiVPOGSData\KiVPOGSDataSet.Designer.cs">
+      <DependentUpon>KiVPOGSDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\KivpogsExportForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\KivpogsExportForm.Designer.cs">
+      <DependentUpon>KivpogsExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\KivpogsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\KivpogsForm.Designer.cs">
+      <DependentUpon>KivpogsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\KiVPOGSHelper.cs" />
+    <Compile Include="DatumMarks\KiVPOGS\KiVPOGSMainReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\KiVPOGS\KiVPOGSMainReport.Designer.cs">
+      <DependentUpon>KiVPOGSMainReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\ImagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\ImagesForm.Designer.cs">
+      <DependentUpon>ImagesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMarks\RinexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatumMarks\RinexForm.Designer.cs">
+      <DependentUpon>RinexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\DocListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\DocListDialog.Designer.cs">
+      <DependentUpon>DocListDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\AddEditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\AddEditUserForm.Designer.cs">
+      <DependentUpon>AddEditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\AdmUsersForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\AdmUsersForm.Designer.cs">
+      <DependentUpon>AdmUsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\OrgLoginStatReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\OrgLoginStatReport.Designer.cs">
+      <DependentUpon>OrgLoginStatReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\ReportPeriodDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\ReportPeriodDialog.Designer.cs">
+      <DependentUpon>ReportPeriodDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\UserLoginStatByOrgReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\UserLoginStatByOrgReport.Designer.cs">
+      <DependentUpon>UserLoginStatByOrgReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\UserLoginStatReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationUsers\UserLoginStatReport.Designer.cs">
+      <DependentUpon>UserLoginStatReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationVolumes\AddVolumeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationVolumes\AddVolumeForm.Designer.cs">
+      <DependentUpon>AddVolumeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrationVolumes\AdministrationVolumesForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrationVolumes\AdministrationVolumesForm.Designer.cs">
+      <DependentUpon>AdministrationVolumesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\AddEditRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\AddEditRoleForm.Designer.cs">
+      <DependentUpon>AddEditRoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\AdministrationForm.Designer.cs">
+      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AsupCatalog\AsupCatalogForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AsupCatalog\AsupCatalogForm.Designer.cs">
+      <DependentUpon>AsupCatalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChoiceAsupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChoiceAsupForm.designer.cs">
+      <DependentUpon>ChoiceAsupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Classifiers\AddEditClassifierDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Classifiers\AddEditClassifierDialog.Designer.cs">
+      <DependentUpon>AddEditClassifierDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Classifiers\ClassifiersForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Classifiers\ClassifiersForm.Designer.cs">
+      <DependentUpon>ClassifiersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientSettingsEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientSettingsEditForm.Designer.cs">
+      <DependentUpon>ClientSettingsEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\AddEditCoordSysDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\AddEditCoordSysDialog.Designer.cs">
+      <DependentUpon>AddEditCoordSysDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\AddEditIgs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\AddEditIgs.Designer.cs">
+      <DependentUpon>AddEditIgs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\AddTransformDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\AddTransformDialog.Designer.cs">
+      <DependentUpon>AddTransformDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\ChangeCompressValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\ChangeCompressValueForm.Designer.cs">
+      <DependentUpon>ChangeCompressValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\CoorSysForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CoordinateSystems\CoorSysForm.Designer.cs">
+      <DependentUpon>CoorSysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\DocumentDTO.cs" />
+    <Compile Include="Forms\Document\DocByClsListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\DocByClsListControl.Designer.cs">
+      <DependentUpon>DocByClsListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\DocByThemeListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\DocByThemeListControl.Designer.cs">
+      <DependentUpon>DocByThemeListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\DocCalcListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\DocCalcListControl.Designer.cs">
+      <DependentUpon>DocCalcListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\DocOtherListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\DocOtherListControl.Designer.cs">
+      <DependentUpon>DocOtherListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\DocSurveyListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\DocSurveyListControl.Designer.cs">
+      <DependentUpon>DocSurveyListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\DocTaskListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\DocTaskListControl.Designer.cs">
+      <DependentUpon>DocTaskListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Document\DocumentListWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Document\DocumentListWindow.Designer.cs">
+      <DependentUpon>DocumentListWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpLog\ExpLogForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpLog\ExpLogForm.Designer.cs">
+      <DependentUpon>ExpLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExpLog\ExpLogReportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExpLog\ExpLogReportDialog.Designer.cs">
+      <DependentUpon>ExpLogReportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageWindow.Designer.cs">
+      <DependentUpon>ImageWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImpLog\ImpLogForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ImpLog\ImpLogForm.Designer.cs">
+      <DependentUpon>ImpLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImpLog\ImpLogItemsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImpLog\ImpLogItemsDialog.Designer.cs">
+      <DependentUpon>ImpLogItemsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ParametricModels\DrmListWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ParametricModels\DrmListWindow.Designer.cs">
+      <DependentUpon>DrmListWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Query\QueryResultWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Query\QueryResultWindow.Designer.cs">
+      <DependentUpon>QueryResultWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Query\QueryWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Query\QueryWindow.Designer.cs">
+      <DependentUpon>QueryWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\DocListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Entities\DocListControl.Designer.cs">
+      <DependentUpon>DocListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\IEntityControlBase.cs" />
+    <Compile Include="Controls\Entities\SurfaceDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Entities\SurfaceDataControl.Designer.cs">
+      <DependentUpon>SurfaceDataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Entities\SurveyMainPropertiesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Entities\SurveyMainPropertiesControl.Designer.cs">
+      <DependentUpon>SurveyMainPropertiesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SizeCheck\ISizeCheckResultsNavigator.cs" />
+    <Compile Include="Forms\SizeCheck\SizeFramePictureDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SizeCheck\SizeFramePictureDialog.Designer.cs">
+      <DependentUpon>SizeFramePictureDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Surveys\SurveyPropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Surveys\SurveyPropertiesDialog.Designer.cs">
+      <DependentUpon>SurveyPropertiesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Surveys\SurveysForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Surveys\SurveysForm.Designer.cs">
+      <DependentUpon>SurveysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Test\TestWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Test\TestWindow.Designer.cs">
+      <DependentUpon>TestWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gis\GeoObjectBasicInfo.cs" />
+    <Compile Include="Helpers\AsupHelper.cs" />
+    <Compile Include="Helpers\DevExpressReport\CrossParamsReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\CrossParamsReport.Designer.cs">
+      <DependentUpon>CrossParamsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizeInsulatedJointReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizeInsulatedJointReport.Designer.cs">
+      <DependentUpon>SizeInsulatedJointReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\DistanceFromTrafficLightToContactWireReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\DistanceFromTrafficLightToContactWireReport.Designer.cs">
+      <DependentUpon>DistanceFromTrafficLightToContactWireReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ProcessWithCallbackServiceClientHelper.cs" />
+    <Compile Include="InteractionBridges\ICrossProfileWindowBridge.cs" />
+    <Compile Include="InteractionBridges\IMapWindowBridge.cs" />
+    <Compile Include="Helpers\DevExpressReport\AdjustmentsSheetReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\AdjustmentsSheetReport.Designer.cs">
+      <DependentUpon>AdjustmentsSheetReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\CompareAxisLineWithDrmPlanReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\CompareAxisLineWithDrmPlanReport.Designer.cs">
+      <DependentUpon>CompareAxisLineWithDrmPlanReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\CompareAxisLineWithDrmProfileReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\CompareAxisLineWithDrmProfileReport.Designer.cs">
+      <DependentUpon>CompareAxisLineWithDrmProfileReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\ContactWireReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\ContactWireReport.Designer.cs">
+      <DependentUpon>ContactWireReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\DistanceAxesReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\DistanceAxesReport.Designer.cs">
+      <DependentUpon>DistanceAxesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\DistanceFromObjectReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\DistanceFromObjectReport.Designer.cs">
+      <DependentUpon>DistanceFromObjectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\DistanceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\DistanceReport.Designer.cs">
+      <DependentUpon>DistanceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\GeoradarReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\GeoradarReport.Designer.cs">
+      <DependentUpon>GeoradarReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\ObjectsInclinationReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\ObjectsInclinationReport.Designer.cs">
+      <DependentUpon>ObjectsInclinationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizePassengerPlatformsReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizePassengerPlatformsReport.Designer.cs">
+      <DependentUpon>SizePassengerPlatformsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizePassengerPlatformsReportExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizePassengerPlatformsReportExt.Designer.cs">
+      <DependentUpon>SizePassengerPlatformsReportExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizeTrafficLightReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizeTrafficLightReport.Designer.cs">
+      <DependentUpon>SizeTrafficLightReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizeTrafficLightReportExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SizeTrafficLightReportExt.Designer.cs">
+      <DependentUpon>SizeTrafficLightReportExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SSizeCheckReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SSizeCheckReport.Designer.cs">
+      <DependentUpon>SSizeCheckReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SSizeCheckReportExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SSizeCheckReportExt.Designer.cs">
+      <DependentUpon>SSizeCheckReportExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SSizeCheckReportExt2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helpers\DevExpressReport\SSizeCheckReportExt2.Designer.cs">
+      <DependentUpon>SSizeCheckReportExt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DrmHelper.cs" />
+    <Compile Include="Helpers\SizeChecks\SizeCheckClientHelper.cs" />
+    <Compile Include="Helpers\SizeChecks\SizeCheckResult.cs" />
+    <Compile Include="Helpers\SizeChecks\TaskCheckViolationExtension.cs" />
+    <Compile Include="Helpers\VolumesHelper.cs" />
+    <Compile Include="Imports\GeoradarDataWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imports\GeoradarDataWizard.designer.cs">
+      <DependentUpon>GeoradarDataWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\LasWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imports\LasWizard.designer.cs">
+      <DependentUpon>LasWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\MeasureDataAddDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imports\MeasureDataAddDialog.Designer.cs">
+      <DependentUpon>MeasureDataAddDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\MeasureWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imports\MeasureWizard.designer.cs">
+      <DependentUpon>MeasureWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\Surface3dWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imports\Surface3dWizard.designer.cs">
+      <DependentUpon>Surface3dWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\SurveyDocsWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imports\SurveyDocsWizard.designer.cs">
+      <DependentUpon>SurveyDocsWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapAbstraction\IMapAbstraction.cs" />
+    <Compile Include="ParametricModels\DrmWizardWindow\DrmWizardWindowCaller.cs" />
+    <Compile Include="ParametricModels\DrmWizardWindow\IDrmWizardWindow.cs" />
+    <Compile Include="ParametricModels\Helpers\ParametricModelGeometry.cs" />
+    <Compile Include="ParametricModels\Helpers\ParametricModelProjectHelper.cs" />
+    <Compile Include="ParametricModels\Helpers\PmAxisHelper.cs" />
+    <Compile Include="ParametricModels\Import\Importers\Helpers\ImportHelper.cs" />
+    <Compile Include="ParametricModels\Import\Importers\Helpers\ImportResultMessagesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Helpers\ImportResultMessagesDialog.Designer.cs">
+      <DependentUpon>ImportResultMessagesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Helpers\ImportValidator.cs" />
+    <Compile Include="ParametricModels\Import\Importers\Implementations\BaseImporter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\BaseImporter.Designer.cs">
+      <DependentUpon>BaseImporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\EmptyProjectImporter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\EmptyProjectImporter.Designer.cs">
+      <DependentUpon>EmptyProjectImporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\AlignPointsCsvImporter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\AlignPointsCsvImporter.Designer.cs">
+      <DependentUpon>AlignPointsCsvImporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\ExchangeFormatImporter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\ExchangeFormatImporter.Designer.cs">
+      <DependentUpon>ExchangeFormatImporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Exporters\LandXmlExporter.cs" />
+    <Compile Include="ParametricModels\Exporters\LandXmlExporterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Exporters\LandXmlExporterDialog.Designer.cs">
+      <DependentUpon>LandXmlExporterDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\LandXmlImporter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\LandXmlImporter.Designer.cs">
+      <DependentUpon>LandXmlImporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\PlanProfileMultipleAxisCsvImporter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\PlanProfileMultipleAxisCsvImporter.Designer.cs">
+      <DependentUpon>PlanProfileMultipleAxisCsvImporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\PlanProfileSingleAxisCsvImporter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Implementations\PlanProfileSingleAxisCsvImporter.Designer.cs">
+      <DependentUpon>PlanProfileSingleAxisCsvImporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\Helpers\XmlImportHelper.cs" />
+    <Compile Include="ParametricModels\Import\Importers\Helpers\DigitalModel.cs" />
+    <Compile Include="ParametricModels\Import\Importers\ImporterFactory.cs" />
+    <Compile Include="ParametricModels\ParametricModelConverter\AddCustomFieldDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\AddCustomFieldDialog.Designer.cs">
+      <DependentUpon>AddCustomFieldDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\CustomColumnsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\CustomColumnsDialog.Designer.cs">
+      <DependentUpon>CustomColumnsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\EditDistanceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\EditDistanceDialog.Designer.cs">
+      <DependentUpon>EditDistanceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\EditLenDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\EditLenDialog.Designer.cs">
+      <DependentUpon>EditLenDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\EditStationingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\EditStationingDialog.Designer.cs">
+      <DependentUpon>EditStationingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\ImportElementDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\ImportElementDialog.Designer.cs">
+      <DependentUpon>ImportElementDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\ImportStationIrrDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\ImportStationIrrDialog.Designer.cs">
+      <DependentUpon>ImportStationIrrDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\PmConverterForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\PmConverterForm.Designer.cs">
+      <DependentUpon>PmConverterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\PmConverterHelper.cs" />
+    <Compile Include="ParametricModels\ParametricModelConverter\PmConverterInfos.cs" />
+    <Compile Include="ParametricModels\ParametricModelConverter\RoundStDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelConverter\RoundStDialog.Designer.cs">
+      <DependentUpon>RoundStDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\ParametricModelEditForm.Designer.cs">
+      <DependentUpon>ParametricModelEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\ParametricModelsImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParametricModels\Import\ParametricModelsImportForm.Designer.cs">
+      <DependentUpon>ParametricModelsImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricModels\Import\Importers\IParametricModelImporter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DevExpReport\ExpLogReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DevExpReport\ExpLogReport.Designer.cs">
+      <DependentUpon>ExpLogReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\ClientSettingsClass.cs" />
+    <Compile Include="Utils\ClientUtils.cs" />
+    <Compile Include="Utils\MessageUtils.cs" />
+    <Compile Include="Workflow\ResolutionWizard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Workflow\ResolutionWizard.Designer.cs">
+      <DependentUpon>ResolutionWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow\WorkflowProcessControllerBase.cs" />
+    <Compile Include="Workflow\WorkflowStepControllerBase.cs" />
+    <Compile Include="Workflow\WorkflowStepModelBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intech.Common.Controls\Intech.Common.Controls.csproj">
+      <Project>{67b0a02a-e742-4ed8-8824-60cbe5f06b62}</Project>
+      <Name>Intech.Common.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.DevX\Intech.Common.DevX.csproj">
+      <Project>{8120b478-19ed-419d-9130-dfcb25f4840a}</Project>
+      <Name>Intech.Common.DevX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.Windows\Intech.Common.Windows.csproj">
+      <Project>{6e0f6d80-5c47-43e2-b09a-d71cc748fbd7}</Project>
+      <Name>Intech.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{d977c536-fe1f-431d-a17f-c358bf874dc2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1f06a782-ae33-4244-b3e3-6ae00252c1bf}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{b64afe83-045b-4f8a-913c-d5aa2704640d}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI.Gis\KSPDIGT.Base.UI.Gis.csproj">
+      <Project>{2b452a8c-20ae-4941-933a-cbfa0678979e}</Project>
+      <Name>KSPDIGT.Base.UI.Gis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.Geo\KSPDIGT.IL.Geo.csproj">
+      <Project>{0EAA9AF9-61E5-4869-B8A1-248994DBBD54}</Project>
+      <Name>KSPDIGT.IL.Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts\KSPDIGT.IL.ServiceContracts.csproj">
+      <Project>{0c89cc33-21d1-48df-a043-d2437b7701e2}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Track\KSPDIGT.Base.Track.csproj">
+      <Project>{B4424462-9FA9-41F0-AE22-2D6614E48253}</Project>
+      <Name>KSPDIGT.Base.Track</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI\KSPDIGT.Base.UI.csproj">
+      <Project>{FE6D3B2C-EDFB-4143-B4CF-BC5ED3B82362}</Project>
+      <Name>KSPDIGT.Base.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Resources\KSPDIGT.Client.Resources.csproj">
+      <Project>{9683E2B7-FB8D-4A4D-BE7A-B259C33F05DE}</Project>
+      <Name>KSPDIGT.Client.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CalcTasks\CalcResultControl.resx">
+      <DependentUpon>CalcResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalcTasks\ChartWithTableControl\ChartRangeParametersDialog.resx">
+      <DependentUpon>ChartRangeParametersDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalcTasks\ChartWithTableControl\ChartWithTableRibbonControl.resx">
+      <DependentUpon>ChartWithTableRibbonControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalcTasks\ChartWithTableControl\SaveResultParametersDialog.resx">
+      <DependentUpon>SaveResultParametersDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CoordinateSystemSelector.resx">
+      <DependentUpon>CoordinateSystemSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DocSelector.resx">
+      <DependentUpon>DocSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DrmProjectSelectionControl.resx">
+      <DependentUpon>DrmProjectSelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Entities\GeoradarDataControl.resx">
+      <DependentUpon>GeoradarDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Entities\GeoradarImageControl.resx">
+      <DependentUpon>GeoradarImageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Entities\GeoradarImageDetailControl.resx">
+      <DependentUpon>GeoradarImageDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Entities\LaserScanControl.resx">
+      <DependentUpon>LaserScanControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Entities\MeasureListControl.resx">
+      <DependentUpon>MeasureListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapFragmentSelectionPanel.resx">
+      <DependentUpon>MapFragmentSelectionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapFragmentSelectionSuitablePanel.resx">
+      <DependentUpon>MapFragmentSelectionSuitablePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RailroadSelector.resx">
+      <DependentUpon>RailroadSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SurveysSelectionControlEx.resx">
+      <DependentUpon>SurveysSelectionControlEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SurveysSelectionExPopupControl.resx">
+      <DependentUpon>SurveysSelectionExPopupControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TransformCoordinateSystemSelector.resx">
+      <DependentUpon>TransformCoordinateSystemSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumCardReport.resx">
+      <DependentUpon>DatumCardReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\KiVPOGS\CoordSystemControl.resx">
+      <DependentUpon>CoordSystemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExportAxisLineDialog.resx">
+      <DependentUpon>ExportAxisLineDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LogDialog.resx">
+      <DependentUpon>LogDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MapFragmentSelectionDialogForTask.resx">
+      <DependentUpon>MapFragmentSelectionDialogForTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectReportTypeDialog.resx">
+      <DependentUpon>SelectReportTypeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SurveySelectionDialog.resx">
+      <DependentUpon>SurveySelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WayFragmentSelectionDialog.resx">
+      <DependentUpon>WayFragmentSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WayVisibilityBitmapDialog.resx">
+      <DependentUpon>WayVisibilityBitmapDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WayVisibilityParamsDialog.resx">
+      <DependentUpon>WayVisibilityParamsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\DocListControl.resx">
+      <DependentUpon>DocListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\RoadWayGridControl.resx">
+      <DependentUpon>RoadWayGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\CardReport.resx">
+      <DependentUpon>CardReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumAbrisReport.resx">
+      <DependentUpon>DatumAbrisReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumCoordGridControl.resx">
+      <DependentUpon>DatumCoordGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumDetailWindow.resx">
+      <DependentUpon>DatumDetailWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumHistoryControl.resx">
+      <DependentUpon>DatumHistoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumHistoryDialog.resx">
+      <DependentUpon>DatumHistoryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumImageReport.resx">
+      <DependentUpon>DatumImageReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumMarkControl.resx">
+      <DependentUpon>DatumMarkControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumMarksForm.resx">
+      <DependentUpon>DatumMarksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumMarksImportCsvWizard.resx">
+      <DependentUpon>DatumMarksImportCsvWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumMarksImportXmlWizard.resx">
+      <DependentUpon>DatumMarksImportXmlWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DatumStatusWindow.resx">
+      <DependentUpon>DatumStatusWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DeleteDatumDialog.resx">
+      <DependentUpon>DeleteDatumDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\DocBaseListControl.resx">
+      <DependentUpon>DocBaseListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\EditDatumDialog.resx">
+      <DependentUpon>EditDatumDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\KiVPOGS\KivpogsExportForm.resx">
+      <DependentUpon>KivpogsExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\KiVPOGS\KivpogsForm.resx">
+      <DependentUpon>KivpogsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\KiVPOGS\KiVPOGSMainReport.resx">
+      <DependentUpon>KiVPOGSMainReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\ImagesForm.resx">
+      <DependentUpon>ImagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatumMarks\RinexForm.resx">
+      <DependentUpon>RinexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\DocListDialog.resx">
+      <DependentUpon>DocListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationUsers\AddEditUserForm.resx">
+      <DependentUpon>AddEditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationUsers\AdmUsersForm.resx">
+      <DependentUpon>AdmUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationUsers\OrgLoginStatReport.resx">
+      <DependentUpon>OrgLoginStatReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationUsers\ReportPeriodDialog.resx">
+      <DependentUpon>ReportPeriodDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationUsers\UserLoginStatByOrgReport.resx">
+      <DependentUpon>UserLoginStatByOrgReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationUsers\UserLoginStatReport.resx">
+      <DependentUpon>UserLoginStatReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationVolumes\AddVolumeForm.resx">
+      <DependentUpon>AddVolumeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdministrationVolumes\AdministrationVolumesForm.resx">
+      <DependentUpon>AdministrationVolumesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\AddEditRoleForm.resx">
+      <DependentUpon>AddEditRoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\AdministrationForm.resx">
+      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AsupCatalog\AsupCatalogForm.resx">
+      <DependentUpon>AsupCatalogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChoiceAsupForm.resx">
+      <DependentUpon>ChoiceAsupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Classifiers\AddEditClassifierDialog.resx">
+      <DependentUpon>AddEditClassifierDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Classifiers\ClassifiersForm.resx">
+      <DependentUpon>ClassifiersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientSettingsEditForm.resx">
+      <DependentUpon>ClientSettingsEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CoordinateSystems\AddEditCoordSysDialog.resx">
+      <DependentUpon>AddEditCoordSysDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CoordinateSystems\AddEditIgs.resx">
+      <DependentUpon>AddEditIgs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CoordinateSystems\AddTransformDialog.resx">
+      <DependentUpon>AddTransformDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CoordinateSystems\ChangeCompressValueForm.resx">
+      <DependentUpon>ChangeCompressValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CoordinateSystems\CoorSysForm.resx">
+      <DependentUpon>CoorSysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\DocByClsListControl.resx">
+      <DependentUpon>DocByClsListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\DocByThemeListControl.resx">
+      <DependentUpon>DocByThemeListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\DocCalcListControl.resx">
+      <DependentUpon>DocCalcListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\DocOtherListControl.resx">
+      <DependentUpon>DocOtherListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\DocSurveyListControl.resx">
+      <DependentUpon>DocSurveyListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\DocTaskListControl.resx">
+      <DependentUpon>DocTaskListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Document\DocumentListWindow.resx">
+      <DependentUpon>DocumentListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpLog\ExpLogForm.resx">
+      <DependentUpon>ExpLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExpLog\ExpLogReportDialog.resx">
+      <DependentUpon>ExpLogReportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageWindow.resx">
+      <DependentUpon>ImageWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImpLog\ImpLogForm.resx">
+      <DependentUpon>ImpLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImpLog\ImpLogItemsDialog.resx">
+      <DependentUpon>ImpLogItemsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ParametricModels\DrmListWindow.resx">
+      <DependentUpon>DrmListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Query\QueryResultWindow.resx">
+      <DependentUpon>QueryResultWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Query\QueryWindow.resx">
+      <DependentUpon>QueryWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Entities\DocListControl.resx">
+      <DependentUpon>DocListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Entities\SurfaceDataControl.resx">
+      <DependentUpon>SurfaceDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Entities\SurveyMainPropertiesControl.resx">
+      <DependentUpon>SurveyMainPropertiesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SizeCheck\SizeFramePictureDialog.resx">
+      <DependentUpon>SizeFramePictureDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Surveys\SurveyPropertiesDialog.resx">
+      <DependentUpon>SurveyPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Surveys\SurveysForm.resx">
+      <DependentUpon>SurveysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Test\TestWindow.resx">
+      <DependentUpon>TestWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\AdjustmentsSheetReport.resx">
+      <DependentUpon>AdjustmentsSheetReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\CompareAxisLineWithDrmPlanReport.resx">
+      <DependentUpon>CompareAxisLineWithDrmPlanReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\CompareAxisLineWithDrmProfileReport.resx">
+      <DependentUpon>CompareAxisLineWithDrmProfileReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\ContactWireReport.resx">
+      <DependentUpon>ContactWireReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\CrossParamsReport.resx">
+      <DependentUpon>CrossParamsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\DistanceAxesReport.resx">
+      <DependentUpon>DistanceAxesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\SizeInsulatedJointReport.resx">
+      <DependentUpon>SizeInsulatedJointReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\DistanceFromObjectReport.resx">
+      <DependentUpon>DistanceFromObjectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\GeoradarReport.resx">
+      <DependentUpon>GeoradarReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\ObjectsInclinationReport.resx">
+      <DependentUpon>ObjectsInclinationReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\SizePassengerPlatformsReport.resx">
+      <DependentUpon>SizePassengerPlatformsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\SizePassengerPlatformsReportExt.resx">
+      <DependentUpon>SizePassengerPlatformsReportExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\SizeTrafficLightReport.resx">
+      <DependentUpon>SizeTrafficLightReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\DistanceFromTrafficLightToContactWireReport.resx">
+      <DependentUpon>DistanceFromTrafficLightToContactWireReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\SizeTrafficLightReportExt.resx">
+      <DependentUpon>SizeTrafficLightReportExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\SSizeCheckReport.resx">
+      <DependentUpon>SSizeCheckReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\SSizeCheckReportExt.resx">
+      <DependentUpon>SSizeCheckReportExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\DevExpressReport\SSizeCheckReportExt2.resx">
+      <DependentUpon>SSizeCheckReportExt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\GeoradarDataWizard.resx">
+      <DependentUpon>GeoradarDataWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\LasWizard.resx">
+      <DependentUpon>LasWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\MeasureDataAddDialog.resx">
+      <DependentUpon>MeasureDataAddDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\MeasureWizard.resx">
+      <DependentUpon>MeasureWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\Surface3dWizard.resx">
+      <DependentUpon>Surface3dWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imports\SurveyDocsWizard.resx">
+      <DependentUpon>SurveyDocsWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Import\Importers\Helpers\ImportResultMessagesDialog.resx">
+      <DependentUpon>ImportResultMessagesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Import\Importers\Implementations\EmptyProjectImporter.resx">
+      <DependentUpon>EmptyProjectImporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Import\Importers\Implementations\AlignPointsCsvImporter.resx">
+      <DependentUpon>AlignPointsCsvImporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Import\Importers\Implementations\ExchangeFormatImporter.resx">
+      <DependentUpon>ExchangeFormatImporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Exporters\LandXmlExporterDialog.resx">
+      <DependentUpon>LandXmlExporterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Import\Importers\Implementations\LandXmlImporter.resx">
+      <DependentUpon>LandXmlImporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Import\Importers\Implementations\PlanProfileMultipleAxisCsvImporter.resx">
+      <DependentUpon>PlanProfileMultipleAxisCsvImporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Import\Importers\Implementations\PlanProfileSingleAxisCsvImporter.resx">
+      <DependentUpon>PlanProfileSingleAxisCsvImporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\AddCustomFieldDialog.resx">
+      <DependentUpon>AddCustomFieldDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\CustomColumnsDialog.resx">
+      <DependentUpon>CustomColumnsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\EditDistanceDialog.resx">
+      <DependentUpon>EditDistanceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\EditLenDialog.resx">
+      <DependentUpon>EditLenDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\EditStationingDialog.resx">
+      <DependentUpon>EditStationingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\ImportElementDialog.resx">
+      <DependentUpon>ImportElementDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\ImportStationIrrDialog.resx">
+      <DependentUpon>ImportStationIrrDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\PmConverterForm.resx">
+      <DependentUpon>PmConverterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelConverter\RoundStDialog.resx">
+      <DependentUpon>RoundStDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\ParametricModelEditForm.resx">
+      <DependentUpon>ParametricModelEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametricModels\Import\ParametricModelsImportForm.resx">
+      <DependentUpon>ParametricModelsImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DevExpReport\ExpLogReport.resx">
+      <DependentUpon>ExpLogReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workflow\ResolutionWizard.resx">
+      <DependentUpon>ResolutionWizard.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Chemas\DistanceObjectDS.xsc">
+      <DependentUpon>DistanceObjectDS.xsd</DependentUpon>
+    </None>
+    <None Include="Chemas\DistanceObjectDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DistanceObjectDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Chemas\DistanceObjectDS.xss">
+      <DependentUpon>DistanceObjectDS.xsd</DependentUpon>
+    </None>
+    <None Include="Chemas\GeoradarData\georadar-xsd.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatumMarks\Import\XmlImport\datum.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatumMarks\KiVPOGS\KiVPOGSData\KiVPOGSDataSet.xsc">
+      <DependentUpon>KiVPOGSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatumMarks\KiVPOGS\KiVPOGSData\KiVPOGSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KiVPOGSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatumMarks\KiVPOGS\KiVPOGSData\KiVPOGSDataSet.xss">
+      <DependentUpon>KiVPOGSDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CalcTasks\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CalcTasks\DataStructures\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

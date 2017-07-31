@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BookmarksModel" targetNamespace="http://tempuri.org/BookmarksModel.xsd" xmlns:mstns="http://tempuri.org/BookmarksModel.xsd" xmlns="http://tempuri.org/BookmarksModel.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BookmarksModel" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BookmarksModel" msprop:Generator_UserDSName="BookmarksModel">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Bookmarks" msprop:Generator_TableClassName="BookmarksDataTable" msprop:Generator_TableVarName="tableBookmarks" msprop:Generator_TablePropName="Bookmarks" msprop:Generator_RowDeletingName="BookmarksRowDeleting" msprop:Generator_UserTableName="Bookmarks" msprop:Generator_RowChangingName="BookmarksRowChanging" msprop:Generator_RowEvHandlerName="BookmarksRowChangeEventHandler" msprop:Generator_RowDeletedName="BookmarksRowDeleted" msprop:Generator_RowEvArgName="BookmarksRowChangeEvent" msprop:Generator_RowChangedName="BookmarksRowChanged" msprop:Generator_RowClassName="BookmarksRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
+              <xs:element name="ParentID" msprop:Generator_ColumnVarNameInTable="columnParentID" msprop:Generator_ColumnPropNameInRow="ParentID" msprop:Generator_ColumnPropNameInTable="ParentIDColumn" msprop:Generator_UserColumnName="ParentID" type="xs:string" minOccurs="0" />
+              <xs:element name="MapID" msprop:Generator_ColumnVarNameInTable="columnMapID" msprop:Generator_ColumnPropNameInRow="MapID" msprop:Generator_ColumnPropNameInTable="MapIDColumn" msprop:Generator_UserColumnName="MapID" type="xs:string" minOccurs="0" />
+              <xs:element name="User" msprop:Generator_ColumnVarNameInTable="columnUser" msprop:Generator_ColumnPropNameInRow="User" msprop:Generator_ColumnPropNameInTable="UserColumn" msprop:Generator_UserColumnName="User" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Extent" msprop:Generator_ColumnVarNameInTable="columnExtent" msprop:Generator_ColumnPropNameInRow="Extent" msprop:Generator_ColumnPropNameInTable="ExtentColumn" msprop:Generator_UserColumnName="Extent" type="xs:string" minOccurs="0" />
+              <xs:element name="Note" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_UserColumnName="Note" type="xs:string" minOccurs="0" />
+              <xs:element name="ImageIndex" msprop:Generator_ColumnVarNameInTable="columnImageIndex" msprop:Generator_ColumnPropNameInRow="ImageIndex" msprop:Generator_ColumnPropNameInTable="ImageIndexColumn" msprop:Generator_UserColumnName="ImageIndex" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="BookmarksKey1">
+      <xs:selector xpath=".//mstns:Bookmarks" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

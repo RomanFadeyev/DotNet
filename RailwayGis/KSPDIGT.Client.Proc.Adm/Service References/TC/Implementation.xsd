@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TCService.Interface" />
+  <xs:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TCService" />
+  <xs:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="LoginResult" nillable="true" type="q1:LoginResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Calculate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="request" nillable="true" type="q2:TaskSet" />
+        <xs:element minOccurs="0" name="ptrAlias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="asupAlias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="CalculateResult" nillable="true" type="q3:ArrayOfErrorCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateRaw">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="request" nillable="true" type="q4:TaskSet" />
+        <xs:element minOccurs="0" name="ptrAlias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="asupAlias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateRawResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="CalculateRawResult" nillable="true" type="q5:ArrayOfCalculationOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="screenX" type="xs:int" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetMarkResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Draw">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="settings" nillable="true" type="q6:DrawSettings" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="format" type="q7:ImgFormat" />
+        <xs:element minOccurs="0" name="xPos" type="xs:int" />
+        <xs:element minOccurs="0" name="scale" type="xs:int" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DrawResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="DrawResult" nillable="true" type="q8:DrawResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Print">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="meterPerPage" type="xs:int" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PrintResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnginesMetaInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ptrAlias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnginesMetaInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetEnginesMetaInfoResult" nillable="true" type="q9:ArrayOfEngineMetaInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteMetaInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="input" nillable="true" type="q10:RouteDescription" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="workDate" nillable="true" type="q11:WorkDate" />
+        <xs:element minOccurs="0" name="asupAlias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteMetaInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetRouteMetaInfoResult" nillable="true" type="q12:ArrayOfWayMetaInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="road" type="xs:int" />
+        <xs:element minOccurs="0" name="ptrAlias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetPriceInfoResult" nillable="true" type="q13:ArrayOfPriceFactor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalculationResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalculationResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetCalculationResultResult" nillable="true" type="q14:ArrayOfCalculationOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalculationResultExt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="input" nillable="true" type="q15:ArrayOfAnalyzePolygon" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalculationResultExtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetCalculationResultExtResult" nillable="true" type="q16:ArrayOfAnalyzeTask" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalculationResultSlim">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalculationResultSlimResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetCalculationResultSlimResult" nillable="true" type="q17:ArrayOfArrayOfAnalyzeResultSlim" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWarningsInfluence">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="baseIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="compareIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWarningsInfluenceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetWarningsInfluenceResult" nillable="true" type="q18:ArrayOfWarningInfluence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ParseMch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="input" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ParseMchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="ParseMchResult" nillable="true" type="q19:RouteDescription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplySpeed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="input" nillable="true" type="q20:ArrayOfCustomWayDescription" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="workDate" nillable="true" type="q21:WorkDate" />
+        <xs:element minOccurs="0" name="asupAlias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplySpeedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="ApplySpeedResult" nillable="true" type="q22:ArrayOfCustomWayDescription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOrderNWarnings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="moveType" type="q23:MoveTypeBase" />
+        <xs:element minOccurs="0" name="asupAlias" nillable="true" type="xs:string" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="workDate" nillable="true" type="q24:WorkDate" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllOrderNWarningsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetAllOrderNWarningsResult" nillable="true" type="q25:ArrayOfWarning" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderNWarnings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="wids" nillable="true" type="q26:ArrayOfint" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="moveType" type="q27:MoveTypeBase" />
+        <xs:element minOccurs="0" name="asupAlias" nillable="true" type="xs:string" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="workDate" nillable="true" type="q28:WorkDate" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderNWarningsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="GetOrderNWarningsResult" nillable="true" type="q29:ArrayOfWarning" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitWarnings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="req" nillable="true" type="q30:ArrayOfWarning" />
+        <xs:element minOccurs="0" name="asupAlias" nillable="true" type="xs:string" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="workDate" nillable="true" type="q31:WorkDate" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitWarningsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="InitWarningsResult" nillable="true" type="q32:ArrayOfWarning" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitRoute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="req" nillable="true" type="q33:RouteDescription" />
+        <xs:element minOccurs="0" name="asupAlias" nillable="true" type="xs:string" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="workDate" nillable="true" type="q34:WorkDate" />
+        <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitRouteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/TCService.Interface" minOccurs="0" name="InitRouteResult" nillable="true" type="q35:RouteDescription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Debug">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DebugResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

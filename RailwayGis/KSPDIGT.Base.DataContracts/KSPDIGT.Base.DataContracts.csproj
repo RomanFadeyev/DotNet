@@ -1,0 +1,913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Base.DataContracts</RootNamespace>
+    <AssemblyName>KSPDIGT.Base.DataContracts</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\KSPDIGT.Base.DataContracts.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\KSPDIGT.Base.DataContracts.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="AsupCatalog\AsupCatalogInfoClass.cs" />
+    <Compile Include="AsyncServiceCall\AsyncTask.cs" />
+    <Compile Include="Authorization\AuthorizedUserInfo.cs" />
+    <Compile Include="Authorization\RoleConstants.cs" />
+    <Compile Include="BusinessLogicResponses\DatumMarkBusinessLogicResponses.cs" />
+    <Compile Include="CalcResult\CalcResult.cs" />
+    <Compile Include="Calcs\CalcAttribute.cs" />
+    <Compile Include="Calcs\CalcDataInfoClass.cs" />
+    <Compile Include="Calcs\CalcDatasWithObjectName.cs" />
+    <Compile Include="Calcs\CalcResult.cs" />
+    <Compile Include="Calcs\CalcsResultInfoClass.cs" />
+    <Compile Include="Calcs\ReportInfoClass.cs" />
+    <Compile Include="Calcs\WayNum.cs" />
+    <Compile Include="Calculation\BasicDistanceCalculationParameters.cs" />
+    <Compile Include="Calculation\CalculatedDistanceInfo.cs" />
+    <Compile Include="Calculation\CalculatedPointTag.cs" />
+    <Compile Include="Calculation\ContactWireDistanceInfo.cs" />
+    <Compile Include="Calculation\DistanceCalcParamUI.cs" />
+    <Compile Include="Calculation\GeoradarDataDistanceInfo.cs" />
+    <Compile Include="Classificators\ClsCodes.cs" />
+    <Compile Include="ClientServerFactories\ClientServerFactory.cs" />
+    <Compile Include="ClientServerFactories\IMapDataProvider.cs" />
+    <Compile Include="ClientServerFactories\IDataSourceAbstraction.cs" />
+    <Compile Include="ClientServerFactories\TransformWrapper.cs" />
+    <Compile Include="ClientServerFactories\ITransformProvider.cs" />
+    <Compile Include="CommentList\CommentListDataClasses.cs" />
+    <Compile Include="Common\Direction.cs" />
+    <Compile Include="CoordinateSystems\IgsInfoClass.cs" />
+    <Compile Include="DatumMark\DatumMarkShowOnMapData.cs" />
+    <Compile Include="RailwayCrossingVisibility\RcvData.cs" />
+    <Compile Include="DataModels\Common\EntityFrameworkHelper.cs" />
+    <Compile Include="DataModels\Common\ObjectQueryExtension.cs" />
+    <Compile Include="DataModels\GeodatabaseConfiguration\GDB.cs" />
+    <Compile Include="DataModels\GeodatabaseConfiguration\GDB.Domains.cs" />
+    <Compile Include="DataModels\GeodatabaseConfiguration\GDB.FeatureClasses.cs" />
+    <Compile Include="DataModels\GeodatabaseConfiguration\GDB.FeatureClasses.GEO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Common\GDBObjectMetadata.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Common\GDBObjectTitleHelper.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Common\GDBObjectTypeHelper.cs" />
+    <Compile Include="ParametricModel\AlignOpDto.cs" />
+    <Compile Include="Picketaging\IPicketagedPointsCollection.cs" />
+    <Compile Include="Picketaging\PicketageConversion.cs" />
+    <Compile Include="Picketaging\PicketageFormatting.cs" />
+    <Compile Include="Picketaging\PicketageType.cs" />
+    <Compile Include="RailwayCrossingVisibility\CrossParamsObject.Unbound.cs" />
+    <Compile Include="RailwayCrossingVisibility\RcvBaseCalculatedParameter.cs" />
+    <Compile Include="RailwayCrossingVisibility\RcvContext.cs" />
+    <Compile Include="RailwayCrossingVisibility\RcvParams.cs" />
+    <Compile Include="Stationing\StationedPoint2D.cs" />
+    <Compile Include="Stationing\StationedPoint3D.cs" />
+    <Compile Include="Stationing\StationedValue.cs" />
+    <Compile Include="GeoObjects\ServerQuery\DatabaseIdentifier.cs" />
+    <Compile Include="GeoObjects\ServerQuery\Feature.cs" />
+    <Compile Include="GeoObjects\ServerQuery\QueryIntersectionResultMode.cs" />
+    <Compile Include="GeoObjects\ServerQuery\Shape.cs" />
+    <Compile Include="DataModels\Interfaces.cs" />
+    <Compile Include="DataModels\Model\AccessibleMapExtent.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Action.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\ActionLog.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\ADM\Action.partial.cs" />
+    <Compile Include="DataModels\Model\ADM\ActionLog.partial.cs" />
+    <Compile Include="DataModels\Model\ADM\AdmModelMetadata.cs" />
+    <Compile Include="DataModels\Model\ADM\AdmModelUtils.cs" />
+    <Compile Include="DataModels\Model\ADM\MapFragment.partial.cs" />
+    <Compile Include="DataModels\Common\IndirectDescriptor.cs" />
+    <Compile Include="DataModels\Common\ObjectChangeTracker.cs" />
+    <Compile Include="DataModels\Common\SelfTrackingEntitiesContextExtensions.cs" />
+    <Compile Include="DataModels\Model\Align.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AlignElement.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AlignElementAp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AlignElementApPp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AlignElementOp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AlignElementOpPp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AlignOp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AlignPoint.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupDist.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupDor.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupIsso.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupNormIntertrack.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupPrz.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupPutgl.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupPutglDor.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupPutglPeregon.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupPutglUp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupStan.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupWayPlan.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AsupZdan.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AxisDataPlan.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\AxisDataRake.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\BlockStation.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Bridge.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\BridgeSpan.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Building.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CableLine.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Calc.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CalcAttr.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CalcChart.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CalcData.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CalcMessage.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CalcObject.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CalcValue.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Calendar.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CdProf.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Cls.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Coord.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CoordSys.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CoordSysToIgs.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CoordSysTransform.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CurveDef.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CurveDefPair.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CurveDefPair2.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Datum.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\DATUM\Coord.partial.cs" />
+    <Compile Include="DataModels\Model\DATUM\Datum.partial.cs" />
+    <Compile Include="DataModels\Model\DATUM\DatumModelMetadata.cs" />
+    <Compile Include="DataModels\Model\DATUM\Img.partial.cs" />
+    <Compile Include="DataModels\Model\Dbversion.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\DerailingShoe.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Document.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\DocumentToCalc.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\DocumentToDatum.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\DocumentToSurvey.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\DocumentToTask.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Drawing.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\DRM\Align.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\AlignElement.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\AlignElementApPp.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\AlignElementOp.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\AlignElementOpPp.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\AlignElementAp.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\AlignPoint.Partial.cs" />
+    <Compile Include="DataModels\Model\DRM\AxisPointDump.cs" />
+    <Compile Include="DataModels\Model\DRM\CurveDef.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\DrmModelMetadata.cs" />
+    <Compile Include="DataModels\Model\CombinedModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CombinedModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CombinedModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\CombinedModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CombinedModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\DRM\GradeProf.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\GradeProfOp.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\IStationingElement.cs" />
+    <Compile Include="DataModels\Model\DRM\Prj.partial.cs" />
+    <Compile Include="DataModels\Model\ExpLog.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\ExpLogItem.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\FootBridge.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\FoulingIndicator.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Fraction.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\GeoradarData.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\GeoradarImage.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\GeoradarValue.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\GradeProf.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\GradeProfAp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\GradeProfApPp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\GradeProfOp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\GradeProfOpPp.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Hut.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Igs.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Img.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\ImpLog.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\ImpLogItem.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\InsulatedJoint.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\LsData.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\MapFragment.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\MapFragmentAxis.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\MapFragmentAxisLine.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\MapFragmentVersion.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Measure.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\NaturalGroundPoint.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\ObjectType.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\PassingTrackSection.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Pipe.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Pipeline.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Platform.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\PlatformPoint.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Prj.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\RailwayCrossing.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\REFDATA\Document.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\DocumentToDatum.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\GeoradarValue.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\ExpLogItem.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\StationingCachePropRange.partial.cs" />
+    <Compile Include="DataModels\Model\Rinex.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\RoadCrosspass.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Role.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\RoleAction.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\RoleLayer.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Speed.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Sta.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Station.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationingCacheAxisBoundary.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationingCacheKmLength.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationingCacheObjectPos.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationingCachePicketInfo.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationingCachePkLength.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationingCachePropRange.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationingCacheSpeedRange.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationingCacheWaypartRange.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationIrr.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StationIrrPkInfo.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StoppingDevice.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\StopPoint.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SubgradeEdge.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurfaceData.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Survey.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurveyDocument.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurveyFull.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurveyGeoradarData.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurveyGeoradarImage.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurveyLsData.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurveyMeasure.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurveySurfaceData.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\SurveyToTask.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Switch.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Task.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\TaskCheck.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\TaskCheckViolation.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\TaskData.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\TaskFeature.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\TaskStep.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Tower.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\TowerClearance.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\TrafficLight.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\TrafficLightClearance.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\User.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\UserRole.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Model\Volume.cs">
+      <DependentUpon>CombinedModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatumMark\DatumWithDocuments.cs" />
+    <Compile Include="Generic\ArbitraryCoordinateSystem.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\AuxiliaryAxisLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\AxesOverlayLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\AxisLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\AxisLineGDBO.Invariable.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\BridgeSpanAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\CarrierWireLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Common\BaseGDBObjectClasses.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Common\GDBObjectMetadata.Registry.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ContactNetworkSupport3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ContactNetworkSupportPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ContactNetworkTrussSupportAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ContactNetworkTrussSupportLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ContactWireLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ContourHydrographyAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\DatumMarkPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\EquipmentRailwayCrossing3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\EquipmentRailwayCrossingPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Fence3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\FenceLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\FixedStationingGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\FundamOfSupportAndAnchor3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\FundamOfSupportAndAnchorLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\GEO\CoordSysViewGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\GEO\MapFragmentViewGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\GEO\PhotofixationPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\GEO\VolumeViewGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\GroundPowerSupplyObject3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\GroundPowerSupplyObjectAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\HillAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\HorizontalLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\HydrographyLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\IsolatingJunctionPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ISSO3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ISSOAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Lighting3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\LightingFarmLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\LightingPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\LimitColumn3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\LimitColumnPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Mark3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\MarkPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\PassengerInfrastructure3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\PicketColumnPoint3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\PicketColumnPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Platform3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\PlatformAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\PointOfInterestPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\PowerLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\RailroadAndPedestrianCrossingAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\RailThreadLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\RoadAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\RoadLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\SettlementStructure3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\SettlementStructureAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\SignalOrGuideColumn3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\SignalOrGuideColumnPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\Speaker3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\SpeakerPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\StationCenterPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\StationingPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\StationObjectPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\StructuralLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\SurfaceMarkPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ThroughMeterPicketPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TieAxisLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TrackStop3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TrackStopPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TrackSwitchPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TrafficLight3DGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TrafficLightAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TrafficLightLineGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TrafficLightPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\TrainShoeKickerPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\VegetationContourAreaGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\WagonStopPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\WagonWeigherPointGDBO.cs" />
+    <Compile Include="DataModels\GeodatabaseObjects\ZoneAreaGDBO.cs" />
+    <Compile Include="Geometry\Bounds2D.cs" />
+    <Compile Include="Geometry\Bounds3D.cs" />
+    <Compile Include="Geometry\Box3D.cs" />
+    <Compile Include="Geometry\Move\Point2DClass.cs" />
+    <Compile Include="Generic\Point2DClassWithLabel.cs" />
+    <Compile Include="Geometry\Move\Point3DClass.cs" />
+    <Compile Include="Geometry\Point2D.cs" />
+    <Compile Include="Geometry\Point3D.cs" />
+    <Compile Include="Geometry\Point3DComposition.cs" />
+    <Compile Include="GeoObjects\ServerQuery\FeatureIdentifier.cs" />
+    <Compile Include="GeoObjects\ServerQuery\SpatialRelationMode.cs" />
+    <Compile Include="Licensing\ClientInfo.cs" />
+    <Compile Include="MapFragment\MapFragmentLayerInfo.cs" />
+    <Compile Include="Picketaging\PicketInfo.cs" />
+    <Compile Include="Picketaging\PicketInfoSet.cs" />
+    <Compile Include="PointCloud\PointsWithinPolygonParameters.cs" />
+    <Compile Include="ParametricModel\ProfilePointInfo.cs" />
+    <Compile Include="Picketaging\PicketagePos.cs" />
+    <Compile Include="PointCloud\CloudPointCluster.cs" />
+    <Compile Include="LandXml\LandXML.cs" />
+    <Compile Include="DataModels\Model\ModelUtils.cs" />
+    <Compile Include="DataModels\Model\REFDATA\Calc.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\CalcAttr.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\CalcData.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\CalcMessage.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\CalcObject.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\StationingCacheWaypartRange.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\SurfaceData.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\TaskCheckViolation.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\StationingCachePicketInfo.partial.cs" />
+    <Compile Include="DataModels\Model\NSI\Cls.partial.cs" />
+    <Compile Include="DataModels\Model\NSI\CoordSys.partial.cs" />
+    <Compile Include="BusinessLogicResponses\BasicBusinessLogicResponse.cs" />
+    <Compile Include="DataModels\Model\NSI\NSIModelMetadata.cs" />
+    <Compile Include="DataModels\Model\REFDATA\ImpLogItem.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\ImpLog.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\ExpLog.partial.cs" />
+    <Compile Include="DataModels\Model\REFDATA\RefDataModelMetadata.cs" />
+    <Compile Include="DataModels\Model\REFDATA\TaskStep.partial.cs" />
+    <Compile Include="DatumMark\DatumMarkFileData.cs" />
+    <Compile Include="Document\DocumentDTO.cs" />
+    <Compile Include="ImpLogItem\ImpLogItemInfo.cs" />
+    <Compile Include="ImpLog\ImpLogInfo.cs" />
+    <Compile Include="ParametricModel\PMUnionData.cs" />
+    <Compile Include="OperationDataModels\CalcInfo.cs" />
+    <Compile Include="OperationDataModels\PicketPointInfo.cs" />
+    <Compile Include="ParametricModel\AlignOpDtoEx.cs" />
+    <Compile Include="ParametricModel\TrackComparer.cs" />
+    <Compile Include="ParametricModel\ParametricModelPlanProfileCsv.cs" />
+    <Compile Include="PointCloud\CloudPoint.cs" />
+    <Compile Include="PointCloud\CloudPointDefaultColors.cs" />
+    <Compile Include="PointCloud\GeometryObjects.cs" />
+    <Compile Include="PointCloud\CloudPointClass.cs" />
+    <Compile Include="PointCloud\GeoScreenPoint.cs" />
+    <Compile Include="Query\QueryDO.cs" />
+    <Compile Include="Query\SearchSQLRange.cs" />
+    <Compile Include="Query\XMLCData.cs" />
+    <Compile Include="Common\Range.cs" />
+    <Compile Include="Common\Side.cs" />
+    <Compile Include="Stationing\StationingInfoWithDistance.cs" />
+    <Compile Include="Stationing\StationingInfoWithDistances.cs" />
+    <Compile Include="Stationing\StationingInfoWithDistancesAndPoint.cs" />
+    <Compile Include="Stationing\StationRange.cs" />
+    <Compile Include="SizeCheck\CrossProfilePointEx.cs" />
+    <Compile Include="SizeCheck\SizeCheckStartParameters.cs" />
+    <Compile Include="SizeCheck\WayPartAttribute.cs" />
+    <Compile Include="SizeCheck\SizeCheckParameters.cs" />
+    <Compile Include="SizeCheck\SizeCheckOneSliceData.cs" />
+    <Compile Include="SizeCheck\SizeFrameTemplate.cs" />
+    <Compile Include="Specifications\SpecificationsScheme.cs">
+      <DependentUpon>SpecificationsScheme.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Surveys\InitSurveyParams.cs" />
+    <Compile Include="Surveys\SurveyConstants.cs" />
+    <Compile Include="Utils\ClsUtils.cs" />
+    <Compile Include="Volumes\VolumeInfoClass.cs" />
+    <Compile Include="Surveys\LasSurveyHelper.cs" />
+    <Compile Include="Surveys\SurveyDisplayInfo.cs" />
+    <Compile Include="Surveys\SurveyType.cs" />
+    <Compile Include="Surveys\XSD\PointCloudRoot.cs" />
+    <Compile Include="Surveys\XSD\PointCloudRoot.partial.cs" />
+    <Compile Include="Tasks\TasksDataClasses.cs" />
+    <Compile Include="Exceptions\ClientHandledExceptions.cs" />
+    <Compile Include="Generic\ClassifierRecordClass.cs" />
+    <Compile Include="Generic\DatumCoordSysClass.cs" />
+    <Compile Include="Generic\DatumRecordClass.cs" />
+    <Compile Include="Generic\NsiCoordSysClass.cs" />
+    <Compile Include="LogItems\LogItemInfoClass.cs" />
+    <Compile Include="MapFragment\MapFragmentShortInfo.cs" />
+    <Compile Include="ObjectProperties\ASUPNorm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASUPNorm.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectProperties\GeoRadarDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeoRadarDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectProperties\IssoDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IssoDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectProperties\StationPlanDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StationPlanDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OperationDataModels\DatumImagesModel.cs" />
+    <Compile Include="OperationDataModels\RoadWayInfo.cs" />
+    <Compile Include="OperationDataModels\FullNSIModel.cs" />
+    <Compile Include="OperationDataModels\SurveyInfo.cs" />
+    <Compile Include="OperationDataModels\UsersInfoModel.cs" />
+    <Compile Include="ParametricModel\CreatingParametricModelProjectParameters.cs" />
+    <Compile Include="ParametricModel\AlignInfo.cs" />
+    <Compile Include="ParametricModel\DrmProjectShortInfo.cs" />
+    <Compile Include="PhotoFixation\PhotoFileInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\GlobalSettingsClass.cs" />
+    <Compile Include="Stationing\StationingInfo.cs" />
+    <Compile Include="Surveys\SurveyDocInfo.cs" />
+    <Compile Include="DataModels\Model\DRM\AxisPoint.cs" />
+    <Compile Include="Workflow\CreateRiRP.cs" />
+    <Compile Include="Workflow\DkssConstants.cs" />
+    <Compile Include="Workflow\DO\WorkflowJump.cs" />
+    <Compile Include="Workflow\DO\WorkflowProcess.cs" />
+    <Compile Include="Workflow\DO\WorkflowStep.cs" />
+    <Compile Include="Workflow\TasksConstants.cs" />
+    <Compile Include="Workflow\WorkflowProcessManager.cs" />
+    <Compile Include="Wsdl\WsdlDocumentationAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{b64afe83-045b-4f8a-913c-d5aa2704640d}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataModels\corrected.context.cs.ttinclude" />
+    <None Include="DataModels\corrected.ef.utility.cs.ttinclude" />
+    <None Include="DataModels\corrected.model.cs.ttinclude" />
+    <EntityDeploy Include="DataModels\Model\CombinedModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CombinedModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModels\Model\CombinedModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CombinedModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModels\Model\CombinedModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CombinedModel.cs</LastGenOutput>
+    </None>
+    <Compile Include="DataModels\Model\REFDATA\Task.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\AlignOp.partial.cs" />
+    <Compile Include="DataModels\Model\DRM\StationIrr.Partial.cs" />
+    <None Include="ObjectProperties\ASUPNorm.xsc">
+      <DependentUpon>ASUPNorm.xsd</DependentUpon>
+    </None>
+    <None Include="ObjectProperties\ASUPNorm.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ASUPNorm.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectProperties\ASUPNorm.xss">
+      <DependentUpon>ASUPNorm.xsd</DependentUpon>
+    </None>
+    <None Include="ObjectProperties\GeoRadarDS.xsc">
+      <DependentUpon>GeoRadarDS.xsd</DependentUpon>
+    </None>
+    <None Include="ObjectProperties\GeoRadarDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GeoRadarDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectProperties\GeoRadarDS.xss">
+      <DependentUpon>GeoRadarDS.xsd</DependentUpon>
+    </None>
+    <None Include="ObjectProperties\IssoDS.xsc">
+      <DependentUpon>IssoDS.xsd</DependentUpon>
+    </None>
+    <None Include="ObjectProperties\IssoDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IssoDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectProperties\IssoDS.xss">
+      <DependentUpon>IssoDS.xsd</DependentUpon>
+    </None>
+    <None Include="ObjectProperties\StationPlanDS.xsc">
+      <DependentUpon>StationPlanDS.xsd</DependentUpon>
+    </None>
+    <None Include="ObjectProperties\StationPlanDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StationPlanDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectProperties\StationPlanDS.xss">
+      <DependentUpon>StationPlanDS.xsd</DependentUpon>
+    </None>
+    <None Include="Specifications\SpecificationsScheme.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Surveys\XSD\PointCloud.root.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Calculation\TODO.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EAA9AF9-61E5-4869-B8A1-248994DBBD54}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.IL.Geo</RootNamespace>
+    <AssemblyName>KSPDIGT.IL.Geo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AxisCaching\AxisLineStationingInfoCache.cs" />
+    <Compile Include="Extensions\MapFragmentAxisLineExtension.cs" />
+    <Compile Include="GeoObjects\GeoFeatureExtensions.cs" />
+    <Compile Include="Helpers\ExportCoordinatesHelper.cs" />
+    <Compile Include="Helpers\WayPartAttributeChangePointHelper.cs" />
+    <Compile Include="LinqToSql\LinqToSqlKnownMethods.cs" />
+    <Compile Include="LinqToSql\WhereExpressionCompiler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reduction\CalculationWithReductionHelper.cs" />
+    <Compile Include="GeoObjects\GeoFeature.cs" />
+    <Compile Include="GeoObjects\GeoDbTableQuery.cs" />
+    <Compile Include="Stationing\AxisLineStationingInfo.cs" />
+    <Compile Include="Stationing\Exceptions.cs" />
+    <Compile Include="Stationing\StationingEngine.cs" />
+    <Compile Include="Stationing\StationingUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intech.Common.Windows\Intech.Common.Windows.csproj">
+      <Project>{6E0F6D80-5C47-43E2-B09A-D71CC748FBD7}</Project>
+      <Name>Intech.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1F06A782-AE33-4244-B3E3-6AE00252C1BF}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{b64afe83-045b-4f8a-913c-d5aa2704640d}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4abe9f10-671e-4e25-9ba4-a62e19230e5d}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Track\KSPDIGT.Base.Track.csproj">
+      <Project>{B4424462-9FA9-41F0-AE22-2D6614E48253}</Project>
+      <Name>KSPDIGT.Base.Track</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts\KSPDIGT.IL.ServiceContracts.csproj">
+      <Project>{0c89cc33-21d1-48df-a043-d2437b7701e2}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

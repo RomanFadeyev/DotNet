@@ -1,0 +1,49 @@
+﻿<?xml version="1.0"?>
+<QueryDO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Выданные сведения за период</Name>
+  <Description>Запрос выдает список записей из журнала выданных сведений</Description>
+  <Params>
+    <QueryParam>
+      <Name>p1</Name>
+      <DisplayName>Тип сведений</DisplayName>
+      <Category></Category>
+      <ParamType>SpecType</ParamType>
+      <SpecType>ExpLog.DataType</SpecType>
+    </QueryParam>
+    <QueryParam>
+      <Name>p2</Name>
+      <DisplayName>Начало периода</DisplayName>
+      <Category></Category>
+      <ParamType>Date</ParamType>
+    </QueryParam>
+    <QueryParam>
+      <Name>p3</Name>
+      <DisplayName>Окончание периода</DisplayName>
+      <Category></Category>
+      <ParamType>Date</ParamType>
+    </QueryParam>
+  </Params>
+  <Use>true</Use>
+  <Interactive>true</Interactive>
+  <Sql>
+    <![CDATA[
+  select
+L.DATA_TYPE as "Тип",
+L.RECIPIENT_ORG as "Организация-получатель",
+L.DOC_CAUSE as "Основание выдачи сведений",
+L.USERNAME as "Оператор"
+from REFDATA.EXP_LOG L
+where
+L.DATA_TYPE = :p1 and
+L.REC_ADD_DATE >= :p2 and
+L.REC_ADD_DATE <= :p3
+  ]]>
+  </Sql>
+  <Fields>
+    <Field>
+      <Name>Тип</Name>
+      <SpecType>ExpLog.DataType</SpecType>
+      <Group>true</Group>
+    </Field>    
+  </Fields>
+</QueryDO>

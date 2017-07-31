@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DistanceObjectDS" targetNamespace="http://tempuri.org/DistanceObjectDS.xsd" xmlns:mstns="http://tempuri.org/DistanceObjectDS.xsd" xmlns="http://tempuri.org/DistanceObjectDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DistanceObjectDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DistanceObjectDS" msprop:Generator_UserDSName="DistanceObjectDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DistanceObjectTable" msprop:Generator_TableClassName="DistanceObjectTableDataTable" msprop:Generator_TableVarName="tableDistanceObjectTable" msprop:Generator_TablePropName="DistanceObjectTable" msprop:Generator_RowDeletingName="DistanceObjectTableRowDeleting" msprop:Generator_UserTableName="DistanceObjectTable" msprop:Generator_RowChangingName="DistanceObjectTableRowChanging" msprop:Generator_RowEvHandlerName="DistanceObjectTableRowChangeEventHandler" msprop:Generator_RowDeletedName="DistanceObjectTableRowDeleted" msprop:Generator_RowEvArgName="DistanceObjectTableRowChangeEvent" msprop:Generator_RowChangedName="DistanceObjectTableRowChanged" msprop:Generator_RowClassName="DistanceObjectTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="a_Height" msdata:Caption="Высота до объекта" msprop:Generator_ColumnVarNameInTable="columna_Height" msprop:Generator_ColumnPropNameInRow="a_Height" msprop:Generator_ColumnPropNameInTable="a_HeightColumn" msprop:Generator_UserColumnName="a_Height" type="xs:double" minOccurs="0" />
+              <xs:element name="a_Name" msdata:Caption="Название слоя" msprop:Generator_ColumnVarNameInTable="columna_Name" msprop:Generator_ColumnPropNameInRow="a_Name" msprop:Generator_ColumnPropNameInTable="a_NameColumn" msprop:Generator_UserColumnName="a_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="a_ID" msdata:Caption="ID объекта" msprop:Generator_ColumnVarNameInTable="columna_ID" msprop:Generator_ColumnPropNameInRow="a_ID" msprop:Generator_ColumnPropNameInTable="a_IDColumn" msprop:Generator_UserColumnName="a_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="a_CLSID" msdata:Caption="CLSID объекта" msprop:Generator_ColumnVarNameInTable="columna_CLSID" msprop:Generator_ColumnPropNameInRow="a_CLSID" msprop:Generator_ColumnPropNameInTable="a_CLSIDColumn" msprop:Generator_UserColumnName="a_CLSID" type="xs:string" minOccurs="0" />
+              <xs:element name="a_Distance" msdata:Caption="Расстояние до оси пути" msprop:Generator_ColumnVarNameInTable="columna_Distance" msprop:Generator_ColumnPropNameInRow="a_Distance" msprop:Generator_ColumnPropNameInTable="a_DistanceColumn" msprop:Generator_UserColumnName="a_Distance" type="xs:double" minOccurs="0" />
+              <xs:element name="a_Position" msdata:Caption="Позиция" msprop:Generator_ColumnVarNameInTable="columna_Position" msprop:Generator_ColumnPropNameInRow="a_Position" msprop:Generator_ColumnPropNameInTable="a_PositionColumn" msprop:Generator_UserColumnName="a_Position" type="xs:string" minOccurs="0" />
+              <xs:element name="a_ObjectName" msprop:Generator_ColumnVarNameInTable="columna_ObjectName" msprop:Generator_ColumnPropNameInRow="a_ObjectName" msprop:Generator_ColumnPropNameInTable="a_ObjectNameColumn" msprop:Generator_UserColumnName="a_ObjectName" type="xs:string" minOccurs="0" />
+              <xs:element name="a_PositionNum" msprop:Generator_ColumnVarNameInTable="columna_PositionNum" msprop:Generator_ColumnPropNameInRow="a_PositionNum" msprop:Generator_ColumnPropNameInTable="a_PositionNumColumn" msprop:Generator_UserColumnName="a_PositionNum" type="xs:double" minOccurs="0" />
+              <xs:element name="a_LegendTitle" msprop:Generator_ColumnVarNameInTable="columna_LegendTitle" msprop:Generator_ColumnPropNameInRow="a_LegendTitle" msprop:Generator_ColumnPropNameInTable="a_LegendTitleColumn" msprop:Generator_UserColumnName="a_LegendTitle" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

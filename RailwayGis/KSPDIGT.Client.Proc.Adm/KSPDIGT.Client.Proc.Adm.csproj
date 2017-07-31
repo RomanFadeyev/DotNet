@@ -1,0 +1,872 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E80B8AC9-A128-4D69-8C4B-4AB12CB7EA1D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Client.Proc.Adm</RootNamespace>
+    <AssemblyName>KSPDIGT.Client.Proc.Adm</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>App_Icon_Client_Adm.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Carousel.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Controls.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\DevX\Framework\DevExpress.Xpf.Core.v13.2.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\DevX\Framework\DevExpress.Xpf.Grid.v13.2.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Layout.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Mvvm.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\DevX\Framework\DevExpress.Xpf.Ribbon.v13.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2013.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\DevX\Framework\DevExpress.Xpf.Themes.Office2013.v13.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.2.Wizard, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Service References\TC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="..\TierClient.cs">
+      <Link>TierClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="ApplicationMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationMainForm.Designer.cs">
+      <DependentUpon>ApplicationMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ClassifierGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ClassifierGridControl.Designer.cs">
+      <DependentUpon>ClassifierGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\CalcParamDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\CalcParamDialog.Designer.cs">
+      <DependentUpon>CalcParamDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\CalcsResultsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\CalcsResultsForm.Designer.cs">
+      <DependentUpon>CalcsResultsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\CalcViewForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\CalcViewForm.designer.cs">
+      <DependentUpon>CalcViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\SelectDocDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\SelectDocDialog.Designer.cs">
+      <DependentUpon>SelectDocDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\TempCalcDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CalcsResults\TempCalcDataForm.Designer.cs">
+      <DependentUpon>TempCalcDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DKSS\DkssForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DKSS\DkssForm.Designer.cs">
+      <DependentUpon>DkssForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DKSS\ParametricModelsCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DKSS\ParametricModelsCreateForm.Designer.cs">
+      <DependentUpon>ParametricModelsCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExportCmp\ExportCmpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExportCmp\ExportCmpForm.Designer.cs">
+      <DependentUpon>ExportCmpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PcDi\PcDiForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\PcDi\PcDiForm.Designer.cs">
+      <DependentUpon>PcDiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanProfile\PlanProfileParamsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanProfile\PlanProfileParamsForm.Designer.cs">
+      <DependentUpon>PlanProfileParamsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanProfile\SaveAsCalcDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanProfile\SaveAsCalcDialog.Designer.cs">
+      <DependentUpon>SaveAsCalcDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pms\PmsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Pms\PmsForm.Designer.cs">
+      <DependentUpon>PmsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\Controls\PlanProfileControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\Controls\PlanProfileControl.Designer.cs">
+      <DependentUpon>PlanProfileControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Controls\TasksControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\Controls\TasksControl.Designer.cs">
+      <DependentUpon>TasksControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Helper\TaskCheckClass.cs" />
+    <Compile Include="Tasks\SharedBehaviors\CommentListViewBehavior.cs" />
+    <Compile Include="Tasks\SharedViews\BallastDepthBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\BallastDepthBaseView.Designer.cs">
+      <DependentUpon>BallastDepthBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\CargoSizeBuiltView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\CargoSizeBuiltView.Designer.cs">
+      <DependentUpon>CargoSizeBuiltView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\DistanceAxesBuiltView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\DistanceAxesBuiltView.Designer.cs">
+      <DependentUpon>DistanceAxesBuiltView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\FormatFillBuiltView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\FormatFillBuiltView.Designer.cs">
+      <DependentUpon>FormatFillBuiltView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\HeightContactWireBuiltView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\HeightContactWireBuiltView.Designer.cs">
+      <DependentUpon>HeightContactWireBuiltView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\SysCoordAndPositionBuiltView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Built\SysCoordAndPositionBuiltView.Designer.cs">
+      <DependentUpon>SysCoordAndPositionBuiltView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\CargoSizeBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\CargoSizeBaseView.Designer.cs">
+      <DependentUpon>CargoSizeBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\CommentListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\CommentListView.Designer.cs">
+      <DependentUpon>CommentListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\CompareAxisLineWithDrmBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\CompareAxisLineWithDrmBaseView.Designer.cs">
+      <DependentUpon>CompareAxisLineWithDrmBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\BallastDepthDesignView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\BallastDepthDesignView.Designer.cs">
+      <DependentUpon>BallastDepthDesignView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\CargoSizeDesignView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\CargoSizeDesignView.Designer.cs">
+      <DependentUpon>CargoSizeDesignView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\CompareAxisLineWithDrmDesignView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\CompareAxisLineWithDrmDesignView.Designer.cs">
+      <DependentUpon>CompareAxisLineWithDrmDesignView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\DistanceAxesDesignView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\DistanceAxesDesignView.Designer.cs">
+      <DependentUpon>DistanceAxesDesignView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\FormatFillDesignView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\FormatFillDesignView.Designer.cs">
+      <DependentUpon>FormatFillDesignView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\HeightContactWireDesignView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\HeightContactWireDesignView.Designer.cs">
+      <DependentUpon>HeightContactWireDesignView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\SysCoordAndPositionDesignView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\Design\SysCoordAndPositionDesignView.Designer.cs">
+      <DependentUpon>SysCoordAndPositionDesignView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DistanceAxesBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DistanceAxesBaseView.Designer.cs">
+      <DependentUpon>DistanceAxesBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DocView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DocView.Designer.cs">
+      <DependentUpon>DocView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DrmDataBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DrmDataBaseView.Designer.cs">
+      <DependentUpon>DrmDataBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DrmDataBuiltView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DrmDataBuiltView.Designer.cs">
+      <DependentUpon>DrmDataBuiltView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DrmDataView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DrmDataView.Designer.cs">
+      <DependentUpon>DrmDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DrmNoDataView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\DrmNoDataView.Designer.cs">
+      <DependentUpon>DrmNoDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\FormatFillBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\FormatFillBaseView.Designer.cs">
+      <DependentUpon>FormatFillBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\GrdoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\GrdoView.Designer.cs">
+      <DependentUpon>GrdoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\HeightContactWireBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\HeightContactWireBaseView.Designer.cs">
+      <DependentUpon>HeightContactWireBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\PlanProfile\PlanProfileChartHelper.cs" />
+    <Compile Include="Tasks\SharedViews\PlanProfile\PlanProfileReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\PlanProfile\PlanProfileReport.Designer.cs">
+      <DependentUpon>PlanProfileReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\PlanProfile\PlanProfileView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\PlanProfile\PlanProfileView.Designer.cs">
+      <DependentUpon>PlanProfileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\SysCoordAndPositionBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\SysCoordAndPositionBaseView.Designer.cs">
+      <DependentUpon>SysCoordAndPositionBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\TrackMachineView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\SharedViews\TrackMachineView.Designer.cs">
+      <DependentUpon>TrackMachineView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\WorkflowProcessFactory.cs" />
+    <Compile Include="Tasks\Workflow\RIRP\DKSS\WorkflowStepController.cs" />
+    <Compile Include="Tasks\Workflow\RIRP\DKSS\WorkflowStepModel.cs" />
+    <Compile Include="Tasks\Workflow\RIRP\PCDI\AcceptWorkReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tasks\Workflow\RIRP\PCDI\AcceptWorkReport.Designer.cs">
+      <DependentUpon>AcceptWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Workflow\RIRP\PCDI\Views\AcceptWorkView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tasks\Workflow\RIRP\PCDI\Views\AcceptWorkView.Designer.cs">
+      <DependentUpon>AcceptWorkView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks\Workflow\RIRP\PCDI\WorkflowStepController.cs" />
+    <Compile Include="Tasks\Workflow\RIRP\PCDI\WorkflowStepModel.cs" />
+    <Compile Include="Tasks\Workflow\RIRP\PMS\WorkflowStepController.cs" />
+    <Compile Include="Tasks\Workflow\RIRP\PMS\WorkflowStepModel.cs" />
+    <Compile Include="Tasks\Workflow\RIRP\WorkflowProcessController.cs" />
+    <Compile Include="Tasks\Workflow\RIRP\WorkflowProcessHelper.cs" />
+    <Compile Include="Test\TestDocumentForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Test\TestDocumentForm.Designer.cs">
+      <DependentUpon>TestDocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TestForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\TestForm3.Designer.cs">
+      <DependentUpon>TestForm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TestForm333.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\TestForm333.Designer.cs">
+      <DependentUpon>TestForm333.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TestFormGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Test\TestFormGrid.Designer.cs">
+      <DependentUpon>TestFormGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\TcUtils.cs" />
+    <EmbeddedResource Include="ApplicationMainForm.resx">
+      <DependentUpon>ApplicationMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ClassifierGridControl.resx">
+      <DependentUpon>ClassifierGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalcsResults\CalcParamDialog.resx">
+      <DependentUpon>CalcParamDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalcsResults\CalcsResultsForm.resx">
+      <DependentUpon>CalcsResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalcsResults\CalcViewForm.resx">
+      <DependentUpon>CalcViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalcsResults\SelectDocDialog.resx">
+      <DependentUpon>SelectDocDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CalcsResults\TempCalcDataForm.resx">
+      <DependentUpon>TempCalcDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DKSS\DkssForm.resx">
+      <DependentUpon>DkssForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DKSS\ParametricModelsCreateForm.resx">
+      <DependentUpon>ParametricModelsCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExportCmp\ExportCmpForm.resx">
+      <DependentUpon>ExportCmpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PcDi\PcDiForm.resx">
+      <DependentUpon>PcDiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanProfile\PlanProfileParamsForm.resx">
+      <DependentUpon>PlanProfileParamsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanProfile\SaveAsCalcDialog.resx">
+      <DependentUpon>SaveAsCalcDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pms\PmsForm.resx">
+      <DependentUpon>PmsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Tasks\Controls\PlanProfileControl.resx">
+      <DependentUpon>PlanProfileControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\Controls\TasksControl.resx">
+      <DependentUpon>TasksControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\BallastDepthBaseView.resx">
+      <DependentUpon>BallastDepthBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\CargoSizeBaseView.resx">
+      <DependentUpon>CargoSizeBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\CommentListView.resx">
+      <DependentUpon>CommentListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\CompareAxisLineWithDrmBaseView.resx">
+      <DependentUpon>CompareAxisLineWithDrmBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\DistanceAxesBaseView.resx">
+      <DependentUpon>DistanceAxesBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\DocView.resx">
+      <DependentUpon>DocView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\DrmDataBaseView.resx">
+      <DependentUpon>DrmDataBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\DrmDataBuiltView.resx">
+      <DependentUpon>DrmDataBuiltView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\DrmDataView.resx">
+      <DependentUpon>DrmDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\DrmNoDataView.resx">
+      <DependentUpon>DrmNoDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\FormatFillBaseView.resx">
+      <DependentUpon>FormatFillBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\GrdoView.resx">
+      <DependentUpon>GrdoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\HeightContactWireBaseView.resx">
+      <DependentUpon>HeightContactWireBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\PlanProfile\PlanProfileReport.resx">
+      <DependentUpon>PlanProfileReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\PlanProfile\PlanProfileView.resx">
+      <DependentUpon>PlanProfileView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\SysCoordAndPositionBaseView.resx">
+      <DependentUpon>SysCoordAndPositionBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\SharedViews\TrackMachineView.resx">
+      <DependentUpon>TrackMachineView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\Workflow\RIRP\PCDI\AcceptWorkReport.resx">
+      <DependentUpon>AcceptWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tasks\Workflow\RIRP\PCDI\Views\AcceptWorkView.resx">
+      <DependentUpon>AcceptWorkView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\TestDocumentForm.resx">
+      <DependentUpon>TestDocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\TestForm3.resx">
+      <DependentUpon>TestForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\TestForm333.resx">
+      <DependentUpon>TestForm333.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\TestFormGrid.resx">
+      <DependentUpon>TestFormGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\SolutionFiles\CommonFiles\160620_Symbol_CSSD_RWI_v2.ttf">
+      <Link>160620_Symbol_CSSD_RWI_v2.ttf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SolutionFiles\CommonFiles\GOST_A.TTF">
+      <Link>GOST_A.TTF</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TC\Implementation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TC\Implementation1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TC\Implementation2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TC\Implementation3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TC\Implementation4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.AnalyzeResultSlim.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.AnalyzeTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.CalculationOutput.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.CustomWayDescription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.DrawResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.EngineMetaInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.ErrorCode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.LoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.PriceFactor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.RouteDescription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.Warning.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.WarningInfluence.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\KSPDIGT.Client.Common.TC.WayMetaInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TC\Service.wsdl" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TC\Implementation.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common.Controls\Intech.Common.Controls.csproj">
+      <Project>{67B0A02A-E742-4ED8-8824-60CBE5F06B62}</Project>
+      <Name>Intech.Common.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common.DevX\Intech.Common.DevX.csproj">
+      <Project>{8120B478-19ED-419D-9130-DFCB25F4840A}</Project>
+      <Name>Intech.Common.DevX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.Windows\Intech.Common.Windows.csproj">
+      <Project>{6E0F6D80-5C47-43E2-B09A-D71CC748FBD7}</Project>
+      <Name>Intech.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.ArcGIS.Core\KSPDIGT.ArcGIS.Core.csproj">
+      <Project>{2AFECBAE-C343-4D37-B5B6-539738AF7129}</Project>
+      <Name>KSPDIGT.ArcGIS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1f06a782-ae33-4244-b3e3-6ae00252c1bf}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Track\KSPDIGT.Base.Track.csproj">
+      <Project>{B4424462-9FA9-41F0-AE22-2D6614E48253}</Project>
+      <Name>KSPDIGT.Base.Track</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI.Gis\KSPDIGT.Base.UI.Gis.csproj">
+      <Project>{2B452A8C-20AE-4941-933A-CBFA0678979E}</Project>
+      <Name>KSPDIGT.Base.UI.Gis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Engine.ArcGIS\KSPDIGT.Client.Engine.ArcGIS.csproj">
+      <Project>{BA9505D3-6A0C-4F6E-ADF3-753782367F4C}</Project>
+      <Name>KSPDIGT.Client.Engine.ArcGIS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{B64AFE83-045B-4F8A-913C-D5AA2704640D}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Engine.DRM\KSPDIGT.Client.Engine.DRM.csproj">
+      <Project>{571DA16B-3CF8-4F22-90B1-46B836C245A9}</Project>
+      <Name>KSPDIGT.Client.Engine.DRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Proc.Common\KSPDIGT.Client.Proc.Common.csproj">
+      <Project>{21bc19e8-7e31-43b0-8018-1ca159499c0a}</Project>
+      <Name>KSPDIGT.Client.Proc.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Resources\KSPDIGT.Client.Resources.csproj">
+      <Project>{9683e2b7-fb8d-4a4d-be7a-b259c33f05de}</Project>
+      <Name>KSPDIGT.Client.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.ThinMap.Engine\KSPDIGT.Client.Engine.ThinMap.csproj">
+      <Project>{D106D961-DCE7-4680-8D8C-E67BF52BB522}</Project>
+      <Name>KSPDIGT.Client.Engine.ThinMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.Geo\KSPDIGT.IL.Geo.csproj">
+      <Project>{0EAA9AF9-61E5-4869-B8A1-248994DBBD54}</Project>
+      <Name>KSPDIGT.IL.Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts\KSPDIGT.IL.ServiceContracts.csproj">
+      <Project>{0c89cc33-21d1-48df-a043-d2437b7701e2}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI\KSPDIGT.Base.UI.csproj">
+      <Project>{FE6D3B2C-EDFB-4143-B4CF-BC5ED3B82362}</Project>
+      <Name>KSPDIGT.Base.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Engine\KSPDIGT.Client.Engine.csproj">
+      <Project>{583DFF91-763D-42D2-A1A9-4FCA04AFB3C6}</Project>
+      <Name>KSPDIGT.Client.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Icon_Client_Adm.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\UserInformation\" />
+    <Folder Include="Helpers\DatumMarks\" />
+    <Folder Include="Tasks\Workflow\RIRP\DKSS\Views\" />
+    <Folder Include="Tasks\Workflow\RIRP\PMS\Views\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)\SolutionFiles\BatchFiles\prepare_client.cmd" "$(SolutionDir)" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2 @@
+﻿<# string inputFile = @"CombinedModel.edmx";#>
+<#@ include file="..\\corrected.context.cs.ttinclude"#>

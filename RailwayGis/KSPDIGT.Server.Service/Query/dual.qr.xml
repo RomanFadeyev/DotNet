@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<QueryDO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Тестовый запрос</Name>
+  <Description>Тестовый запрос</Description>
+  <Params>
+    <QueryParam>
+      <Name>p1</Name>
+      <DisplayName>Строка</DisplayName>
+      <Category>первая</Category>
+      <ParamType>String</ParamType>
+    </QueryParam>
+    <QueryParam>
+      <Name>p2</Name>
+      <DisplayName>Дата</DisplayName>
+      <Category>первая</Category>
+      <ParamType>Date</ParamType>
+    </QueryParam>
+    <QueryParam>
+      <Name>p3</Name>
+      <DisplayName>Время+дата</DisplayName>
+      <Category>первая</Category>
+      <ParamType>DateTime</ParamType>
+    </QueryParam>
+    <QueryParam>
+      <Name>p4</Name>
+      <DisplayName>Целое</DisplayName>
+      <Category>первая</Category>
+      <ParamType>Int</ParamType>
+    </QueryParam>
+    <QueryParam>
+      <Name>p5</Name>
+      <DisplayName>Вещественое</DisplayName>
+      <Category>первая</Category>
+      <ParamType>Float</ParamType>
+    </QueryParam>
+  </Params>
+  <Use>false</Use>
+  <Interactive>false</Interactive>
+  <Sql><![CDATA[
+  select dummy as "Поле думи", 1 as "Единица" from dual where :p1=:p1 and :p2 = :p2 and :p3=:p3 and :p4=:p4 and :p5=:p5
+  ]]></Sql>
+</QueryDO>

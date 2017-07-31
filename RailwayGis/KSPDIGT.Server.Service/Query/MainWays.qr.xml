@@ -1,0 +1,37 @@
+﻿<?xml version="1.0"?>
+<QueryDO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Главные пути в картах</Name>
+  <Description>Запрос выдает список всех главных путей, проходящих через имеющиеся карты, с информацией о границах</Description>  
+  <Use>true</Use>
+  <Interactive>true</Interactive>
+  <Sql>
+    <![CDATA[
+select 
+mf.name as "Карта", 
+mfa.way_id_asup_putgl as "Ид. главного пути",
+p.nom as "Номер главного пути",
+mfa.start_km as "Км начала",
+mfa.start_m as "М начала",          
+mfa.end_km as "Км конца",
+mfa.end_m as "М конца",
+cs.name as "Система координат",
+mfa.start_x as "X начала",          
+mfa.start_y as "Y начала",          
+mfa.end_x as "X конца",            
+mfa.end_y as "Y конца"
+
+from REFDATA.MAP_FRAGMENT_AXIS mfa
+join REFDATA.MAP_FRAGMENT mf on mf.gid=mfa.map_fragment_gid 
+left outer join refdata.asup_putgl p on p.putgl_id=mfa.way_id_asup_putgl
+join nsi.coord_sys cs on cs.gid=mf.coord_sys_gid
+
+order by mf.name, mfa.way_id_asup_putgl
+  ]]>
+  </Sql>
+  <Fields>
+    <Field>
+      <Name>Карта</Name>      
+      <Group>true</Group>
+    </Field>
+  </Fields>
+</QueryDO>

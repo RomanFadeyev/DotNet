@@ -1,0 +1,27 @@
+﻿<controls:BaseWpfControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:controls="clr-namespace:KSPDIGT.Base.UI.ThinMap.Controls"
+        dx:ThemeManager.ThemeName="Office2013"
+    x:Class="KSPDIGT.Base.UI.ThinMap.Controls.ThinMapControl"
+        Height="350" Width="525" FontFamily="Tahoma" FontSize="9">
+    <Grid Name="gr">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="56*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter x:Name="gsLayersMap" Grid.Column="1" Grid.Row ="0"  Grid.RowSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="Gray"  ShowsPreview="True" Width="2"/>
+        <esri:MapView x:Name="mpMain" Grid.Column="2" Grid.Row ="0" IsLogoVisible="False">
+            <esri:Map/>
+        </esri:MapView>
+        <controls:ThinMapLayersControl x:Name ="lcMain" Grid.Column="0" Grid.Row ="0"  Grid.RowSpan="2"/>        
+        <controls:ThinMapStatusControl x:Name="scMain" Grid.Column="1" Grid.Row ="1" Grid.ColumnSpan="2"/>
+    </Grid>
+</controls:BaseWpfControl>

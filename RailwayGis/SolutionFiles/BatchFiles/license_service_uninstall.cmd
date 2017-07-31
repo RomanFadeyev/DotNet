@@ -1,0 +1,2 @@
+sc stop KSPDLicenseService
+sc delete KSPDLicenseService

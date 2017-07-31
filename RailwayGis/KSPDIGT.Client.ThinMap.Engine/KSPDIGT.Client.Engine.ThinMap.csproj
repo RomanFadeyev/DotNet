@@ -1,0 +1,991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D106D961-DCE7-4680-8D8C-E67BF52BB522}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Client.Engine.ThinMap</RootNamespace>
+    <AssemblyName>KSPDIGT.Client.Engine.ThinMap</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.Designer.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="EGIS.ShapeFileLib, Version=4.5.4.0, Culture=neutral, PublicKeyToken=05b98c869b5ffe6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\EGIS\EGIS.ShapeFileLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Esri.ArcGISRuntime, Version=10.2.7.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="KSPDIGT.DrawProfile">
+      <HintPath>..\..\Libraries\Actual\GProfile\KSPDIGT.DrawProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\OpenTK\OpenTK.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="Component\AxisLineSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\AxisLineSelectionControl.Designer.cs">
+      <DependentUpon>AxisLineSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\StationingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\StationingControl.Designer.cs">
+      <DependentUpon>StationingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\StationingRangeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\StationingRangeControl.Designer.cs">
+      <DependentUpon>StationingRangeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\SurveysSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\SurveysSelectionControl.Designer.cs">
+      <DependentUpon>SurveysSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engines\ThinMapBaseEngine.cs" />
+    <Compile Include="Engines\ThinMapOperationEngine.cs" />
+    <Compile Include="Extensions\GeoFeatureExtensions.cs" />
+    <Compile Include="Extensions\ThinMapFeatureExtensions.cs" />
+    <Compile Include="Extensions\WpfExtensions.cs" />
+    <Compile Include="Interaction\CrossProfileWindowBridge.cs" />
+    <Compile Include="Interaction\MapWindowBridge.cs" />
+    <Compile Include="UI\Calculations\CalculationHelper.cs" />
+    <Compile Include="UI\Calculations\DistanceAxesWindow\DistanceAxesWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ChartControlBaseWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ChartControlBaseWindow.Designer.cs">
+      <DependentUpon>ChartControlBaseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\DistanceFromAxisToObjectsWindow\DistanceFromAxisToObjectsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\DistanceFromTrafficLightToContactWire\DistanceFromTrafficLightToContactWireWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\GeoradarCalcHelper.cs" />
+    <Compile Include="UI\Calculations\HeightContactWire\HeightContactWireWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\HeightContactWire\HeightContactWireWindow.Designer.cs">
+      <DependentUpon>HeightContactWireWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\SizeInsulatedJoint\SizeInsulatedJointWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\SizeScbObject\SizeScbObjectWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\DrmCompare\CompareDrmWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\DrmCompare\CompareDrmWindow.Designer.cs">
+      <DependentUpon>CompareDrmWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\DrmCompare\CompareAxisLineWithDrmWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\Georadar\GeoradarResultsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\Georadar\GeoradarResultsWindow.Designer.cs">
+      <DependentUpon>GeoradarResultsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\HeightRailsWindow\HeightRailsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\HeightRailsWindow\HeightRailsWindow.Designer.cs">
+      <DependentUpon>HeightRailsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\Measure\MeasureResultsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\Measure\MeasureResultsWindow.Designer.cs">
+      <DependentUpon>MeasureResultsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ObjectsInclination\ObjectsInclinationResultWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\ControlHelpers.cs" />
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPSurveyExEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPSurveyExEditor.Designer.cs">
+      <DependentUpon>DPSurveyExEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\SizeCheck\SizeCheckResultsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\SizeCheck\WoodThreatsResultsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\SizeCheck\WoodThreatsResultsWindow.Designer.cs">
+      <DependentUpon>WoodThreatsResultsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\SizeObjectWindows\SizePassengerPlatformsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\SizeObjectWindows\SizeContactNetworkSupportPointWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\SizeObjectWindows\SizeTrafficLightWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossParamsFunc.cs" />
+    <Compile Include="UI\CrossParams\CrossParamsHelper.cs" />
+    <Compile Include="UI\CrossParams\CrossCalcsParametersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossCalcsParametersForm.Designer.cs">
+      <DependentUpon>CrossCalcsParametersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossParamsHelper.partial.cs" />
+    <Compile Include="UI\CrossParams\CrossParamsObject.cs" />
+    <Compile Include="UI\CrossParams\CrossParamsObject.partial.cs" />
+    <Compile Include="UI\CrossParams\CrossParamsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossParamsWindow.Designer.cs">
+      <DependentUpon>CrossParamsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossParamsTypes.cs" />
+    <Compile Include="UI\CrossParams\CrossParamsWindow.Types.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossVisibilityHelper.cs" />
+    <Compile Include="UI\CrossParams\CrossVisibilityParamsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossVisibilityParamsDialog.Designer.cs">
+      <DependentUpon>CrossVisibilityParamsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossVisibilityServerForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CrossParams\CrossVisibilityServerForm.Designer.cs">
+      <DependentUpon>CrossVisibilityServerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossParams\SelectAxisCarOtkDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CrossParams\SelectAxisCarOtkDialog.Designer.cs">
+      <DependentUpon>SelectAxisCarOtkDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossParams\SelectAxisTrainOtkDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CrossParams\SelectAxisTrainOtkDialog.Designer.cs">
+      <DependentUpon>SelectAxisTrainOtkDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\CrossValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\CrossValueForm.Designer.cs">
+      <DependentUpon>CrossValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\FeatureSelectorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\FeatureSelectorDialog.Designer.cs">
+      <DependentUpon>FeatureSelectorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\MapFragmentSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\MapFragmentSelectionDialog.designer.cs">
+      <DependentUpon>MapFragmentSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\DrmCompare\CompareAxisLineWithDrmTool.cs" />
+    <Compile Include="UI\Calculations\DrmCompare\CompareDrmTool.cs" />
+    <Compile Include="UI\DrmCreation\AxisLineSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DrmCreation\AxisLineSelectionDialog.Designer.cs">
+      <DependentUpon>AxisLineSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrmCreation\DrmCreatingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DrmCreation\DrmCreatingForm.Designer.cs">
+      <DependentUpon>DrmCreatingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrmCreation\DrmCreatingHelper.cs" />
+    <Compile Include="UI\GradeProfile\GradeProfileHelper.cs" />
+    <Compile Include="UI\Import\ExportToDesignOrganizationsWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Import\ExportToDesignOrganizationsWizard.designer.cs">
+      <DependentUpon>ExportToDesignOrganizationsWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Import\ImportAuxiliaryAxisLineDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Import\ImportAuxiliaryAxisLineDialog.Designer.cs">
+      <DependentUpon>ImportAuxiliaryAxisLineDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\MapWindow.ToolImplementations.cs">
+      <DependentUpon>MapWindow.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\ActiveMapSettings.cs" />
+    <Compile Include="Settings\ThinMapLayerToTableSettings.cs" />
+    <Compile Include="UI\Calculations\AxisLineStationingHelper.cs" />
+    <Compile Include="UI\Calculations\AxisLineTitleHelper.cs" />
+    <Compile Include="UI\Calculations\IrregularStationing\IrregularStationingWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\IrregularStationing\IrregularStationingWindow.Designer.cs">
+      <DependentUpon>IrregularStationingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPBaseControl.Designer.cs">
+      <DependentUpon>DPBaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPBufferEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPBufferEditor.Designer.cs">
+      <DependentUpon>DPBufferEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPCompareDrmEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPCompareDrmEditor.Designer.cs">
+      <DependentUpon>DPCompareDrmEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPContactWireEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPContactWireEditor.Designer.cs">
+      <DependentUpon>DPContactWireEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPControlInterfaces.cs" />
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPGrdoDiagramEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPGrdoDiagramEditor.Designer.cs">
+      <DependentUpon>DPGrdoDiagramEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPMapExportDesOrgEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPMapExportDesOrgEditor.Designer.cs">
+      <DependentUpon>DPMapExportDesOrgEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPMeasureDiagramEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPMeasureDiagramEditor.Designer.cs">
+      <DependentUpon>DPMeasureDiagramEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPObjectsInclinationEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPObjectsInclinationEditor.Designer.cs">
+      <DependentUpon>DPObjectsInclinationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPObjectTypeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPObjectTypeEditor.Designer.cs">
+      <DependentUpon>DPObjectTypeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPPartialIntervalEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPPartialIntervalEditor.Designer.cs">
+      <DependentUpon>DPPartialIntervalEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPPKTypeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPPKTypeEditor.Designer.cs">
+      <DependentUpon>DPPKTypeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPReductionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPReductionEditor.Designer.cs">
+      <DependentUpon>DPReductionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPSizeCheckEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPSizeCheckEditor.Designer.cs">
+      <DependentUpon>DPSizeCheckEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPStationingInputEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPStationingInputEditor.Designer.cs">
+      <DependentUpon>DPStationingInputEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPStationingTypeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPStationingTypeEditor.Designer.cs">
+      <DependentUpon>DPStationingTypeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPWayTypeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPWayTypeEditor.Designer.cs">
+      <DependentUpon>DPWayTypeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\DistanceCalculationParametersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\DistanceCalculationParametersDialog.Designer.cs">
+      <DependentUpon>DistanceCalculationParametersDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\CalculationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\CalculationsForm.Designer.cs">
+      <DependentUpon>CalculationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\CompareCalcsParametersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\CompareCalcsParametersForm.Designer.cs">
+      <DependentUpon>CompareCalcsParametersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Calculations\ParametersAndDialogs\DistanceParametersHistory.cs" />
+    <Compile Include="UI\CrossProfileWindow\CrossProfileSettings.cs" />
+    <Compile Include="UI\CrossProfileWindow\CrossProfileWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\CrossProfileWindow.designer.cs">
+      <DependentUpon>CrossProfileWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\CrossProfileHelper.cs" />
+    <Compile Include="UI\CrossProfileWindow\CrossProfileParametersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\CrossProfileParametersDialog.Designer.cs">
+      <DependentUpon>CrossProfileParametersDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\GotoStationingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\GotoStationingDialog.Designer.cs">
+      <DependentUpon>GotoStationingDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\Tool Windows\MoveToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\Tool Windows\MoveToolWindow.Designer.cs">
+      <DependentUpon>MoveToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\Tool Windows\MeasureToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CrossProfileWindow\Tool Windows\MeasureToolWindow.Designer.cs">
+      <DependentUpon>MeasureToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GradeProfile\GradeProfileTool.cs" />
+    <Compile Include="UI\MapWindow\MapWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\MapWindow.Designer.cs">
+      <DependentUpon>MapWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\MapWindow.CommandsAndTools.cs">
+      <DependentUpon>MapWindow.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\MapWindow.WaitCursor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Implementations\ThinMapTool.cs" />
+    <Compile Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksToolWindow.Designer.cs">
+      <DependentUpon>BookmarksToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksModel.cs">
+      <DependentUpon>BookmarksModel.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksModel.Designer.cs">
+      <DependentUpon>BookmarksModel.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksEditForm.Designer.cs">
+      <DependentUpon>BookmarksEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\GoToStationingToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\GoToStationingToolWindow.designer.cs">
+      <DependentUpon>GoToStationingToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\GoToXYToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\GoToXYToolWindow.Designer.cs">
+      <DependentUpon>GoToXYToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\MapMarks\MapMarksAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\MapMarks\MapMarksAddEditForm.Designer.cs">
+      <DependentUpon>MapMarksAddEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\MapMarks\MapMarksToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\MapMarks\MapMarksToolWindow.Designer.cs">
+      <DependentUpon>MapMarksToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\MapMarks\MapMarkClass.cs" />
+    <Compile Include="UI\MapWindow\Tool Windows\MapMarks\MapMarksHelper.cs" />
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\GeoObjectPropertiesExtensions.cs" />
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDatumMarkControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDatumMarkControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesDatumMarkControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesGeoradarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesGeoradarControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesGeoradarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesLsDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesLsDataControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesLsDataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesMainPropControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesMainPropControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesMainPropControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesNoAsupBindingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesNoAsupBindingControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesNoAsupBindingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesControlBase.Designer.cs">
+      <DependentUpon>ObjectPropertiesControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDrmControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDrmControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesDrmControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesAxisPicketageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesAxisPicketageControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesAxisPicketageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDrmListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDrmListControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesDrmListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurface3dControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurface3dControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesSurface3dControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurveyMeasureControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurveyMeasureControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesSurveyMeasureControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurveyReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurveyReportControl.Designer.cs">
+      <DependentUpon>ObjectPropertiesSurveyReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\GeoObjectProperties.cs" />
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\ObjectPropertiesToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ObjectProperties\ObjectPropertiesToolWindow.Designer.cs">
+      <DependentUpon>ObjectPropertiesToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\PolylineMeasureToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\PolylineMeasureToolWindow.Designer.cs">
+      <DependentUpon>PolylineMeasureToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\RulerToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\RulerToolWindow.Designer.cs">
+      <DependentUpon>RulerToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\ThinMapToolWindowBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PhotoViewWindow\PhotoViewQueryHelper.cs" />
+    <Compile Include="UI\PhotoViewWindow\PhotoViewWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PhotoViewWindow\PhotoViewWindow.Designer.cs">
+      <DependentUpon>PhotoViewWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dialogs\StationingInfoDialogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dialogs\StationingInfoDialogs.Designer.cs">
+      <DependentUpon>StationingInfoDialogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\SearchObjects\SearchObjectResultWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\SearchObjects\SearchObjectResultWindow.Designer.cs">
+      <DependentUpon>SearchObjectResultWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\SearchObjects\SearchEngine\SearchCondition.cs" />
+    <Compile Include="UI\MapWindow\Tool Windows\SearchObjects\SearchEngine\TypeHelpers.cs" />
+    <Compile Include="UI\MapWindow\Tool Windows\SearchObjects\SearchObjectsParamsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\SearchObjects\SearchObjectsParamsWindow.Designer.cs">
+      <DependentUpon>SearchObjectsParamsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapWindow\Tool Windows\SearchObjects\SearchEngine\SearchObjectsHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksModel.xsc">
+      <DependentUpon>BookmarksModel.xsd</DependentUpon>
+    </None>
+    <None Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksModel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookmarksModel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksModel.xss">
+      <DependentUpon>BookmarksModel.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intech.Common.Controls\Intech.Common.Controls.csproj">
+      <Project>{67b0a02a-e742-4ed8-8824-60cbe5f06b62}</Project>
+      <Name>Intech.Common.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.DevX\Intech.Common.DevX.csproj">
+      <Project>{8120b478-19ed-419d-9130-dfcb25f4840a}</Project>
+      <Name>Intech.Common.DevX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.Windows\Intech.Common.Windows.csproj">
+      <Project>{6E0F6D80-5C47-43E2-B09A-D71CC748FBD7}</Project>
+      <Name>Intech.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1F06A782-AE33-4244-B3E3-6AE00252C1BF}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{B64AFE83-045B-4F8A-913C-D5AA2704640D}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Engine.DRM\KSPDIGT.Client.Engine.DRM.csproj">
+      <Project>{571DA16B-3CF8-4F22-90B1-46B836C245A9}</Project>
+      <Name>KSPDIGT.Client.Engine.DRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.Geo\KSPDIGT.IL.Geo.csproj">
+      <Project>{0eaa9af9-61e5-4869-b8a1-248994dbbd54}</Project>
+      <Name>KSPDIGT.IL.Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts\KSPDIGT.IL.ServiceContracts.csproj">
+      <Project>{0C89CC33-21D1-48DF-A043-D2437B7701E2}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Track\KSPDIGT.Base.Track.csproj">
+      <Project>{B4424462-9FA9-41F0-AE22-2D6614E48253}</Project>
+      <Name>KSPDIGT.Base.Track</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI\KSPDIGT.Base.UI.csproj">
+      <Project>{FE6D3B2C-EDFB-4143-B4CF-BC5ED3B82362}</Project>
+      <Name>KSPDIGT.Base.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Engine\KSPDIGT.Client.Engine.csproj">
+      <Project>{583DFF91-763D-42D2-A1A9-4FCA04AFB3C6}</Project>
+      <Name>KSPDIGT.Client.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Resources\KSPDIGT.Client.Resources.csproj">
+      <Project>{9683E2B7-FB8D-4A4D-BE7A-B259C33F05DE}</Project>
+      <Name>KSPDIGT.Client.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI.ThinMap\KSPDIGT.Base.UI.ThinMap.csproj">
+      <Project>{270BC799-51C9-4D41-8B84-7CA16F3BE2F6}</Project>
+      <Name>KSPDIGT.Base.UI.ThinMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI.Gis\KSPDIGT.Base.UI.Gis.csproj">
+      <Project>{2B452A8C-20AE-4941-933A-CBFA0678979E}</Project>
+      <Name>KSPDIGT.Base.UI.Gis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Component\AxisLineSelectionControl.resx">
+      <DependentUpon>AxisLineSelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\StationingControl.resx">
+      <DependentUpon>StationingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\StationingRangeControl.resx">
+      <DependentUpon>StationingRangeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\SurveysSelectionControl.resx">
+      <DependentUpon>SurveysSelectionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ChartControlBaseWindow.resx">
+      <DependentUpon>ChartControlBaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\DrmCompare\CompareDrmWindow.resx">
+      <DependentUpon>CompareDrmWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\Georadar\GeoradarResultsWindow.resx">
+      <DependentUpon>GeoradarResultsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\HeightContactWire\HeightContactWireWindow.resx">
+      <DependentUpon>HeightContactWireWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\HeightRailsWindow\HeightRailsWindow.resx">
+      <DependentUpon>HeightRailsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\IrregularStationing\IrregularStationingWindow.resx">
+      <DependentUpon>IrregularStationingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\Measure\MeasureResultsWindow.resx">
+      <DependentUpon>MeasureResultsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPBaseControl.resx">
+      <DependentUpon>DPBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPBufferEditor.resx">
+      <DependentUpon>DPBufferEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPCompareDrmEditor.resx">
+      <DependentUpon>DPCompareDrmEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPContactWireEditor.resx">
+      <DependentUpon>DPContactWireEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPGrdoDiagramEditor.resx">
+      <DependentUpon>DPGrdoDiagramEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPMapExportDesOrgEditor.resx">
+      <DependentUpon>DPMapExportDesOrgEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPMeasureDiagramEditor.resx">
+      <DependentUpon>DPMeasureDiagramEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPObjectsInclinationEditor.resx">
+      <DependentUpon>DPObjectsInclinationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPObjectTypeEditor.resx">
+      <DependentUpon>DPObjectTypeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPPartialIntervalEditor.resx">
+      <DependentUpon>DPPartialIntervalEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPPKTypeEditor.resx">
+      <DependentUpon>DPPKTypeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPReductionEditor.resx">
+      <DependentUpon>DPReductionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPSizeCheckEditor.resx">
+      <DependentUpon>DPSizeCheckEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPStationingInputEditor.resx">
+      <DependentUpon>DPStationingInputEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPStationingTypeEditor.resx">
+      <DependentUpon>DPStationingTypeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPSurveyExEditor.resx">
+      <DependentUpon>DPSurveyExEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\Basic\Controls\DPWayTypeEditor.resx">
+      <DependentUpon>DPWayTypeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\DistanceCalculationParametersDialog.resx">
+      <DependentUpon>DistanceCalculationParametersDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\CalculationsForm.resx">
+      <DependentUpon>CalculationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\ParametersAndDialogs\CompareCalcsParametersForm.resx">
+      <DependentUpon>CompareCalcsParametersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Calculations\SizeCheck\WoodThreatsResultsWindow.resx">
+      <DependentUpon>WoodThreatsResultsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossParams\CrossVisibilityParamsDialog.resx">
+      <DependentUpon>CrossVisibilityParamsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossParams\CrossVisibilityServerForm.resx">
+      <DependentUpon>CrossVisibilityServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossParams\SelectAxisCarOtkDialog.resx">
+      <DependentUpon>SelectAxisCarOtkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossParams\SelectAxisTrainOtkDialog.resx">
+      <DependentUpon>SelectAxisTrainOtkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossProfileWindow\CrossProfileWindow.resx">
+      <DependentUpon>CrossProfileWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossProfileWindow\CrossProfileParametersDialog.resx">
+      <DependentUpon>CrossProfileParametersDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossProfileWindow\CrossValueForm.resx">
+      <DependentUpon>CrossValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossProfileWindow\GotoStationingDialog.resx">
+      <DependentUpon>GotoStationingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossProfileWindow\Tool Windows\MoveToolWindow.resx">
+      <DependentUpon>MoveToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossProfileWindow\Tool Windows\MeasureToolWindow.resx">
+      <DependentUpon>MeasureToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossParams\CrossCalcsParametersForm.resx">
+      <DependentUpon>CrossCalcsParametersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CrossParams\CrossParamsWindow.resx">
+      <DependentUpon>CrossParamsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\FeatureSelectorDialog.resx">
+      <DependentUpon>FeatureSelectorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\MapFragmentSelectionDialog.resx">
+      <DependentUpon>MapFragmentSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DrmCreation\AxisLineSelectionDialog.resx">
+      <DependentUpon>AxisLineSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DrmCreation\DrmCreatingForm.resx">
+      <DependentUpon>DrmCreatingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Import\ExportToDesignOrganizationsWizard.resx">
+      <DependentUpon>ExportToDesignOrganizationsWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Import\ImportAuxiliaryAxisLineDialog.resx">
+      <DependentUpon>ImportAuxiliaryAxisLineDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\MapWindow.resx">
+      <DependentUpon>MapWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksToolWindow.resx">
+      <DependentUpon>BookmarksToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\Bookmarks\BookmarksEditForm.resx">
+      <DependentUpon>BookmarksEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\GoToStationingToolWindow.resx">
+      <DependentUpon>GoToStationingToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\GoToXYToolWindow.resx">
+      <DependentUpon>GoToXYToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\MapMarks\MapMarksAddEditForm.resx">
+      <DependentUpon>MapMarksAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\MapMarks\MapMarksToolWindow.resx">
+      <DependentUpon>MapMarksToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDatumMarkControl.resx">
+      <DependentUpon>ObjectPropertiesDatumMarkControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesGeoradarControl.resx">
+      <DependentUpon>ObjectPropertiesGeoradarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesLsDataControl.resx">
+      <DependentUpon>ObjectPropertiesLsDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesMainPropControl.resx">
+      <DependentUpon>ObjectPropertiesMainPropControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesNoAsupBindingControl.resx">
+      <DependentUpon>ObjectPropertiesNoAsupBindingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDrmControl.resx">
+      <DependentUpon>ObjectPropertiesDrmControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesAxisPicketageControl.resx">
+      <DependentUpon>ObjectPropertiesAxisPicketageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesDrmListControl.resx">
+      <DependentUpon>ObjectPropertiesDrmListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurface3dControl.resx">
+      <DependentUpon>ObjectPropertiesSurface3dControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurveyMeasureControl.resx">
+      <DependentUpon>ObjectPropertiesSurveyMeasureControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\Pages\ObjectPropertiesSurveyReportControl.resx">
+      <DependentUpon>ObjectPropertiesSurveyReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\ObjectProperties\ObjectPropertiesToolWindow.resx">
+      <DependentUpon>ObjectPropertiesToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\PolylineMeasureToolWindow.resx">
+      <DependentUpon>PolylineMeasureToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\RulerToolWindow.resx">
+      <DependentUpon>RulerToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PhotoViewWindow\PhotoViewWindow.resx">
+      <DependentUpon>PhotoViewWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dialogs\StationingInfoDialogs.resx">
+      <DependentUpon>StationingInfoDialogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\SearchObjects\SearchObjectResultWindow.resx">
+      <DependentUpon>SearchObjectResultWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapWindow\Tool Windows\SearchObjects\SearchObjectsParamsWindow.resx">
+      <DependentUpon>SearchObjectsParamsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Export\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

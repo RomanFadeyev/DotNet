@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:simpleType name="STTypeAttributes">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="WoodThreats"/>
+            <xsd:enumeration value="SSizeCheck"/>
+		</xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="WayPartConditionNameAttributes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="IsStation"/>
+			<xsd:enumeration value="IsSpan"/>
+			<xsd:enumeration value="IsExternalAccessWays"/>
+			<xsd:enumeration value="IsStopPoint"/>
+			<xsd:enumeration value="IsLeft"/>
+			<xsd:enumeration value="IsRight"/>
+			<xsd:enumeration value="IsNoPower"/>
+			<xsd:enumeration value="WithinPlatform"/>
+			<xsd:enumeration value="WithinEngineeringConstruction"/>
+			<xsd:enumeration value="IsStopAvailable"/>
+			<xsd:enumeration value="IsNoCarrierWire"/>
+			<xsd:enumeration value="WithinPlatformWhichLeft"/>
+			<xsd:enumeration value="WithinPlatformWhichRight"/>
+		</xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="WayPointConditionNameAttributes">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="GeometricTakeaway"/>
+			<xsd:enumeration value="OutstandingAcceleration"/>
+			<xsd:enumeration value="OuterRailElevation"/>
+			<xsd:enumeration value="Radius"/>
+			<xsd:enumeration value="OuterPart"/>
+			<xsd:enumeration value="InnerPart"/>
+			<xsd:enumeration value="HorDistClassA"/>
+			<xsd:enumeration value="HorDistClassB"/>
+			<xsd:enumeration value="HorDistClassC"/>
+		</xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="STPointConditionType">
+        <xsd:attribute name="Name" use="required" type="WayPointConditionNameAttributes"/>
+        <xsd:attribute name="Value" type="xsd:string"/>
+    </xsd:complexType>
+    <xsd:complexType name="STPointModificationType">
+        <xsd:sequence>
+            <xsd:element name="Condition" type="STPointConditionType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="X" use="optional" type="xsd:double" default="321123"/>
+        <xsd:attribute name="Y" use="optional" type="xsd:double" default="321123"/>
+        <xsd:attribute name="AddGeometricTakeawayForX" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="AddX" type="xsd:double" default="321123"/>
+        <xsd:attribute name="AddY" type="xsd:double" default="321123"/>
+    </xsd:complexType>
+    <xsd:complexType name="STPointType">
+        <xsd:sequence>
+            <xsd:element name="Modifications" minOccurs="0" maxOccurs="1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Modification" maxOccurs="unbounded" type="STPointModificationType"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="Name" type="xsd:string" use="required"/>
+        <xsd:attribute name="Label" type="xsd:string" use="required"/>
+        <xsd:attribute name="DefaultX" type="xsd:double" use="required"/>
+        <xsd:attribute name="DefaultY" type="xsd:double" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="STPointsGroupSubType">
+        <xsd:all>
+            <xsd:element name="PointNames">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="PointName" maxOccurs="unbounded" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Conditions" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Condition" type="STConfigurationConditionType" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:all>
+        <xsd:attribute name="Label" use="required"/>
+        <xsd:attribute name="UseByDefault" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType name="STPointsGroupType">
+        <xsd:sequence>
+            <xsd:element name="Group" maxOccurs="unbounded" type="STPointsGroupSubType">
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="Name" type="xsd:string" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="STPointsGroupNameType">
+        <xsd:attribute name="Name" use="required" type="xsd:string"/>
+    </xsd:complexType>
+    <xsd:complexType name="STConfigurationConditionType">
+        <xsd:attribute name="Name" use="required" type="WayPartConditionNameAttributes"/>
+    </xsd:complexType>
+    <xsd:complexType name="STConfigurationType">
+        <xsd:all>
+            <xsd:element name="LeftPartGroups">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Group" type="STPointsGroupNameType" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="RightPartGroups">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Group" maxOccurs="unbounded" type="STPointsGroupNameType"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Conditions" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Condition" minOccurs="0" maxOccurs="unbounded" type="STConfigurationConditionType"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:all>
+        <xsd:attribute name="Name" type="xsd:string"/>
+		<xsd:attribute name="UseByDefault" type="xsd:boolean"/>
+    </xsd:complexType>
+    <xsd:complexType name="STExcludedRegionType">
+        <xsd:sequence>
+            <xsd:element name="Conditions" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Condition" maxOccurs="unbounded" type="STConfigurationConditionType" minOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="Label" type="xsd:string" use="required"/>
+		<xsd:attribute name="MinX" type="xsd:double" use="required"/>
+		<xsd:attribute name="MinY" type="xsd:double" use="required"/>
+		<xsd:attribute name="MaxX" type="xsd:double" use="required"/>
+		<xsd:attribute name="MaxY" type="xsd:double" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="SizeTaskType">
+        <xsd:all>
+            <xsd:element name="Points">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Point" maxOccurs="unbounded" type="STPointType"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PointGroups">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="PointGroup" type="STPointsGroupType" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ExcludedRegions" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="ExcludedRegion" maxOccurs="unbounded" minOccurs="1" type="STExcludedRegionType"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Configurations" minOccurs="1">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Configuration" maxOccurs="unbounded" type="STConfigurationType"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:all>
+        <xsd:attribute name="Type" type="STTypeAttributes" use="required"/>
+        <xsd:attribute name="Name" type="xsd:string" use="required"/>
+        <xsd:attribute name="Label" use="required" type="xsd:string"/>
+        <xsd:attribute name="XWidthScale" type="xsd:double"/>
+		<xsd:attribute name="YWidthScale" type="xsd:double"/>
+    </xsd:complexType>
+    <xsd:complexType name="SizeFrameConfigurationsType">
+        <xsd:all>
+            <xsd:element name="Tasks">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Task" type="SizeTaskType" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
+    <xsd:complexType name="LayerFieldConditionType">
+        <xsd:sequence>
+            <xsd:element name="Value" maxOccurs="unbounded" type="xsd:string">
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="FieldName" type="xsd:string" use="required"/>
+    </xsd:complexType>
+    <xsd:simpleType name="UsagePartAttributes">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ForLeftPart"/>
+            <xsd:enumeration value="ForRightPart"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="LayerDistanceStandardsType">
+        <xsd:all>
+            <xsd:element name="NormPoints">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Point" type="STPointType" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:all>
+        <xsd:attribute name="Label" type="xsd:string" use="required"/>
+        <xsd:attribute name="LayerName" type="xsd:string" use="required"/>
+    </xsd:complexType>
+    <xsd:complexType name="AxisLineDistanceStandardsType">
+        <xsd:sequence>
+            <xsd:element name="LayerDistances" type="LayerDistanceStandardsType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="Specifications">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element name="SizeFrameConfigurations" type="SizeFrameConfigurationsType" minOccurs="0"/>
+                <xsd:element name="AxisLineDistancesStandards" type="AxisLineDistanceStandardsType" minOccurs="0"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

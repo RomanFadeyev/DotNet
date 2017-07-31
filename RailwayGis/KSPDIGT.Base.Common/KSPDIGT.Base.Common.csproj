@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B64AFE83-045B-4F8A-913C-D5AA2704640D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Base.Common</RootNamespace>
+    <AssemblyName>KSPDIGT.Base.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\KSPDIGT.Base.Common.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\KSPDIGT.Base.Common.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\Libraries\Actual\Zip\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\NLog\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="Attributes\Attributes.cs" />
+    <Compile Include="Attributes\GDBObjectAttributes.cs" />
+    <Compile Include="Constants\ActionEnum.cs" />
+    <Compile Include="Constants\CalculationTaskName.cs" />
+    <Compile Include="Constants\CoordSysConstants.cs" />
+    <Compile Include="Constants\DatumConstant.cs" />
+    <Compile Include="Constants\DefaultConstants.cs" />
+    <Compile Include="Constants\GISOperationConstants.cs" />
+    <Compile Include="Constants\SupportConstants.cs" />
+    <Compile Include="Constants\ServiceNames.cs" />
+    <Compile Include="Constants\Tiers.cs" />
+    <Compile Include="Enums\ArmType.cs" />
+    <Compile Include="Enums\AuthorizationMode.cs" />
+    <Compile Include="Enums\GeometryType.cs" />
+    <Compile Include="Exceptions\ActionDeniedException.cs" />
+    <Compile Include="Exceptions\InvalidVersionException.cs" />
+    <Compile Include="Exceptions\ServerExceptions.cs" />
+    <Compile Include="Extensions\AsyncTaskExtension.cs" />
+    <Compile Include="Extensions\ExceptionExtension.cs" />
+    <Compile Include="Extensions\ImageExtension.cs" />
+    <Compile Include="Extensions\MachineGidExtension.cs" />
+    <Compile Include="Extensions\SystemDataExtensions.cs" />
+    <Compile Include="Interfaces\IGenericProgressDialogExtensions.cs" />
+    <Compile Include="Interfaces\IProgressHandler.cs" />
+    <Compile Include="StreamServer\BaseStreamServer.cs" />
+    <Compile Include="Utils\AsyncHelper.cs" />
+    <Compile Include="Utils\AsyncHelperWinForms.cs" />
+    <Compile Include="Utils\BuildValidator.cs" />
+    <Compile Include="Utils\CalculationUtils.cs" />
+    <Compile Include="Exceptions\GISExceptions.cs" />
+    <Compile Include="Exceptions\IUserNotifyException.cs" />
+    <Compile Include="Extensions\AttributesExtension.cs" />
+    <Compile Include="Extensions\ByteExtentions.cs" />
+    <Compile Include="Extensions\ChecksExtension.cs" />
+    <Compile Include="Extensions\ClassesExtension.cs" />
+    <Compile Include="Extensions\EnumerableExtension.cs" />
+    <Compile Include="Extensions\LogExtension.cs" />
+    <Compile Include="Extensions\NumericExtension.cs" />
+    <Compile Include="Extensions\StringBuilderExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Constants\ProductInfo.cs" />
+    <Compile Include="Exceptions\BusinessLogicException.cs" />
+    <Compile Include="Interfaces\IGenericProgressDialog.cs" />
+    <Compile Include="Interfaces\IExtendedPreviewableObject.cs" />
+    <Compile Include="Logger\LogManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CodeProfiler.cs" />
+    <Compile Include="Utils\DataUtils.cs" />
+    <Compile Include="Utils\DebugUtils.cs" />
+    <Compile Include="Utils\EnumUtils.cs" />
+    <Compile Include="Utils\ExecuteUtils.cs" />
+    <Compile Include="Utils\ExplorerClass.cs" />
+    <Compile Include="Utils\FileUtils.cs" />
+    <Compile Include="Utils\PlyWriter.cs" />
+    <Compile Include="Utils\SequentialSerialization\BinaryDump.cs" />
+    <Compile Include="Utils\SerializationUtils.cs" />
+    <Compile Include="Utils\SettingsPathProviders.cs" />
+    <Compile Include="Utils\CsvUtils.cs" />
+    <Compile Include="Utils\TitleUtils.cs" />
+    <Compile Include="Utils\XMLSerializing.cs" />
+    <Compile Include="Utils\XmlUtils.cs" />
+    <Compile Include="Utils\XsdValidator.cs" />
+    <Compile Include="WCF\ErrorHandler.cs" />
+    <Compile Include="Workspace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

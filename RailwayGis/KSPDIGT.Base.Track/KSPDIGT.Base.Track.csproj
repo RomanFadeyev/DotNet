@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4424462-9FA9-41F0-AE22-2D6614E48253}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Base.Track</RootNamespace>
+    <AssemblyName>KSPDIGT.Base.Track</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\PicketagedGeometryExtensions.cs" />
+    <Compile Include="Helpers\TrackRelations.cs" />
+    <Compile Include="Misc\AlignPointDistances.cs" />
+    <Compile Include="Consts.cs" />
+    <Compile Include="Helpers\AlignElementExtensions.cs" />
+    <Compile Include="Helpers\AlignElementsHelper.cs" />
+    <Compile Include="Misc\AlignPointStationed.cs" />
+    <Compile Include="Helpers\AlignPointsHelper.cs" />
+    <Compile Include="Helpers\AxisPointsHelper.cs" />
+    <Compile Include="Helpers\CurvatureToGeometryConvertor.cs" />
+    <Compile Include="Helpers\CurvatureToRadiusConvertor.cs" />
+    <Compile Include="Helpers\GeometryToCurvatureConvertor.cs" />
+    <Compile Include="Helpers\GradeProfExtensions.cs" />
+    <Compile Include="Helpers\PlanNormalizer.cs" />
+    <Compile Include="Helpers\ProfileHelper.cs" />
+    <Compile Include="ModelDomain\DomainHistory.cs" />
+    <Compile Include="ModelDomain\IGetSetState.cs" />
+    <Compile Include="ModelDomain\ModelDomain.cs" />
+    <Compile Include="Picketaging\Picketage.cs" />
+    <Compile Include="Picketaging\PicketagePeg.cs" />
+    <Compile Include="Picketaging\PicketagePegging.cs" />
+    <Compile Include="Picketaging\PicketageRange.cs" />
+    <Compile Include="Picketaging\PicketageEnums.cs" />
+    <Compile Include="Picketaging\PicketLine.cs" />
+    <Compile Include="Recognition\Plan\FractureBuilder.cs" />
+    <Compile Include="Recognition\Profile\WayProfileRecognizer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recognition\Plan\CurveElementRecognizer.cs" />
+    <Compile Include="Recognition\Plan\FractureBuilderOld.cs" />
+    <Compile Include="Recognition\Plan\PlanRecognizer.cs" />
+    <Compile Include="Stationing\Profiles\CurvatureStationedProfile.cs" />
+    <Compile Include="Stationing\Profiles\ElevationStationedProfile.cs" />
+    <Compile Include="Stationing\Profiles\GaugeStationedProfile.cs" />
+    <Compile Include="Stationing\Profiles\PolylineProfile.cs" />
+    <Compile Include="Stationing\Profiles\ShiftStationedProfile.cs" />
+    <Compile Include="Stationing\Profiles\StationedValueProfile.cs" />
+    <Compile Include="Stationing\StationedPoint2DExtensions.cs" />
+    <Compile Include="Stationing\StationedPoint3DExtensions.cs" />
+    <Compile Include="Stationing\StationedValueExtensions.cs" />
+    <Compile Include="TrackLine\Acceleration\UncompensatedAcceleration.cs" />
+    <Compile Include="TrackLine\Canting\CantCalculation.cs" />
+    <Compile Include="TrackLine\Canting\CantingValuePoint.cs" />
+    <Compile Include="TrackLine\Canting\CantingValuePointList.cs" />
+    <Compile Include="TrackLine\Canting\SpeedLimitations.cs" />
+    <Compile Include="TrackLine\Plan\ElementFeature.cs" />
+    <Compile Include="TrackLine\Plan\ElementFeatureSet.cs" />
+    <Compile Include="TrackLine\Plan\InvalidTrackModificationException.cs" />
+    <Compile Include="TrackLine\Speeds\ConstSpeedsLine.cs" />
+    <Compile Include="TrackLine\Speeds\ISpeedSpecifiedLine.cs" />
+    <Compile Include="TrackLine\Plan\Elements\Curve.cs" />
+    <Compile Include="TrackLine\Plan\Elements\Easement.cs" />
+    <Compile Include="TrackLine\Plan\IElementContainer.cs" />
+    <Compile Include="TrackLine\Speeds\TrainKindsSpeedSet.cs" />
+    <Compile Include="TrackLine\Survey\PlanSurvey.cs" />
+    <Compile Include="TrackLine\Survey\PlanSurveyExtestions.cs" />
+    <Compile Include="TrackLine\Plan\Elements\Straight.cs" />
+    <Compile Include="TrackLine\Plan\TrackPlan.cs" />
+    <Compile Include="TrackLine\Plan\TrackPlanExtensions.cs" />
+    <Compile Include="TrackLine\Survey\SurveyExtensions.cs" />
+    <Compile Include="TrackLine\Survey\SurveyPicketage.cs" />
+    <Compile Include="TrackLine\Survey\TrackSurveyPointInfo.cs" />
+    <Compile Include="TrackLine\Speeds\TrackSpeedRange.cs" />
+    <Compile Include="TrackLine\Speeds\TrackSpeeds.cs" />
+    <Compile Include="TrackProfileView\CoordSpaces\TrackProfileCoordSpaceBase.cs" />
+    <Compile Include="TrackProfileView\Diagrams\BasicDataDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Common\ComplexDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Common\CustomDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\DiagramLegendPainter.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Grids\CurvatureGrid.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Grids\PicketLabelGrid.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Grids\ValueAxisLabelGrid.cs" />
+    <Compile Include="TrackProfileView\Diagrams\ICoordSpacedDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\IDataDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\IDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\IOverlayElement.cs" />
+    <Compile Include="TrackProfileView\Scenarios\CurvatureZoomingScenario.cs" />
+    <Compile Include="TrackProfileView\TrackProfileAxis.cs" />
+    <Compile Include="TrackProfileView\TrackProfileView.cs" />
+    <Compile Include="Utils\Extentions.cs" />
+    <Compile Include="Utils\AutoToolTip.cs" />
+    <Compile Include="TrackProfileView\Diagrams\BasicDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\IDataExportSupportDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\IProfilePointerSupportDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\IStationedDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\IVerticalRangeDiagram.cs" />
+    <Compile Include="TrackProfileView\CoordSpaces\LinearCoordSpace.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Grids\LinearGrid.cs" />
+    <Compile Include="Utils\DrawingTools.cs" />
+    <Compile Include="TrackProfileView\UI Engine\Action.cs" />
+    <Compile Include="TrackProfileView\UI Engine\ActionGroup.cs" />
+    <Compile Include="TrackProfileView\UI Engine\CaptionedTextBoxStripSupport.cs" />
+    <Compile Include="TrackProfileView\UI Engine\ContextMenuShowMode.cs" />
+    <Compile Include="TrackProfileView\UI Engine\CustomAction.cs" />
+    <Compile Include="TrackProfileView\UI Engine\EventType.cs" />
+    <Compile Include="TrackProfileView\UI Engine\GroupSeparatorDummyAction.cs" />
+    <Compile Include="TrackProfileView\UI Engine\PropertyValueAction.cs" />
+    <Compile Include="TrackProfileView\UI Engine\ScenarioBase.cs" />
+    <Compile Include="TrackProfileView\UI Engine\SimpleAction.cs" />
+    <Compile Include="TrackProfileView\UI Engine\StripesLayout.cs" />
+    <Compile Include="TrackProfileView\UI Engine\SubElementEngine.cs" />
+    <Compile Include="TrackProfileView\UI Engine\TextValueAction.cs" />
+    <Compile Include="TrackProfileView\UI Engine\TextValueCustomAction.cs" />
+    <Compile Include="TrackProfileView\UI Engine\UpdatingStack.cs" />
+    <Compile Include="TrackProfileView\UI Engine\ViewEventHandler.cs" />
+    <Compile Include="TrackProfileView\CoordSpaces\ITrackProfileCoordSpace.cs" />
+    <Compile Include="TrackProfileView\Interaction\AxisZoomingScenario.cs" />
+    <Compile Include="TrackProfileView\Interaction\ProfileViewPointer.cs" />
+    <Compile Include="TrackProfileView\Interaction\ProfileViewSelectionRange.cs" />
+    <Compile Include="TrackProfileView\Interaction\ZoomBar.cs" />
+    <Compile Include="TrackProfileView\UI Engine\ITextValueAction.cs" />
+    <Compile Include="Utils\ListEx.cs" />
+    <Compile Include="Utils\ObservableHashSet.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Grids\PicketageGrid.cs" />
+    <Compile Include="TrackProfileView\CoordSpaces\CurvatureCoordSpace.cs" />
+    <Compile Include="TrackProfileView\CoordSpaces\ShiftsCoordSpace.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Plan\StationValued\SimpleCantingDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Plan\StationValued\SimpleCurvatureDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Plan\StationValued\SimpleStationedDiagram.cs" />
+    <Compile Include="TrackProfileView\Diagrams\Profile\StationValued\SimpleProfileDiagram.cs" />
+    <Compile Include="TrackProfileView\UI Engine\ToolStripFactory.cs" />
+    <Compile Include="Utils\TryFinally.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{d977c536-fe1f-431d-a17f-c358bf874dc2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1f06a782-ae33-4244-b3e3-6ae00252c1bf}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{b64afe83-045b-4f8a-913c-d5aa2704640d}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4abe9f10-671e-4e25-9ba4-a62e19230e5d}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

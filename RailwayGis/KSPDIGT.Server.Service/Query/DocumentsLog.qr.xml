@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<QueryDO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Кол-во документов  по типам</Name>
+  <Description>Запрос выдает общее кол-во документов, хранимых в базе данных, с разбивкой по типам</Description>  
+  <Use>true</Use>
+  <Interactive>true</Interactive>
+  <Sql>
+    <![CDATA[
+  select c.path_ as "Тип по классификатору", x.cnt as "Кол-во" from 
+(select cls_type, count(*)as cnt from refdata.document t group by t.cls_type) x
+left outer join 
+(
+  select t.code, t.parent_code, SYS_CONNECT_BY_PATH(name, '\') as path_ from NSI.CLS t
+  START WITH parent_code is null
+  CONNECT BY prior t.code=t.parent_code
+)
+c  on c.code=x.cls_type
+  ]]>
+  </Sql>  
+</QueryDO>

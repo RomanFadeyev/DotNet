@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{571DA16B-3CF8-4F22-90B1-46B836C245A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Client.Engine.DRM</RootNamespace>
+    <AssemblyName>KSPDIGT.Client.Engine.DRM</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\KSPDIGT.IRRDI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\KSPDIGT.IRRDI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="GeoAPI">
+      <HintPath>..\..\Libraries\Actual\SharpMap\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite">
+      <HintPath>..\..\Libraries\Actual\SharpMap\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SharpMap">
+      <HintPath>..\..\Libraries\Actual\SharpMap\SharpMap.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpMap.UI">
+      <HintPath>..\..\Libraries\Actual\SharpMap\SharpMap.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\TierClient.cs">
+      <Link>TierClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="Gui\Diagram\SlopeProfileDiagram.cs" />
+    <Compile Include="Gui\DisplayDto\DisplayPlanElementInfo.cs" />
+    <Compile Include="Gui\DisplayDto\DisplayProfileElementInfo.cs" />
+    <Compile Include="Gui\DisplayDto\DisplayTrackElementInfo.cs" />
+    <Compile Include="Gui\DrmWizard\DrmWizardPageBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Helpers\DiagramCreator.cs" />
+    <Compile Include="Gui\DrmWizard\IDrmWizardPage.cs" />
+    <Compile Include="Gui\DrmWizard\IDrmWizardPageModel.cs" />
+    <Compile Include="Gui\DrmWizard\Model\DrmWizardModel.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\StationingMarkup\IrregularPicketEditInfo.cs" />
+    <Compile Include="Gui\DrmWizard\Model\TrackableBindingList.cs" />
+    <Compile Include="Gui\DrmWizard\Model\TrackableList.cs" />
+    <Compile Include="Gui\DrmWizard\Helpers\UiHelper.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\CalcPlanPageModel.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\CheckPlanElementsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\CheckPlanElementsDialog.Designer.cs">
+      <DependentUpon>CheckPlanElementsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\TrackPlanElementChainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\TrackPlanElementChainWindow.Designer.cs">
+      <DependentUpon>TrackPlanElementChainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\CalcProfilePageModel.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\CheckProfileElementsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\CheckProfileElementsDialog.Designer.cs">
+      <DependentUpon>CheckProfileElementsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Compare\ComparePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Compare\ComparePage.Designer.cs">
+      <DependentUpon>ComparePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Compare\ComparePageModel.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\Compare\CompareViewSet.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\StationingMarkup\StationingMarkupPageModel.cs" />
+    <Compile Include="Gui\DisplayDto\GridTuner.cs" />
+    <Compile Include="Gui\IViewSet.cs" />
+    <Compile Include="Gui\Representations\RadiusRepresentation.cs" />
+    <Compile Include="Helpers\AxisPointSynthesis.cs" />
+    <Compile Include="MapControls\AxisDrmParamChartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MapControls\AxisDrmParamChartControl.Designer.cs">
+      <DependentUpon>AxisDrmParamChartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\CompareDrmPlanReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\CompareDrmPlanReport.Designer.cs">
+      <DependentUpon>CompareDrmPlanReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\CompareDrmProfileReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\CompareDrmProfileReport.Designer.cs">
+      <DependentUpon>CompareDrmProfileReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\CompareDrmPlanViewSet.cs" />
+    <Compile Include="Reporting\DevExpReport\CompareDrmProfileViewSet.cs" />
+    <Compile Include="Reporting\DevExpReport\PicketageViewsetBase.cs" />
+    <Compile Include="TrackModel\Helpers\TrackPlanElementsHelper.cs" />
+    <Compile Include="TrackModel\DesignedUncompensatedAcceleration.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\ViewPlanElementsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\ViewPlanElementsDialog.Designer.cs">
+      <DependentUpon>ViewPlanElementsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\CombinePassportParamDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\CombinePassportParamDialog.Designer.cs">
+      <DependentUpon>CombinePassportParamDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\GeometrySynthesisSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\GeometrySynthesisSettingsControl.Designer.cs">
+      <DependentUpon>GeometrySynthesisSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Diagram\PlanElementDiagram.cs" />
+    <Compile Include="Gui\Diagram\ProfileElementDiagram.cs" />
+    <Compile Include="Gui\DrmWizard\AlignListWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\AlignListWindow.Designer.cs">
+      <DependentUpon>AlignListWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\DrmPropertiesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\DrmPropertiesWindow.Designer.cs">
+      <DependentUpon>DrmPropertiesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\LoadPassportWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\LoadPassportWizard.Designer.cs">
+      <DependentUpon>LoadPassportWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\PassportCurves\PassportCurvesHelper.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\GeometrySynthesisSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\GeometrySynthesisSettingsDialog.Designer.cs">
+      <DependentUpon>GeometrySynthesisSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\StationingMarkup\EditStartStationingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\StationingMarkup\EditStartStationingWindow.Designer.cs">
+      <DependentUpon>EditStartStationingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\MessageErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\MessageErrorDialog.Designer.cs">
+      <DependentUpon>MessageErrorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\PlanElementsSynthesisCoordsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\PlanElementsSynthesisCoordsDialog.Designer.cs">
+      <DependentUpon>PlanElementsSynthesisCoordsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\SelectTypeReportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\SelectTypeReportDialog.Designer.cs">
+      <DependentUpon>SelectTypeReportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\PassportCurves\PassportCurvesPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\PassportCurves\PassportCurvesPage.Designer.cs">
+      <DependentUpon>PassportCurvesPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\StationingMarkup\CalcValuesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\StationingMarkup\CalcValuesWindow.Designer.cs">
+      <DependentUpon>CalcValuesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\StationingMarkup\StationingMarkupPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\StationingMarkup\StationingMarkupPage.Designer.cs">
+      <DependentUpon>StationingMarkupPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\MoveHeightParamsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\MoveHeightParamsDialog.designer.cs">
+      <DependentUpon>MoveHeightParamsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\ProfileViewset.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\UnionByStationingPreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\UnionByStationingPreviewDialog.Designer.cs">
+      <DependentUpon>UnionByStationingPreviewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\ViewProfileElementsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\ViewProfileElementsDialog.Designer.cs">
+      <DependentUpon>ViewProfileElementsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Diagram\ComplexCurveCurvatureDiagram.cs" />
+    <Compile Include="Gui\Diagram\ComplexCurveShiftsDiagram.cs" />
+    <Compile Include="Gui\Diagram\UncompensatedAccelerationDiagram.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\CalcProfilePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcProfile\CalcProfilePage.Designer.cs">
+      <DependentUpon>CalcProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\EditPlanElementsWindow\EditAlignElementsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\EditPlanElementsWindow\EditAlignElementsWindow.Designer.cs">
+      <DependentUpon>EditAlignElementsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\EditPlanElementsWindow\EditElementRadiusWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\EditPlanElementsWindow\EditElementRadiusWindow.Designer.cs">
+      <DependentUpon>EditElementRadiusWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\PlanRecognitionParamsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\PlanRecognitionParamsDialog.designer.cs">
+      <DependentUpon>PlanRecognitionParamsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\ExchangeData\ExchangeDataPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\ExchangeData\ExchangeDataPage.Designer.cs">
+      <DependentUpon>ExchangeDataPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\EditData\EditDataPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\EditData\EditDataPage.Designer.cs">
+      <DependentUpon>EditDataPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\Plan2DPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\Plan2DPage.Designer.cs">
+      <DependentUpon>Plan2DPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\TrackProfileViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\TrackProfileViewControl.Designer.cs">
+      <DependentUpon>TrackProfileViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\EditPlanElementsWindow\MoveElementBorderWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\EditPlanElementsWindow\MoveElementBorderWindow.Designer.cs">
+      <DependentUpon>MoveElementBorderWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmProjectSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmProjectSelectionDialog.Designer.cs">
+      <DependentUpon>DrmProjectSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\SelectAxisDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\SelectAxisDialog.Designer.cs">
+      <DependentUpon>SelectAxisDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\EditPlanElementsWindow\PlanRecognitionParamsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\EditPlanElementsWindow\PlanRecognitionParamsWindow.Designer.cs">
+      <DependentUpon>PlanRecognitionParamsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\SelectRangeReportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\SelectRangeReportDialog.Designer.cs">
+      <DependentUpon>SelectRangeReportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\UnionByCoordPreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\UnionByCoordPreviewDialog.Designer.cs">
+      <DependentUpon>UnionByCoordPreviewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\CalcPlanPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\CalcPlanPage.Designer.cs">
+      <DependentUpon>CalcPlanPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\Pages\CalcPlan\PlanViewset.cs" />
+    <Compile Include="Gui\DrmWizard\Pages\Plan2D\AxisLine2D.cs" />
+    <Compile Include="Gui\Controls\PicketageSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Controls\PicketageSelector.Designer.cs">
+      <DependentUpon>PicketageSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\DrmWizardWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\DrmWizard\DrmWizardWindow.Designer.cs">
+      <DependentUpon>DrmWizardWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\ChartHelper.cs" />
+    <Compile Include="Reporting\DevExpReport\PlanReportExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\PlanReportExt.Designer.cs">
+      <DependentUpon>PlanReportExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\CreateReportHelper.cs" />
+    <Compile Include="Reporting\DevExpReport\PlanReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\PlanReport.Designer.cs">
+      <DependentUpon>PlanReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\ProfileReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\ProfileReport.Designer.cs">
+      <DependentUpon>ProfileReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\CompareCurvesReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporting\DevExpReport\CompareCurvesReport.Designer.cs">
+      <DependentUpon>CompareCurvesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrackModel\ComplexCurve.cs" />
+    <Compile Include="TrackModel\TrackElement.cs" />
+    <Compile Include="Gui\DrmWizard\Model\Track_.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intech.Common.Controls\Intech.Common.Controls.csproj">
+      <Project>{67B0A02A-E742-4ED8-8824-60CBE5F06B62}</Project>
+      <Name>Intech.Common.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.DevX\Intech.Common.DevX.csproj">
+      <Project>{8120B478-19ED-419D-9130-DFCB25F4840A}</Project>
+      <Name>Intech.Common.DevX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.Windows\Intech.Common.Windows.csproj">
+      <Project>{6E0F6D80-5C47-43E2-B09A-D71CC748FBD7}</Project>
+      <Name>Intech.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1F06A782-AE33-4244-B3E3-6AE00252C1BF}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{B64AFE83-045B-4F8A-913C-D5AA2704640D}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Resources\KSPDIGT.Client.Resources.csproj">
+      <Project>{9683e2b7-fb8d-4a4d-be7a-b259c33f05de}</Project>
+      <Name>KSPDIGT.Client.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts\KSPDIGT.IL.ServiceContracts.csproj">
+      <Project>{0c89cc33-21d1-48df-a043-d2437b7701e2}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Track\KSPDIGT.Base.Track.csproj">
+      <Project>{b4424462-9fa9-41f0-ae22-2d6614e48253}</Project>
+      <Name>KSPDIGT.Base.Track</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI\KSPDIGT.Base.UI.csproj">
+      <Project>{FE6D3B2C-EDFB-4143-B4CF-BC5ED3B82362}</Project>
+      <Name>KSPDIGT.Base.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Engine\KSPDIGT.Client.Engine.csproj">
+      <Project>{583dff91-763d-42d2-a1a9-4fca04afb3c6}</Project>
+      <Name>KSPDIGT.Client.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI.Gis\KSPDIGT.Base.UI.Gis.csproj">
+      <Project>{2B452A8C-20AE-4941-933A-CBFA0678979E}</Project>
+      <Name>KSPDIGT.Base.UI.Gis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StartPk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcPlan\ViewPlanElementsDialog.resx">
+      <DependentUpon>ViewPlanElementsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcPlan\CheckPlanElementsDialog.resx">
+      <DependentUpon>CheckPlanElementsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcPlan\CombinePassportParamDialog.resx">
+      <DependentUpon>CombinePassportParamDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\GeometrySynthesisSettingsControl.resx">
+      <DependentUpon>GeometrySynthesisSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\PicketageSelector.resx">
+      <DependentUpon>PicketageSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\AlignListWindow.resx">
+      <DependentUpon>AlignListWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\DrmPropertiesWindow.resx">
+      <DependentUpon>DrmPropertiesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\LoadPassportWizard.resx">
+      <DependentUpon>LoadPassportWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcProfile\CheckProfileElementsDialog.resx">
+      <DependentUpon>CheckProfileElementsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\Compare\ComparePage.resx">
+      <DependentUpon>ComparePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\Plan2D\GeometrySynthesisSettingsDialog.resx">
+      <DependentUpon>GeometrySynthesisSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\StationingMarkup\EditStartStationingWindow.resx">
+      <DependentUpon>EditStartStationingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapControls\AxisDrmParamChartControl.resx">
+      <DependentUpon>AxisDrmParamChartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\CompareDrmPlanReport.resx">
+      <DependentUpon>CompareDrmPlanReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\CompareDrmProfileReport.resx">
+      <DependentUpon>CompareDrmProfileReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\DevExpReport\MessageErrorDialog.resx">
+      <DependentUpon>MessageErrorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcPlan\PlanElementsSynthesisCoordsDialog.resx">
+      <DependentUpon>PlanElementsSynthesisCoordsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\SelectTypeReportDialog.resx">
+      <DependentUpon>SelectTypeReportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\PassportCurves\PassportCurvesPage.resx">
+      <DependentUpon>PassportCurvesPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\StationingMarkup\CalcValuesWindow.resx">
+      <DependentUpon>CalcValuesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\StationingMarkup\StationingMarkupPage.resx">
+      <DependentUpon>StationingMarkupPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcProfile\MoveHeightParamsDialog.resx">
+      <DependentUpon>MoveHeightParamsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\Plan2D\UnionByStationingPreviewDialog.resx">
+      <DependentUpon>UnionByStationingPreviewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcProfile\ViewProfileElementsDialog.resx">
+      <DependentUpon>ViewProfileElementsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcProfile\CalcProfilePage.resx">
+      <DependentUpon>CalcProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\EditPlanElementsWindow\EditAlignElementsWindow.resx">
+      <DependentUpon>EditAlignElementsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\EditPlanElementsWindow\EditElementRadiusWindow.resx">
+      <DependentUpon>EditElementRadiusWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcPlan\PlanRecognitionParamsDialog.resx">
+      <DependentUpon>PlanRecognitionParamsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\DrmWizardWindow.resx">
+      <DependentUpon>DrmWizardWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\ExchangeData\ExchangeDataPage.resx">
+      <DependentUpon>ExchangeDataPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\EditData\EditDataPage.resx">
+      <DependentUpon>EditDataPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\Plan2D\Plan2DPage.resx">
+      <DependentUpon>Plan2DPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Controls\TrackProfileViewControl.resx">
+      <DependentUpon>TrackProfileViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\EditPlanElementsWindow\MoveElementBorderWindow.resx">
+      <DependentUpon>MoveElementBorderWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmProjectSelectionDialog.resx">
+      <DependentUpon>DrmProjectSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\Plan2D\SelectAxisDialog.resx">
+      <DependentUpon>SelectAxisDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\EditPlanElementsWindow\PlanRecognitionParamsWindow.resx">
+      <DependentUpon>PlanRecognitionParamsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\SelectRangeReportDialog.resx">
+      <DependentUpon>SelectRangeReportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\Plan2D\UnionByCoordPreviewDialog.resx">
+      <DependentUpon>UnionByCoordPreviewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcPlan\CalcPlanPage.resx">
+      <DependentUpon>CalcPlanPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\DrmWizard\Pages\CalcPlan\TrackPlanElementChainWindow.resx">
+      <DependentUpon>TrackPlanElementChainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\DevExpReport\PlanReportExt.resx">
+      <DependentUpon>PlanReportExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\DevExpReport\PlanReport.resx">
+      <DependentUpon>PlanReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\DevExpReport\ProfileReport.resx">
+      <DependentUpon>ProfileReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\DevExpReport\CompareCurvesReport.resx">
+      <DependentUpon>CompareCurvesReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EndPk.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

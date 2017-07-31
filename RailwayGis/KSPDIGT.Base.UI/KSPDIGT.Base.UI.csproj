@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE6D3B2C-EDFB-4143-B4CF-BC5ED3B82362}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Base.UI</RootNamespace>
+    <AssemblyName>KSPDIGT.Base.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\KSPDIGT.Base.UI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\KSPDIGT.Base.UI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v13.2.UI, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\OpenTK\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\OpenTK\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\..\Libraries\Actual\ZedGraph\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="App\ApplicationControllerBase.cs" />
+    <Compile Include="App\ApplicationModel.cs" />
+    <Compile Include="Components\ClsComboTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ClsLayerComboTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ClsLayerTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\EntityList.cs" />
+    <Compile Include="Components\FileSystemEdit .cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ModelWizardController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Scene3D\OpenTKLoader.cs" />
+    <Compile Include="Controls\CaptionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Scene3D\SceneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Scene3D\SceneView.designer.cs">
+      <DependentUpon>SceneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevXReport\DevXReportHelper.cs" />
+    <Compile Include="Report\MessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\MessageDialog.Designer.cs">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevXReport\PrintPreviewRibbonFormIntech.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DevXPrintOptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DevXPrintOptionDialog.Designer.cs">
+      <DependentUpon>DevXPrintOptionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChangePasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ChangePasswordDialog.Designer.cs">
+      <DependentUpon>ChangePasswordDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditCalcRowDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EditCalcRowDialog.Designer.cs">
+      <DependentUpon>EditCalcRowDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditDocumentDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EditDocumentDialog.Designer.cs">
+      <DependentUpon>EditDocumentDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\InputResolutionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InputResolutionDialog.Designer.cs">
+      <DependentUpon>InputResolutionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ShowPictureDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ShowPictureDialog.Designer.cs">
+      <DependentUpon>ShowPictureDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Forms\CommentList\AddEditCommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CommentList\AddEditCommentForm.designer.cs">
+      <DependentUpon>AddEditCommentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CommentList\CommentsListDataSet\CommentsListDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommentsListDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CommentList\CommentsListReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\CommentList\CommentsListReport.Designer.cs">
+      <DependentUpon>CommentsListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\ChoiceAlignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\ChoiceAlignForm.designer.cs">
+      <DependentUpon>ChoiceAlignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tasks\ResultTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tasks\ResultTaskForm.designer.cs">
+      <DependentUpon>ResultTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ImageUtils.cs" />
+    <Compile Include="Utils\LayoutControlsUtils.cs" />
+    <Compile Include="Utils\TreeListViewUtils.cs" />
+    <Compile Include="Utils\UIConstants.cs" />
+    <Compile Include="Dialogs\SystemProgressDialog.cs" />
+    <Compile Include="Docking\DockWindowOkCancel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindowOkCancel.Designer.cs">
+      <DependentUpon>DockWindowOkCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\DockWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindow.Designer.cs">
+      <DependentUpon>DockWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\BindingsExtension.cs" />
+    <Compile Include="Forms\GridViewFromSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GridViewFromSourceForm.designer.cs">
+      <DependentUpon>GridViewFromSourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Interfaces\IExtendedDockContentInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ControlUtils.cs" />
+    <Compile Include="Utils\DevXUtils.cs" />
+    <Compile Include="Utils\TableLayoutPanelHelper.cs" />
+    <Compile Include="Utils\XtraTabControlExtender.cs" />
+    <Compile Include="Windows\GridAllPropsWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\GridAllPropsWindow.Designer.cs">
+      <DependentUpon>GridAllPropsWindow.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Scene3D\SceneView.resx">
+      <DependentUpon>SceneView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\MessageDialog.resx">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DevXPrintOptionDialog.resx">
+      <DependentUpon>DevXPrintOptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangePasswordDialog.resx">
+      <DependentUpon>ChangePasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditCalcRowDialog.resx">
+      <DependentUpon>EditCalcRowDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditDocumentDialog.resx">
+      <DependentUpon>EditDocumentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InputResolutionDialog.resx">
+      <DependentUpon>InputResolutionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ShowPictureDialog.resx">
+      <DependentUpon>ShowPictureDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\DockWindowOkCancel.resx">
+      <DependentUpon>DockWindowOkCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\DockWindow.resx">
+      <DependentUpon>DockWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CommentList\AddEditCommentForm.resx">
+      <DependentUpon>AddEditCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CommentList\CommentsListReport.resx">
+      <DependentUpon>CommentsListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GridViewFromSourceForm.resx">
+      <DependentUpon>GridViewFromSourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\ChoiceAlignForm.resx">
+      <DependentUpon>ChoiceAlignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tasks\ResultTaskForm.resx">
+      <DependentUpon>ResultTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\GridAllPropsWindow.resx">
+      <DependentUpon>GridAllPropsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common.Controls\Intech.Common.Controls.csproj">
+      <Project>{67B0A02A-E742-4ED8-8824-60CBE5F06B62}</Project>
+      <Name>Intech.Common.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common.DevX\Intech.Common.DevX.csproj">
+      <Project>{8120B478-19ED-419D-9130-DFCB25F4840A}</Project>
+      <Name>Intech.Common.DevX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.Windows\Intech.Common.Windows.csproj">
+      <Project>{6E0F6D80-5C47-43E2-B09A-D71CC748FBD7}</Project>
+      <Name>Intech.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1F06A782-AE33-4244-B3E3-6AE00252C1BF}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{B64AFE83-045B-4F8A-913C-D5AA2704640D}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.Geo\KSPDIGT.IL.Geo.csproj">
+      <Project>{0EAA9AF9-61E5-4869-B8A1-248994DBBD54}</Project>
+      <Name>KSPDIGT.IL.Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Track\KSPDIGT.Base.Track.csproj">
+      <Project>{B4424462-9FA9-41F0-AE22-2D6614E48253}</Project>
+      <Name>KSPDIGT.Base.Track</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Forms\CommentList\CommentsListDataSet\CommentsListDataSet.xsc">
+      <DependentUpon>CommentsListDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\CommentList\CommentsListDataSet\CommentsListDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CommentsListDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\CommentList\CommentsListDataSet\CommentsListDataSet.xss">
+      <DependentUpon>CommentsListDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveToDB16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveToDB32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\az3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\za3.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

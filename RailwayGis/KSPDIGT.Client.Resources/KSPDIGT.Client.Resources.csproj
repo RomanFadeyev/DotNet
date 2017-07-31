@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9683E2B7-FB8D-4A4D-BE7A-B259C33F05DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Client.Resources</RootNamespace>
+    <AssemblyName>KSPDIGT.Client.Resources</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\ResourcesOld.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\TierClient.cs">
+      <Link>TierClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Commands\CommandCursors.cs" />
+    <Compile Include="Commands\CommandInfo.cs" />
+    <Compile Include="Commands\Common\CommonCommands.cs" />
+    <Compile Include="Commands\Specific\ButtonCommands.cs" />
+    <Compile Include="Commands\Specific\CrossParamsCommands.cs" />
+    <Compile Include="Commands\Specific\ParametricModelCommands.cs" />
+    <Compile Include="Commands\Specific\ReportingCommands.cs" />
+    <Compile Include="Commands\Specific\CrossProfileCommands.cs" />
+    <Compile Include="Commands\Specific\DatumMarkCommands.cs" />
+    <Compile Include="Commands\Specific\GeometryCommands.cs" />
+    <Compile Include="Commands\Specific\PhotoViewWindow.cs" />
+    <Compile Include="Commands\Specific\ThinMapCommands.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Учесть участок.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Включить пользователя в группу.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Добавить пользователя.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Запустить мастер выполнения.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Исключить пользователя из группы.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Печать.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Получить информацию.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Редактировать пользователя.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Удалить пользователя.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Прием-обращений.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WarningER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ErrorER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Удалить.png" />
+    <None Include="Resources\СоздатьКнигу.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Выполнить поиск и открыть в новом окне.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Выполнить поиск.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\СрокВыполненияИстек.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\УгрозаСрыва.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Штатно.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SortDesc16.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SortAsc16.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AccessAdmin16.png" />
+    <None Include="Resources\AccessAdmin32.png" />
+    <Content Include="Resources\Action_Refresh.png" />
+    <None Include="Resources\экспорт16.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\arrow_bottom.png" />
+    <None Include="Resources\arrow_bottomB.png" />
+    <None Include="Resources\App.ico" />
+    <None Include="Resources\Add.16.png" />
+    <None Include="Resources\App.Datum.ico" />
+    <None Include="Resources\az2.png" />
+    <None Include="Resources\az3.png" />
+    <None Include="Resources\CalcAll.16.png" />
+    <None Include="Resources\App_Icon_Client_Datum.ico" />
+    <None Include="Resources\App_Icon_Client_Main.ico" />
+    <None Include="Resources\App_Icon_FLC_Checker.ico" />
+    <None Include="Resources\App_Icon_Server_App.ico" />
+    <None Include="Resources\App_Icon_Server_Manager.ico" />
+    <None Include="Resources\App_Icon_Utils.ico" />
+    <None Include="Resources\Button_CalculateStationingRange_16.png" />
+    <None Include="Resources\Button_CheckBoxChecked_16.png" />
+    <None Include="Resources\Button_CheckBoxUnchecked_16.png" />
+    <Content Include="Resources\checkbox.png" />
+    <Content Include="Resources\checkbox2.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\empty.png" />
+    <None Include="Resources\Информация.ico" />
+    <None Include="Resources\Checked.png" />
+    <None Include="Resources\ContactWirePlan.png" />
+    <None Include="Resources\DistanceObject.png" />
+    <None Include="Resources\HeightContactWire.png" />
+    <None Include="Resources\CompareAxes.png" />
+    <None Include="Resources\GenericFlash16.png" />
+    <None Include="Resources\GenericFlash32.png" />
+    <None Include="Resources\Command.32.ActivateSelectionToolCommand.png" />
+    <None Include="Resources\Command.32.BindToASUPObjectCommand.png" />
+    <None Include="Resources\Command.32.Bookmarks.png" />
+    <None Include="Resources\Command.32.ClearSelectionCommand.png" />
+    <None Include="Resources\Command.32.CompareAxesTool.png" />
+    <None Include="Resources\Command.32.CompareAxisLineWithDrmTool.png" />
+    <None Include="Resources\Command.32.CrossProfileMap.png" />
+    <None Include="Resources\Command.32.DistanceAxesTool.png" />
+    <None Include="Resources\Command.32.DistanceFromAxisToObjectsCommand.png" />
+    <None Include="Resources\Command.32.FindStationingPosition.png" />
+    <None Include="Resources\Command.32.HeightContactWireCommand.png" />
+    <None Include="Resources\Command.32.ImportAxesCommand.png" />
+    <None Include="Resources\Command.32.MapFullExtentCommand.png" />
+    <None Include="Resources\Command.32.MapGoToCommand.png" />
+    <None Include="Resources\Command.32.MapIdentifyTool.png" />
+    <None Include="Resources\Command.32.MapMeasureTool.png" />
+    <None Include="Resources\Command.32.MapZoomToLastExtentBackCommand.png" />
+    <None Include="Resources\Command.32.MapZoomToLastExtentForwardCommand.png" />
+    <None Include="Resources\Command.32.PanCommand.png" />
+    <None Include="Resources\Command.32.ParametricModelProjectCreatingTool.png" />
+    <None Include="Resources\Command.32.ParametricModelProjectExecuteExistingCommand.png" />
+    <None Include="Resources\Command.32.PhotoViewerTool.png" />
+    <None Include="Resources\Command.32.SelectScreenCommand.png" />
+    <None Include="Resources\Command.32.SelectTool.png" />
+    <None Include="Resources\Command.32.ShowSearchWindowCommand.png" />
+    <None Include="Resources\Command.32.UpdateDatumCommand.png" />
+    <None Include="Resources\Command.32.ZoomInCommand.png" />
+    <None Include="Resources\Command.32.ZoomInFixedCommand.png" />
+    <None Include="Resources\Command.32.ZoomOutCommand.png" />
+    <None Include="Resources\Command.32.ZoomOutFixedCommand.png" />
+    <None Include="Resources\Command.32.ZoomToSelectedCommand.png" />
+    <None Include="Resources\Command.16.CompareAxesTool.png" />
+    <None Include="Resources\Command.16.CompareAxisLineWithDrmTool.png" />
+    <None Include="Resources\Command.16.CrossProfileMap.png" />
+    <None Include="Resources\Command.16.CrossProfileNormativeAxisCommand.png" />
+    <None Include="Resources\Command.16.DistanceFromAxisToObjectsCommand.png" />
+    <None Include="Resources\Command.16.HeightContactWireCommand.png" />
+    <None Include="Resources\Command.16.HeightRailsCommand.png" />
+    <None Include="Resources\Command.32.HeightRailsCommand.png" />
+    <None Include="Resources\Command.16.GeoradarResultCommand.png" />
+    <None Include="Resources\Command.32.GeoradarResultCommand.png" />
+    <None Include="Resources\Command.16.LayoutDocumentCommand.png" />
+    <None Include="Resources\Command.32.LayoutDocumentCommand.png" />
+    <None Include="Resources\Command.16.CrossProfileParameters.png" />
+    <None Include="Resources\Command.16.CrossProfileRecalc.png" />
+    <None Include="Resources\Command.16.MapMeasureTool.png" />
+    <None Include="Resources\Command.16.PhotoViewerTool.png" />
+    <None Include="Resources\Command.16.CrossProfileRecalcNext.png" />
+    <None Include="Resources\Command.16.CrossProfileRecalcPrevious.png" />
+    <None Include="Resources\Command.16.FindIrregularStationingsTool.png" />
+    <None Include="Resources\Command.32.FindIrregularStationingsTool.png" />
+    <None Include="Resources\Command.16.MeasureResultCommand.png" />
+    <None Include="Resources\Command.32.MeasureResultCommand.png" />
+    <None Include="Resources\Command.16.DistanceAxesTool.png" />
+    <None Include="Resources\Command.16.ParametricModelProjectCreatingTool.png" />
+    <None Include="Resources\Command.32.MapGoToCommand1.png" />
+    <None Include="Resources\Command.16.GoToXYCommand.png" />
+    <None Include="Resources\Command.16.RulerTool.png" />
+    <None Include="Resources\Command.32.RulerTool.png" />
+    <None Include="Resources\Command.16.ObjectProperties.png" />
+    <None Include="Resources\Command.32.ObjectProperties.png" />
+    <None Include="Resources\Command.16.CrossVisibilityTool.png" />
+    <None Include="Resources\Command.32.CrossVisibilityTool.png" />
+    <None Include="Resources\Command.16.ShowOnMap.png" />
+    <None Include="Resources\Command.16.InfoStationingPosition.png" />
+    <None Include="Resources\Command.32.InfoStationingPosition.png" />
+    <None Include="Resources\Command.16.SSizeCheckTool.png" />
+    <None Include="Resources\Command.32.SSizeCheckTool.png" />
+    <None Include="Resources\Command.16.Map3DTool.png" />
+    <None Include="Resources\Command.32.Map3DTool.png" />
+    <None Include="Resources\Command.16.ExportToUnifiedDigitalMapCommand.png" />
+    <None Include="Resources\Command.32.ExportToUnifiedDigitalMapCommand.png" />
+    <None Include="Resources\Command.32.MapMarksCommand.png" />
+    <None Include="Resources\Command.16.MapMarksCommand.png" />
+    <None Include="Resources\Common.16.ShowCrossProfile.png" />
+    <None Include="Resources\Common.16.ShowOnMap.png" />
+    <None Include="Resources\Common.16.ShowPhotofixation.png" />
+    <None Include="Resources\Common.16.ShowPointsInSizeFrame.png" />
+    <None Include="Resources\Command.16.PolylineRulerTool.png" />
+    <None Include="Resources\Command.32.PolylineRulerTool.png" />
+    <None Include="Resources\Command.16.WoodThreatsTool.png" />
+    <None Include="Resources\Command.32.WoodThreatsTool.png" />
+    <None Include="Resources\Command.16.FullExtentCommand.png" />
+    <None Include="Resources\Command.32.FullExtentCommand.png" />
+    <None Include="Resources\Common.16.Edit.png" />
+    <None Include="Resources\Command.16.ExportToUnifiedDigitalMapTool.png" />
+    <None Include="Resources\Command.32.ExportToUnifiedDigitalMapTool.png" />
+    <None Include="Resources\Command.16.SizePassengerPlatformsCommand.png" />
+    <None Include="Resources\Command.16.SizeTrafficLightCommand.png" />
+    <None Include="Resources\Command.32.SizePassengerPlatformsCommand.png" />
+    <None Include="Resources\Command.32.SizeTrafficLightCommand.png" />
+    <None Include="Resources\Common.16.CrossProfile.png" />
+    <None Include="Resources\Common.32.CrossProfile.png" />
+    <None Include="Resources\Command.16.ParametricModelProjectExecuteExistingCommand.png" />
+    <None Include="Resources\Command.16.SizeContactNetworkSupportPointCommand.png" />
+    <None Include="Resources\Command.32.SizeContactNetworkSupportPointCommand.png" />
+    <None Include="Resources\Command.16.ShowSurfacePointsCommand.png" />
+    <None Include="Resources\Command.32.ShowSurfacePointsCommand.png" />
+    <None Include="Resources\Command.16.ObjectsInclinationTool.png" />
+    <None Include="Resources\Command.32.ObjectsInclinationTool.png" />
+    <None Include="Resources\Command.16.GradeProfileTool.png" />
+    <None Include="Resources\Command.32.GradeProfileTool.png" />
+    <None Include="Resources\Command.16.CreateMapMark.png" />
+    <None Include="Resources\Command.16.DeleteMark.png" />
+    <None Include="Resources\Command.16.ExportToDesignOrganizationsTool.png" />
+    <None Include="Resources\Command.32.ExportToDesignOrganizationsTool.png" />
+    <None Include="Resources\Command.16.ExportCoordinates.png" />
+    <None Include="Resources\Command.32.ExportCoordinates.png" />
+    <None Include="Resources\Command.16.DefineParamsCrossingsTool.png" />
+    <None Include="Resources\Command.32.DefineParamsCrossingsTool.png" />
+    <None Include="Resources\Command.16.CrossParamsTool.png" />
+    <None Include="Resources\Command.32.CrossParamsTool.png" />
+    <None Include="Resources\Command.16.ExportMap.png" />
+    <None Include="Resources\Command.32.ExportMap.png" />
+    <None Include="Resources\Collapse.16.png" />
+    <None Include="Resources\common.16.Tracks.png" />
+    <None Include="Resources\Common.16.ImportCsv.png" />
+    <None Include="Resources\Command.16.CreateMapMarkTool.png" />
+    <None Include="Resources\Command.16.CrossProfileSharpMap.png" />
+    <None Include="Resources\Command.32.CrossProfileSharpMap.png" />
+    <None Include="Resources\Command.16.ViewWayVisibility.png" />
+    <None Include="Resources\Command.16.CalculationsCommand.png" />
+    <None Include="Resources\Command.32.CalculationsCommand.png" />
+    <None Include="Resources\Common.16.Add.png" />
+    <None Include="Resources\Common.16.Delete.png" />
+    <None Include="Resources\Command.16.ShowOnChart.png" />
+    <None Include="Resources\Command.16.CrossParamsToolAll.png" />
+    <None Include="Resources\Command.32.CrossParamsToolAll.png" />
+    <None Include="Resources\Command.16.CalcResultsCommand.png" />
+    <None Include="Resources\Command.32.CalcResultsCommand.png" />
+    <None Include="Resources\Command.16.CrossProfileRecalcHomeCommand.png" />
+    <None Include="Resources\Command.32.CrossProfileGotoStationingCommand.png" />
+    <None Include="Resources\Command.16.CrossProfileGotoStationingCommand.png" />
+    <None Include="Resources\Close.16.png" />
+    <None Include="Resources\Command.16.CrossProfileGotoStationingCommand2.png" />
+    <None Include="Resources\Command.16.CrossProfileParameters2.png" />
+    <None Include="Resources\Command.16.CrossProfileRecalc2.png" />
+    <None Include="Resources\Command.16.CrossProfileRecalcHomeCommand2.png" />
+    <None Include="Resources\Command.16.CrossProfileRecalcNext2.png" />
+    <None Include="Resources\Command.16.CrossProfileRecalcPrevious2.png" />
+    <None Include="Resources\Command.16.MapMeasureTool2.png" />
+    <None Include="Resources\Command.16.PhotoViewerTool2.png" />
+    <None Include="Resources\Command.16.ShowOnMap2.png" />
+    <None Include="Resources\Command.16.ViewWayVisibility2.png" />
+    <None Include="Resources\Common_Copy_16.png" />
+    <None Include="Resources\Common_Copy_32.png" />
+    <None Include="Resources\Common_Home_16.png" />
+    <None Include="Resources\Common_Del_16.png" />
+    <None Include="Resources\Common_Edit_16.png" />
+    <None Include="Resources\Map_CalculatedTask_32.png" />
+    <None Include="Resources\Map_CalculatedTask_16.png" />
+    <None Include="Resources\Map_HeightContactWireCommand_16.png" />
+    <None Include="Resources\Map_HeightContactWireCommand_32.png" />
+    <None Include="Resources\Common_Home_32.png" />
+    <None Include="Resources\Common_ShowOnMap_32.png" />
+    <None Include="Resources\App_Icon_Client_Adm.ico" />
+    <None Include="Resources\Common_Refresh_16.png" />
+    <None Include="Resources\Common_Refresh_32.png" />
+    <None Include="Resources\Common_Export_16.png" />
+    <None Include="Resources\Common_Import_16.png" />
+    <None Include="Resources\Common_OpenFolder_16.png" />
+    <None Include="Resources\Common_OpenFolder_32.png" />
+    <None Include="Resources\Common_Add_16.png" />
+    <None Include="Resources\Common_Update_16.png" />
+    <None Include="Resources\Common_ShowOnChart_16.png" />
+    <None Include="Resources\Common_HideMore_16.png" />
+    <None Include="Resources\Common_ViewMore_16.png" />
+    <None Include="Resources\Common_SaveAs_16.png" />
+    <None Include="Resources\Common_SaveAs_32.png" />
+    <None Include="Resources\Common_Recalc_16.png" />
+    <Content Include="Resources\CompareAxisLineWithDigitalRailwayModel.png" />
+    <None Include="Resources\export.16.png" />
+    <None Include="Resources\import.16.png" />
+    <None Include="Resources\copy.16.png" />
+    <None Include="Resources\DatumMark.16.Add.png" />
+    <None Include="Resources\DatumMark.16.Delete.png" />
+    <None Include="Resources\DatumMark.16.Refresh.png" />
+    <None Include="Resources\DatumMark.16.ShowOnMap.png" />
+    <None Include="Resources\DatumMark.16.SetChangesMap.png" />
+    <None Include="Resources\DatumMark.16.Edit.png" />
+    <None Include="Resources\DatumMark.16.Card.png" />
+    <None Include="Resources\DatumMark.16.Detail.png" />
+    <None Include="Resources\DatumMark.16.Images.png" />
+    <None Include="Resources\DatumMark.16.PrintCatalog.png" />
+    <None Include="Resources\CoordSys.16.Add.png" />
+    <None Include="Resources\CoordSys.16.Arch.png" />
+    <None Include="Resources\CoordSys.16.Delete.png" />
+    <None Include="Resources\CoordSys.16.Edit.png" />
+    <None Include="Resources\ContactWire.16.Diagram.png" />
+    <None Include="Resources\ContactWire.16.Export.png" />
+    <None Include="Resources\ContactWire.16.Import.png" />
+    <None Include="Resources\ContactWire.16.Print.png" />
+    <None Include="Resources\ContactWire.16.Recalc.png" />
+    <None Include="Resources\ContactWire.16.Table.png" />
+    <None Include="Resources\ContactWire.16.Update.png" />
+    <None Include="Resources\ImportJournal.16.Export.png" />
+    <None Include="Resources\ImportJournal.16.Import.png" />
+    <None Include="Resources\ImportJournal.16.List.png" />
+    <None Include="Resources\ImportJournal.16.Update.png" />
+    <None Include="Resources\ExpLog.16.Export.png" />
+    <None Include="Resources\ExpLog.16.Import.png" />
+    <None Include="Resources\ExpLog.16.Update.png" />
+    <None Include="Resources\CoordSys.16.Detail.png" />
+    <None Include="Resources\DatumMark.16.ExportCatalog.png" />
+    <None Include="Resources\DKSS.16.Create.png" />
+    <None Include="Resources\DKSS.16.Delete.png" />
+    <None Include="Resources\DKSS.16.Export.png" />
+    <None Include="Resources\DKSS.16.Open.png" />
+    <None Include="Resources\DKSS.16.Update.png" />
+    <None Include="Resources\ExpLog.16.CreateRep.png" />
+    <None Include="Resources\ExpLog.32.CreateRep.png" />
+    <None Include="Resources\Delete.16.png" />
+    <None Include="Resources\DRM.16.DataEdit.png" />
+    <None Include="Resources\DRM.16.Draft.png" />
+    <None Include="Resources\DRM.16.Exchange.png" />
+    <None Include="Resources\DRM.16.Geometry.png" />
+    <None Include="Resources\DRM.16.PassCurves.png" />
+    <None Include="Resources\DRM.16.Plan.png" />
+    <None Include="Resources\DRM.16.Profile.png" />
+    <None Include="Resources\DRM.16.Stationing.png" />
+    <None Include="Resources\DRM.32.DataEdit.png" />
+    <None Include="Resources\DRM.32.Draft.png" />
+    <None Include="Resources\DRM.32.Exchange.png" />
+    <None Include="Resources\DRM.32.Geometry.png" />
+    <None Include="Resources\DRM.32.PassCurves.png" />
+    <None Include="Resources\DRM.32.Plan.png" />
+    <None Include="Resources\DRM.32.Profile.png" />
+    <None Include="Resources\DRM.32.Stationing.png" />
+    <None Include="Resources\Expand.16.png" />
+    <None Include="Resources\GenericBlueLightLeftArrow.16.png" />
+    <None Include="Resources\GenericBlueLightRightArrow.16.png" />
+    <None Include="Resources\DatumMark.16.ChangeStatus.png" />
+    <None Include="Resources\DatumMark.32.Add.png" />
+    <None Include="Resources\DatumMark.32.Card.png" />
+    <None Include="Resources\DatumMark.32.ChangeStatus.png" />
+    <None Include="Resources\DatumMark.32.Delete.png" />
+    <None Include="Resources\DatumMark.32.Detail.png" />
+    <None Include="Resources\DatumMark.32.Edit.png" />
+    <None Include="Resources\DatumMark.32.ExportCatalog.png" />
+    <None Include="Resources\DatumMark.32.Images.png" />
+    <None Include="Resources\DatumMark.32.PrintCatalog.png" />
+    <None Include="Resources\DatumMark.32.Refresh.png" />
+    <None Include="Resources\DatumMark.32.SetChangesMap.png" />
+    <None Include="Resources\DatumMark.32.ShowOnMap.png" />
+    <None Include="Resources\DatumMark.32.ExportCsv.png" />
+    <None Include="Resources\DatumMark.32.ExportXml.png" />
+    <None Include="Resources\DatumMark.32.ImportCsv.png" />
+    <None Include="Resources\DatumMark.32.ImportXml.png" />
+    <None Include="Resources\CrossProfile_Legend_16.png" />
+    <None Include="Resources\CrossProfile_Legend_32.png" />
+    <None Include="Resources\CrossProfile_Recalc_32.png" />
+    <None Include="Resources\CrossProfile_RecalcNext_32.png" />
+    <None Include="Resources\CrossProfile_RecalcPrevious_32.png" />
+    <None Include="Resources\CrossProfile_ViewWayVisibility_32.png" />
+    <None Include="Resources\CrossProfile_Recalc_16.png" />
+    <None Include="Resources\CrossProfile_Parameters_16.png" />
+    <None Include="Resources\CrossProfile_Parameters_32.png" />
+    <None Include="Resources\Geometry_Flash_16.png" />
+    <None Include="Resources\Geometry_Flash_32.png" />
+    <None Include="Resources\Geometry_Zoom_16.png" />
+    <None Include="Resources\Geometry_Zoom_32.png" />
+    <None Include="Resources\Geometry_ZoomAndFlash_16.png" />
+    <None Include="Resources\Geometry_ZoomAndFlash_32.png" />
+    <None Include="Resources\DatumMark_Add_16.png" />
+    <None Include="Resources\DatumMark_Add_32.png" />
+    <None Include="Resources\DatumMark_Card_16.png" />
+    <None Include="Resources\DatumMark_Card_32.png" />
+    <None Include="Resources\DatumMark_ChangeStatus_16.png" />
+    <None Include="Resources\DatumMark_ChangeStatus_32.png" />
+    <None Include="Resources\DatumMark_Delete_16.png" />
+    <None Include="Resources\DatumMark_Delete_32.png" />
+    <None Include="Resources\DatumMark_Detail_16.png" />
+    <None Include="Resources\DatumMark_Detail_32.png" />
+    <None Include="Resources\DatumMark_Edit_16.png" />
+    <None Include="Resources\DatumMark_Edit_32.png" />
+    <None Include="Resources\DatumMark_ExportCatalog_16.png" />
+    <None Include="Resources\DatumMark_ExportCatalog_32.png" />
+    <None Include="Resources\DatumMark_ExportCsv_32.png" />
+    <None Include="Resources\DatumMark_ExportXml_32.png" />
+    <None Include="Resources\DatumMark_Images_16.png" />
+    <None Include="Resources\DatumMark_Images_32.png" />
+    <None Include="Resources\DatumMark_ImportCsv_32.png" />
+    <None Include="Resources\DatumMark_ImportXml_32.png" />
+    <None Include="Resources\DatumMark_PrintCatalog_16.png" />
+    <None Include="Resources\DatumMark_PrintCatalog_32.png" />
+    <None Include="Resources\DatumMark_Refresh_16.png" />
+    <None Include="Resources\DatumMark_SetChangesMap_16.png" />
+    <None Include="Resources\DatumMark_SetChangesMap_32.png" />
+    <None Include="Resources\DatumMark_ShowOnMap_16.png" />
+    <None Include="Resources\DatumMark_ShowOnMap_32.png" />
+    <None Include="Resources\DRM.16.CompareDrm.png" />
+    <None Include="Resources\Cursor_Map_Pan.cur" />
+    <None Include="Resources\Cursor_Map_Tool_Default.cur" />
+    <None Include="Resources\Cursor_Map_Zoom_In.cur" />
+    <None Include="Resources\Cursor_Map_Zoom_Out.cur" />
+    <None Include="Resources\Geometry_PanTarget_16.png" />
+    <None Include="Resources\CrossParams_CalcAll_16.png" />
+    <None Include="Resources\CrossParams_SetValue_16.png" />
+    <None Include="Resources\CrossParams_SetZoom_16.png" />
+    <None Include="Resources\CrossParams_ShowInPlan_16.png" />
+    <None Include="Resources\CrossParams_Expand_16.png" />
+    <None Include="Resources\CrossParams_Collapse_16.png" />
+    <Content Include="Resources\logo.bmp" />
+    <None Include="Resources\note_edit.png" />
+    <None Include="Resources\navigate_down2.png" />
+    <None Include="Resources\navigate_down.png" />
+    <None Include="Resources\WarningIcon.ico" />
+    <None Include="Resources\Вправо.png" />
+    <None Include="Resources\Влево.png" />
+    <None Include="Resources\ПросмотретьКнигу.png" />
+    <None Include="Resources\Unchecked.png" />
+    <None Include="Resources\Логотип.png" />
+    <None Include="Resources\ZoomToTarget16.png" />
+    <None Include="Resources\ZoomToTarget32.png" />
+    <None Include="Resources\PanTarget16.png" />
+    <None Include="Resources\Диаграмма16.png" />
+    <None Include="Resources\Библиотеки_Документы_App.ico" />
+    <None Include="Resources\main.16.about.png" />
+    <None Include="Resources\main.16.exit.png" />
+    <None Include="Resources\main.16.key.png" />
+    <None Include="Resources\main.16.map.png" />
+    <None Include="Resources\main.16.modules.png" />
+    <None Include="Resources\main.16.set.png" />
+    <None Include="Resources\main.16.sign.png" />
+    <None Include="Resources\main.16.windows.png" />
+    <None Include="Resources\main.32.exit.png" />
+    <None Include="Resources\main.32.key.png" />
+    <None Include="Resources\main.32.map.png" />
+    <None Include="Resources\main.32.set.png" />
+    <None Include="Resources\main.32.sign.png" />
+    <None Include="Resources\main.32.windows.png" />
+    <None Include="Resources\waymodel.delete.png" />
+    <None Include="Resources\waymodel.edit.png" />
+    <None Include="Resources\waymodel.run.png" />
+    <None Include="Resources\waymodel.update.png" />
+    <None Include="Resources\выход в исходной точке.png" />
+    <None Include="Resources\выход в текущей точке.png" />
+    <None Include="Resources\main.16.cls.png" />
+    <None Include="Resources\main.32.cls.png" />
+    <None Include="Resources\main.16.MapAdmin.png" />
+    <None Include="Resources\main.32.MapAdmin.png" />
+    <None Include="Resources\main.16.MapDataAdmin.png" />
+    <None Include="Resources\main.32.MapDataAdmin.png" />
+    <None Include="Resources\main.16.Survey.png" />
+    <None Include="Resources\main.32.Survey.png" />
+    <None Include="Resources\Survey.16.Export.png" />
+    <None Include="Resources\Survey.16.Import.png" />
+    <None Include="Resources\Survey.16.Prop.png" />
+    <None Include="Resources\main.16.CoordSys.png" />
+    <None Include="Resources\main.32.CoordSys.png" />
+    <None Include="Resources\Заставка.png" />
+    <None Include="Resources\Заставка.Реперы.png" />
+    <None Include="Resources\Update.16.png" />
+    <None Include="Resources\загрузить16.png" />
+    <None Include="Resources\выгрузить16.png" />
+    <None Include="Resources\добавить16.png" />
+    <None Include="Resources\main.16.ImportJournal.png" />
+    <None Include="Resources\main.32.ImportJournal.png" />
+    <None Include="Resources\PhotoFix.16.ExitSourcePoint.png" />
+    <None Include="Resources\PhotoFix.16.Whole.png" />
+    <None Include="Resources\PhotoFix.16.ZoomIn.png" />
+    <None Include="Resources\PhotoFix.16.ZoomOut.png" />
+    <None Include="Resources\main.16.ExpLog.png" />
+    <None Include="Resources\main.32.ExpLog.png" />
+    <None Include="Resources\waymodel.16.Create.png" />
+    <None Include="Resources\waymodel.16.Export.png" />
+    <None Include="Resources\waymodel.16.Import.png" />
+    <None Include="Resources\main.16.ImportPhotoData.png" />
+    <None Include="Resources\main.16.ImportSurveyDocs.png" />
+    <None Include="Resources\main.32.ImportPhotoData.png" />
+    <None Include="Resources\main.32.ImportSurveyDocs.png" />
+    <None Include="Resources\main.16.dkss.png" />
+    <None Include="Resources\main.16.pms.png" />
+    <None Include="Resources\main.32.dkss.png" />
+    <None Include="Resources\main.32.pms.png" />
+    <None Include="Resources\PMS.16.Delete.png" />
+    <None Include="Resources\PMS.16.Export.png" />
+    <None Include="Resources\PMS.16.Open.png" />
+    <None Include="Resources\PMS.16.Update.png" />
+    <None Include="Resources\SetMinMax.16.png" />
+    <None Include="Resources\main.16.pcdi.png" />
+    <None Include="Resources\main.32.pcdi.png" />
+    <None Include="Resources\main.16.Queries.png" />
+    <None Include="Resources\main.32.Queries.png" />
+    <None Include="Resources\main.16.AsupCatalog.png" />
+    <None Include="Resources\main.32.AsupCatalog.png" />
+    <None Include="Resources\main.16.calcresults.png" />
+    <None Include="Resources\main.32.calcresults.png" />
+    <None Include="Resources\main.16.CalcResultGRDO.png" />
+    <None Include="Resources\main.16.CalcResultMeasure.png" />
+    <None Include="Resources\main.32.CalcResultGRDO.png" />
+    <None Include="Resources\main.32.CalcResultMeasure.png" />
+    <None Include="Resources\Save.16.png" />
+    <None Include="Resources\Save.32.png" />
+    <None Include="Resources\main.16.Documents.png" />
+    <None Include="Resources\main.32.Documents.png" />
+    <None Include="Resources\main.16.waymodel.png" />
+    <None Include="Resources\main.32.waymodel.png" />
+    <None Include="Resources\main.16.AdmVolumes.png" />
+    <None Include="Resources\main.32.AdmVolumes.png" />
+    <None Include="Resources\ShowParametricModelOnMap.png" />
+    <None Include="Resources\main.16.Calcs.png" />
+    <None Include="Resources\main.16.Tasks.png" />
+    <None Include="Resources\SetValue.16.png" />
+    <None Include="Resources\SetZoom.16.png" />
+    <None Include="Resources\ShowInMap.16.png" />
+    <None Include="Resources\ShowInPlan.16.png" />
+    <None Include="Resources\za2.png" />
+    <None Include="Resources\za3.png" />
+    <None Include="Resources\Validation.png" />
+    <None Include="Resources\ShowSurroundingsPoints.16.png" />
+    <None Include="Resources\OKCheck.16.png" />
+    <None Include="Resources\ZoomTo.16.png" />
+    <None Include="Resources\View.16.png" />
+    <None Include="Resources\main.16.close.png" />
+    <None Include="Resources\Save.162.png" />
+    <None Include="Resources\Save.322.png" />
+    <None Include="Resources\Map_ZoomIn_32.png" />
+    <None Include="Resources\Map_ZoomInFixed_32.png" />
+    <None Include="Resources\Map_ZoomOut_32.png" />
+    <None Include="Resources\Map_ZoomOutFixed_32.png" />
+    <None Include="Resources\Map_Pan_16.png" />
+    <None Include="Resources\Map_Pan_32.png" />
+    <None Include="Resources\Map_ZoomFullExtent_16.png" />
+    <None Include="Resources\Map_ZoomFullExtent_32.png" />
+    <None Include="Resources\PhotoFix.16.ZoomIn2.png" />
+    <None Include="Resources\PhotoFix.16.ZoomOut2.png" />
+    <None Include="Resources\Map_ZoomNextExtent_16.png" />
+    <None Include="Resources\Map_ZoomNextExtent_32.png" />
+    <None Include="Resources\Map_ZoomPreviousExtent_16.png" />
+    <None Include="Resources\Map_ZoomPreviousExtent_32.png" />
+    <None Include="Resources\Map_Tool_Default.cur" />
+    <None Include="Resources\Map_Zoom_In.cur" />
+    <None Include="Resources\Map_Zoom_Out.cur" />
+    <None Include="Resources\Map_GoTo_Coordinates_16.png" />
+    <None Include="Resources\Map_GoTo_Coordinates_32.png" />
+    <None Include="Resources\Map_ObjectProperties_16.png" />
+    <None Include="Resources\Map_ObjectProperties_32.png" />
+    <None Include="Resources\Map_ShowPhotofixation_16.png" />
+    <None Include="Resources\Map_CreateDrmProject_16.png" />
+    <None Include="Resources\Map_CreateDrmProject_32.png" />
+    <None Include="Resources\Map_ExecuteExistingDrmProject_16.png" />
+    <None Include="Resources\Map_ExecuteExistingDrmProject_32.png" />
+    <None Include="Resources\Map_PolylineMeasure_32.png" />
+    <None Include="Resources\Map_PolylineMeasure_16.png" />
+    <None Include="Resources\Map_Bookmarks_16.png" />
+    <None Include="Resources\Map_Bookmarks_32.png" />
+    <None Include="Resources\Map_MarksCommand_32.png" />
+    <None Include="Resources\Map_MarksCommand_16.png" />
+    <None Include="Resources\Map_InfoStationingPosition_16.png" />
+    <None Include="Resources\Map_InfoStationingPosition_32.png" />
+    <None Include="Resources\Map_ShowSearchWindow_32.png" />
+    <None Include="Resources\Map_ShowStationingPositionWindow_16.png" />
+    <None Include="Resources\Map_ShowStationingPositionWindow_32.png" />
+    <None Include="Resources\Map_IrregularStationing_16.png" />
+    <None Include="Resources\Map_IrregularStationing_32.png" />
+    <None Include="Resources\Map_Ruler_16.png" />
+    <None Include="Resources\Map_Ruler_32.png" />
+    <None Include="Resources\Map_KmLength_16.png" />
+    <None Include="Resources\Map_KmLength_32.png" />
+    <None Include="Resources\Map_ExportMap_16.png" />
+    <None Include="Resources\Map_ExportMap_32.png" />
+    <None Include="Resources\Map_ShowPhotofixation_32.png" />
+    <None Include="Resources\Map_ExportCoordinates_16.png" />
+    <None Include="Resources\Map_ExportCoordinates_32.png" />
+    <None Include="Resources\Map_GradeProfile_32.png" />
+    <None Include="Resources\Map_GradeProfile_16.png" />
+    <None Include="Resources\Map_Measure_32.png" />
+    <None Include="Resources\Map_DistanceAxes_16.png" />
+    <None Include="Resources\Map_DistanceAxes_32.png" />
+    <None Include="Resources\Map_CompareAxisLineWithDrm_16.png" />
+    <None Include="Resources\Map_CompareAxisLineWithDrm_32.png" />
+    <None Include="Resources\Map_GeoradarResult_16.png" />
+    <None Include="Resources\Map_GeoradarResult_32.png" />
+    <None Include="Resources\Map_HeightRails_16.png" />
+    <None Include="Resources\Map_HeightRails_32.png" />
+    <None Include="Resources\Map_MeasureResult_16.png" />
+    <None Include="Resources\Map_MeasureResult_32.png" />
+    <None Include="Resources\Map_SizeTrafficLight_16.png" />
+    <None Include="Resources\Map_SizeTrafficLight_32.png" />
+    <None Include="Resources\Map_DistanceFromAxisToObjects_16.png" />
+    <None Include="Resources\Map_DistanceFromAxisToObjects_32.png" />
+    <None Include="Resources\Map_CrossParams_16.png" />
+    <None Include="Resources\Map_CrossParams_32.png" />
+    <None Include="Resources\Map_SSizeCheck_16.png" />
+    <None Include="Resources\Map_SSizeCheck_32.png" />
+    <None Include="Resources\Map_WoodThreats_16.png" />
+    <None Include="Resources\Map_WoodThreats_32.png" />
+    <None Include="Resources\Map_ObjectsInclination_16.png" />
+    <None Include="Resources\Map_ObjectsInclination_32.png" />
+    <None Include="Resources\Map_SizeContactNetworkSupportPoint_16.png" />
+    <None Include="Resources\Map_SizeContactNetworkSupportPoint_32.png" />
+    <None Include="Resources\Map_SizePassengerPlatforms_16.png" />
+    <None Include="Resources\Map_SizePassengerPlatforms_32.png" />
+    <None Include="Resources\Main_WebMap_16.png" />
+    <None Include="Resources\Main_WebMap_32.png" />
+    <None Include="Resources\Main_Drm_16.png" />
+    <None Include="Resources\Main_Drm_32.png" />
+    <None Include="Resources\Splash_Datum.png" />
+    <None Include="Resources\Splash_Adm.png" />
+    <None Include="Resources\Splash_Main.png" />
+    <None Include="Resources\Main_About_16.png" />
+    <None Include="Resources\Main_Modules_16.png" />
+    <None Include="Resources\Main_Windows_16.png" />
+    <None Include="Resources\Main_Windows_32.png" />
+    <None Include="Resources\Main_Cls_16.png" />
+    <None Include="Resources\Main_Cls_32.png" />
+    <None Include="Resources\Main_Sign_16.png" />
+    <None Include="Resources\Main_Sign_32.png" />
+    <None Include="Resources\Main_Key_16.png" />
+    <None Include="Resources\Main_Key_32.png" />
+    <None Include="Resources\Main_Close_16.png" />
+    <None Include="Resources\Main_Set_16.png" />
+    <None Include="Resources\Main_Set_32.png" />
+    <None Include="Resources\Main_CoordSys_16.png" />
+    <None Include="Resources\Main_CoordSys_32.png" />
+    <None Include="Resources\Main_ExpLog_16.png" />
+    <None Include="Resources\Main_ExpLog_32.png" />
+    <None Include="Resources\Main_ImportJournal_16.png" />
+    <None Include="Resources\Main_ImportJournal_32.png" />
+    <None Include="Resources\Main_Survey_16.png" />
+    <None Include="Resources\Main_Survey_32.png" />
+    <None Include="Resources\Main_Queries_16.png" />
+    <None Include="Resources\Main_Queries_32.png" />
+    <None Include="Resources\Main_Documents_16.png" />
+    <None Include="Resources\Main_Documents_32.png" />
+    <None Include="Resources\Main_ImportPhotoData_16.png" />
+    <None Include="Resources\Main_ImportPhotoData_32.png" />
+    <None Include="Resources\Main_AdminData_16.png" />
+    <None Include="Resources\Main_AdminData_32.png" />
+    <None Include="Resources\Main_AdminMap_16.png" />
+    <None Include="Resources\Main_AdminMap_32.png" />
+    <None Include="Resources\Main_AdminVolumes_16.png" />
+    <None Include="Resources\Main_AdminVolumes_32.png" />
+    <None Include="Resources\Main_AsupCatalog_16.png" />
+    <None Include="Resources\Main_AsupCatalog_32.png" />
+    <None Include="Resources\Main_AdminAccess_16.png" />
+    <None Include="Resources\Main_AdminAccess_32.png" />
+    <None Include="Resources\Map_UpdateDatumMarks_32.png" />
+    <None Include="Resources\Reporting_CurveCorner_16.png" />
+    <None Include="Resources\Reporting_SetMinMax_16.png" />
+    <None Include="Resources\Plan2D_ZoomTo_16.png" />
+    <None Include="Resources\ParametricModel_ZoomTo_16.png" />
+    <None Include="Resources\Map_ShowCrossProfile_32.png" />
+    <None Include="Resources\Map_ShowCrossProfile_16.png" />
+    <None Include="Resources\ParametricModel_Tracks_16.png" />
+    <None Include="Resources\ParametricModel_SaveChanges_16.png" />
+    <None Include="Resources\ParametricModel_PlanPage_16.png" />
+    <None Include="Resources\ParametricModel_Geometry_16.png" />
+    <None Include="Resources\ParametricModel_Stationing_16.png" />
+    <None Include="Resources\ParametricModel_PassCurves_16.png" />
+    <None Include="Resources\ParametricModel_Exchange_16.png" />
+    <None Include="Resources\ParametricModel_CompareDrm_16.png" />
+    <None Include="Resources\Map_SizeScbObject_32.png" />
+    <None Include="Resources\Map_SizeScbObject_16.png" />
+    <None Include="Resources\Map_SizeInsulatedJoint_16.png" />
+    <None Include="Resources\Map_SizeInsulatedJoint_32.png" />
+    <None Include="Resources\Map_ImportAxis_32.png" />
+    <None Include="Resources\Map_DistanceFromTrafficLightToContactWire_16.png" />
+    <None Include="Resources\Map_DistanceFromTrafficLightToContactWire_32.png" />
+    <Content Include="Resources\Найти.png" />
+    <Content Include="Resources\НайтиВНовомОкне.PNG" />
+    <Content Include="Resources\НайтиЧБ.png" />
+    <Content Include="Resources\ОткрытьДиректорию.png" />
+    <Content Include="Resources\Отчет16.png" />
+    <Content Include="Resources\ОчиститьКритерий.png" />
+    <None Include="Resources\РедактироватьКнигуУчета.png" />
+    <None Include="Resources\скопировать слои16.png" />
+    <None Include="Resources\пересчитать16.png" />
+    <None Include="Resources\Показать3DМодель.16.png" />
+    <None Include="Resources\подробнее.png" />
+    <None Include="Resources\РассчитатьПикетажГраниц.16.png" />
+    <Content Include="Resources\СортироватьПоАлфавиту.png" />
+    <Content Include="Resources\СортироватьПоКатегории.png" />
+    <None Include="Resources\Таблица16.png" />
+    <None Include="Resources\убрать сведения.png" />
+    <None Include="Resources\Сохранить.ТЛС.16.png" />
+    <None Include="Resources\Сохранить.ТЛС.32.png" />
+    <None Include="Resources\Удалить.16.png" />
+    <Content Include="Resources\Шаблоны.png" />
+    <None Include="Resources\Экспорт.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{b64afe83-045b-4f8a-913c-d5aa2704640d}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

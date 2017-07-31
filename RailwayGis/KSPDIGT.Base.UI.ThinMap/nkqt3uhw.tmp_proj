@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{270BC799-51C9-4D41-8B84-7CA16F3BE2F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Base.UI.ThinMap</RootNamespace>
+    <AssemblyName>KSPDIGT.Base.UI.ThinMap</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="Controls\BaseWpfControl.cs" />
+    <Compile Include="Controls\ThinMapControl.xaml.cs">
+      <DependentUpon>ThinMapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ThinMapLayersControl.xaml.cs">
+      <DependentUpon>ThinMapLayersControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ThinMapStatusControl.xaml.cs">
+      <DependentUpon>ThinMapStatusControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ThinMap.cs" />
+    <Compile Include="Core\ThinMapLayerInfo.cs" />
+    <Compile Include="Core\ThinMapOverlayLayer.cs" />
+    <Compile Include="Core\ThinMapView.cs" />
+    <Compile Include="Data\ExtentsHistory.cs" />
+    <Compile Include="Data\MapScales.cs" />
+    <Compile Include="Data\ThinMapFeature.cs" />
+    <Compile Include="Extensions\ArcGISRuntimeGeneralExtension.cs" />
+    <Compile Include="Extensions\GeometryConvertionExtensions.cs" />
+    <Compile Include="Extensions\ThinMapFeatureExtensions.cs" />
+    <Compile Include="Helpers\BaseHelper.cs" />
+    <Compile Include="Core\ThinMapDataSourceHelper.cs" />
+    <Compile Include="Helpers\ThinMapIdentifyHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ThinMapInternalUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intech.Common.Windows\Intech.Common.Windows.csproj">
+      <Project>{6E0F6D80-5C47-43E2-B09A-D71CC748FBD7}</Project>
+      <Name>Intech.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{d977c536-fe1f-431d-a17f-c358bf874dc2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1F06A782-AE33-4244-B3E3-6AE00252C1BF}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{B64AFE83-045B-4F8A-913C-D5AA2704640D}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI.Gis\KSPDIGT.Base.UI.Gis.csproj">
+      <Project>{2B452A8C-20AE-4941-933A-CBFA0678979E}</Project>
+      <Name>KSPDIGT.Base.UI.Gis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Data.v13.2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Printing.v13.2.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Carousel.v13.2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Controls.v13.2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Core.v13.2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Docking.v13.2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Grid.v13.2.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Grid.v13.2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Layout.v13.2.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.LayoutControl.v13.2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Mvvm.v13.2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\DevExpress 13.2\Components\Bin\Framework\DevExpress.Xpf.Printing.v13.2.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Libraries\Actual\ArcGIS\arcgisruntime10.2.7\Esri.ArcGISRuntime.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.FLC.Checker\bin\x86\Debug\Intech.Common.Controls.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\INTECH.Common\bin\Debug\Intech.Common.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\Intech.Common.Windows\bin\Debug\Intech.Common.Windows.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.Base.Algorithms\bin\Debug\KSPDIGT.Base.Algorithms.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.Base.Common\bin\Debug\KSPDIGT.Base.Common.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.Base.DataContracts\bin\Debug\KSPDIGT.Base.DataContracts.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.Base.UI.Gis\bin\Debug\KSPDIGT.Base.UI.Gis.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\mscorlib.dll" />
+    <ReferencePath Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Libraries\Actual\OpenTK\OpenTK.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Data.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Drawing.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Windows.Forms.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\WindowsBase.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.Base.UI.ThinMap\obj\Debug\Controls\ThinMapControl.g.cs" />
+    <Compile Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.Base.UI.ThinMap\obj\Debug\Controls\ThinMapLayersControl.g.cs" />
+    <Compile Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.Base.UI.ThinMap\obj\Debug\Controls\ThinMapStatusControl.g.cs" />
+    <Compile Include="A:\Проекты\КСПД ИЖТ\Develop\Sources\Kspdigt.Net\Kspdigt\KSPDIGT.Base.UI.ThinMap\obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

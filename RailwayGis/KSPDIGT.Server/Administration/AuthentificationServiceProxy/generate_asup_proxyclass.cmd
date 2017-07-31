@@ -1,0 +1,1 @@
+"%ProgramFiles(x86)%\Microsoft SDKs\Windows\v7.0A\Bin\svcutil.exe"  /out:ASUPAuthentificationServiceProxy.cs /config:ASUPAuthentificationServiceProxy.config /namespace:*,KSPDIGT.Server.Administration.AuthentificationServiceProxy /language:cs /ct:System.Collections.Generic.List`1  http://devsrv:9080/auth_service/services/Auth_service?wsdl

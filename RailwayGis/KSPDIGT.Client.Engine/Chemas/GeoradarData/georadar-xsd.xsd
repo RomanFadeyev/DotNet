@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Same User (Ru-Board) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Report">
+		<xs:annotation>
+			<xs:documentation>Отчет о проезде</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header">
+					<xs:annotation>
+						<xs:documentation>Заголовок</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Caption">
+								<xs:annotation>
+									<xs:documentation>Описание выполненных работ</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="1024"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="SurveyDate" type="xs:date">
+								<xs:annotation>
+									<xs:documentation>Дата съемки</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CoordSys" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Наименование пространственной системы координат</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PS">
+								<xs:annotation>
+									<xs:documentation>Подвижной состав</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="100"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="IdDirection">
+								<xs:annotation>
+									<xs:documentation>Участок пути, ID (АСУ-П)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+										<xs:totalDigits value="15"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Direction">
+								<xs:annotation>
+									<xs:documentation>Участок пути, наименование (АСУ-П)</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Way" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Идентификатор главного пути (АСУ-П)
+</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Region">
+								<xs:annotation>
+									<xs:documentation>?????</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="255"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Note">
+								<xs:annotation>
+									<xs:documentation>Примечание</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="1024"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DataStep" type="xs:nonNegativeInteger">
+								<xs:annotation>
+									<xs:documentation>Шаг измерений</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Data">
+					<xs:annotation>
+						<xs:documentation>Данные измерений</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ReportRow" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Запись об измерении</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Location">
+											<xs:annotation>
+												<xs:documentation>Местоположение</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Picketage">
+														<xs:annotation>
+															<xs:documentation>Экспуатационный пикетаж</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Km" type="xs:nonNegativeInteger">
+																	<xs:annotation>
+																		<xs:documentation>Километр</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="Meters" type="xs:nonNegativeInteger">
+																	<xs:annotation>
+																		<xs:documentation>Метр</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Coord">
+														<xs:annotation>
+															<xs:documentation>Пространственные координаты</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="X" type="xs:double">
+																	<xs:annotation>
+																		<xs:documentation>Пространственная координата X</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="Y" type="xs:double">
+																	<xs:annotation>
+																		<xs:documentation>Пространственная координата Y</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="Z" type="xs:double">
+																	<xs:annotation>
+																		<xs:documentation>Пространственная координата Z (h)</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="SurveyPosition" type="xs:nonNegativeInteger">
+														<xs:annotation>
+															<xs:documentation>Позиция измерения</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ResultsData">
+											<xs:annotation>
+												<xs:documentation>Измерение</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="DeformLowering" type="tDeform">
+														<xs:annotation>
+															<xs:documentation>Понижение границ балластного углубления</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="DeformLength" type="tDeform">
+														<xs:annotation>
+															<xs:documentation>Протяженность границ балластного углубления</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="SeparationDepth" type="tDeform">
+														<xs:annotation>
+															<xs:documentation>Глубина залегания разделительного слоя</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="DeformType">
+														<xs:annotation>
+															<xs:documentation>Тип балластного углубления</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:byte">
+																<xs:enumeration value="0"/>
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+																<xs:enumeration value="3"/>
+																<xs:enumeration value="4"/>
+																<xs:enumeration value="5"/>
+																<xs:enumeration value="6"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="DeformLevel">
+														<xs:annotation>
+															<xs:documentation>Степень понижения границ балластного углубления, (интегр.показатель)</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:byte">
+																<xs:enumeration value="0"/>
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+																<xs:enumeration value="3"/>
+																<xs:enumeration value="4"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="MoistureLevel">
+														<xs:annotation>
+															<xs:documentation>Степень вероятного скопления влаги в области основной площадки</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:byte">
+																<xs:enumeration value="0"/>
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+																<xs:enumeration value="3"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Comment" type="xs:string">
+														<xs:annotation>
+															<xs:documentation>Примечание</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FileBindings">
+					<xs:annotation>
+						<xs:documentation>Изображения и отчеты</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Item" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Изображение и отчет</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="StartKm" type="xs:nonNegativeInteger">
+											<xs:annotation>
+												<xs:documentation>Эксплуатационный пикетаж, км</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="StartM" type="xs:nonNegativeInteger">
+											<xs:annotation>
+												<xs:documentation>Эксплуатационный пикетаж, м</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Length" type="xs:nonNegativeInteger">
+											<xs:annotation>
+												<xs:documentation>Протяженность участка, м</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ImageFile" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Файл изображения</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="HtmFile" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Файл сформированного отчета</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="tDeform">
+		<xs:annotation>
+			<xs:documentation>Деформация</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Left" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation>Левый торец шпал, мм</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Middle">
+				<xs:annotation>
+					<xs:documentation>Ось пути, мм</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Right" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation>Правый торец шпал, мм</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

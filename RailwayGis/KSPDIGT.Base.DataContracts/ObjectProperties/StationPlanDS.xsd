@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StationPlanDS" targetNamespace="http://tempuri.org/StationPlanDS.xsd" xmlns:mstns="http://tempuri.org/StationPlanDS.xsd" xmlns="http://tempuri.org/StationPlanDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="StationPlanDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="StationPlanDS" msprop:Generator_UserDSName="StationPlanDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ASUE_STATIONPLAN" msprop:Generator_TableClassName="ASUE_STATIONPLANDataTable" msprop:Generator_TableVarName="tableASUE_STATIONPLAN" msprop:Generator_TablePropName="ASUE_STATIONPLAN" msprop:Generator_RowDeletingName="ASUE_STATIONPLANRowDeleting" msprop:Generator_UserTableName="ASUE_STATIONPLAN" msprop:Generator_RowChangingName="ASUE_STATIONPLANRowChanging" msprop:Generator_RowEvHandlerName="ASUE_STATIONPLANRowChangeEventHandler" msprop:Generator_RowDeletedName="ASUE_STATIONPLANRowDeleted" msprop:Generator_RowEvArgName="ASUE_STATIONPLANRowChangeEvent" msprop:Generator_RowChangedName="ASUE_STATIONPLANRowChanged" msprop:Generator_RowClassName="ASUE_STATIONPLANRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="START_OP_KM" msdata:Caption="Километр начала" msprop:Generator_ColumnVarNameInTable="columnSTART_OP_KM" msprop:Generator_ColumnPropNameInRow="START_OP_KM" msprop:Generator_ColumnPropNameInTable="START_OP_KMColumn" msprop:Generator_UserColumnName="START_OP_KM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="START_M" msdata:Caption="Метр начала" msprop:Generator_ColumnVarNameInTable="columnSTART_M" msprop:Generator_ColumnPropNameInRow="START_M" msprop:Generator_ColumnPropNameInTable="START_MColumn" msprop:Generator_UserColumnName="START_M" type="xs:decimal" minOccurs="0" />
+              <xs:element name="END_OP_KM" msdata:Caption="Километр конца" msprop:Generator_ColumnVarNameInTable="columnEND_OP_KM" msprop:Generator_ColumnPropNameInRow="END_OP_KM" msprop:Generator_ColumnPropNameInTable="END_OP_KMColumn" msprop:Generator_UserColumnName="END_OP_KM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="END_M" msdata:Caption="Метр конца" msprop:Generator_ColumnVarNameInTable="columnEND_M" msprop:Generator_ColumnPropNameInRow="END_M" msprop:Generator_ColumnPropNameInTable="END_MColumn" msprop:Generator_UserColumnName="END_M" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NAME" msdata:Caption="Название типа объекта" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="URL" msdata:Caption="Ссылка" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="URL" msprop:Generator_ColumnVarNameInTable="columnURL" msprop:Generator_ColumnPropNameInTable="URLColumn" msprop:Generator_UserColumnName="URL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

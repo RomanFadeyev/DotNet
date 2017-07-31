@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70A971A6-5353-47E1-96BB-2D7A63FC36D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.Server</RootNamespace>
+    <AssemblyName>KSPDIGT.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\KSPDIGT.Server.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\KSPDIGT.Server.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFProviderWrapperToolkit">
+      <HintPath>..\..\Libraries\Actual\EF4ProviderWrappers\EFProviderWrapperToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EFTracingProvider">
+      <HintPath>..\..\Libraries\Actual\EF4ProviderWrappers\EFTracingProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>..\..\Libraries\Actual\OpenTK\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.Compatibility">
+      <HintPath>..\..\Libraries\Actual\OpenTK\OpenTK.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl">
+      <HintPath>..\..\Libraries\Actual\OpenTK\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Actual\Oracle\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\TierAppServer.cs">
+      <Link>TierAppServer.cs</Link>
+    </Compile>
+    <Compile Include="..\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="Administration\AdministrationHelperClass.cs" />
+    <Compile Include="Administration\AuthentificationServiceProxy\ASUPAuthentificationServiceProxy.cs" />
+    <Compile Include="RailwayCrossingVisibility\RcvHelper.cs" />
+    <Compile Include="GeoDb\ArcGisConnectionPool.cs" />
+    <Compile Include="Caches\PointCloudOperationsHelper.cs" />
+    <Compile Include="Calcs\CalcsExtensions.cs" />
+    <Compile Include="Calculation\CalculationServerHelper.cs" />
+    <Compile Include="Calculation\DistanceCalcHelper.cs" />
+    <Compile Include="Classifiers\ClassifierHelperClass.cs" />
+    <Compile Include="Controllers\AuthentificationController.cs" />
+    <Compile Include="Controllers\ServerController.cs" />
+    <Compile Include="CoordSystems\CoordSysHelperClass.cs" />
+    <Compile Include="CriticalTest.cs" />
+    <Compile Include="Extensions\ClientContextExtension.cs" />
+    <Compile Include="Extensions\ObjectContextExtension.cs" />
+    <Compile Include="GeoQuery\EnumerationConversions.cs" />
+    <Compile Include="GeoQuery\GeoQueryHelper.cs" />
+    <Compile Include="Helpers\Calcs\CalcsHelper.cs" />
+    <Compile Include="Helpers\MapFragment\MapDocumentContentHelperClass.cs" />
+    <Compile Include="Helpers\MapFragment\MapFragmentHelper.cs" />
+    <Compile Include="DatumMarks\DatumHelperClass.cs" />
+    <Compile Include="DatumMarks\DatumUpdateEngine.cs" />
+    <Compile Include="ObjectProperties\ObjectPropertiesHelperClass.cs" />
+    <Compile Include="ParametricModel\DrmModelHelper.cs" />
+    <Compile Include="ParametricModel\DrmModelHelper2.cs" />
+    <Compile Include="PlanProfileRecognizer\PlanProfileRecognizerHelper.cs" />
+    <Compile Include="PMPlan2D\PmPlan2DHelper.cs" />
+    <Compile Include="ProcessWithCallback\ProcessWithCallbackServiceServerHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefData\RefDataHelperClass.cs" />
+    <Compile Include="ServerFactoriesImpl\ServerMapDataProvider.cs" />
+    <Compile Include="ServerFactoriesImpl\ServerDataSourceAbstraction.cs" />
+    <Compile Include="ServiceImplementations\AuthentificationService.cs" />
+    <Compile Include="ServiceImplementations\CalculationService.cs" />
+    <Compile Include="ServiceImplementations\DataWebService.cs" />
+    <Compile Include="ServiceImplementations\KSPDGeneralService.cs" />
+    <Compile Include="ServiceImplementations\MapService.cs" />
+    <Compile Include="ServiceImplementations\ProcessWithCallbackService.cs" />
+    <Compile Include="ServiceImplementations\SizeCheckService.cs" />
+    <Compile Include="ServiceImplementations\StreamServer\KspdGeneralStreamServer.cs" />
+    <Compile Include="ServiceImplementations\WcfServiceAuthorizationManager.cs" />
+    <Compile Include="SizeCheck\SizeCheckCommon.cs" />
+    <Compile Include="SizeCheck\SizeCheckServerHelper.cs" />
+    <Compile Include="SizeCheck\Stages\AxisLineSplitter.cs" />
+    <Compile Include="SizeCheck\Stages\OversizeChecker.cs" />
+    <Compile Include="Utils\OracleUtils.cs" />
+    <Compile Include="Utils\VolumeHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{D977C536-FE1F-431D-A17F-C358BF874DC2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.ArcGIS.Core\KSPDIGT.ArcGIS.Core.csproj">
+      <Project>{2AFECBAE-C343-4D37-B5B6-539738AF7129}</Project>
+      <Name>KSPDIGT.ArcGIS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1F06A782-AE33-4244-B3E3-6AE00252C1BF}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{B64AFE83-045B-4F8A-913C-D5AA2704640D}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4ABE9F10-671E-4E25-9BA4-A62E19230E5D}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.Geo\KSPDIGT.IL.Geo.csproj">
+      <Project>{0eaa9af9-61e5-4869-b8a1-248994dbbd54}</Project>
+      <Name>KSPDIGT.IL.Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts\KSPDIGT.IL.ServiceContracts.csproj">
+      <Project>{0c89cc33-21d1-48df-a043-d2437b7701e2}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Track\KSPDIGT.Base.Track.csproj">
+      <Project>{B4424462-9FA9-41F0-AE22-2D6614E48253}</Project>
+      <Name>KSPDIGT.Base.Track</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.PointCloud\KSPDIGT.PointCloud.csproj">
+      <Project>{33770CED-9B41-4ED2-BEDC-46011D506CF5}</Project>
+      <Name>KSPDIGT.PointCloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Server.Common\KSPDIGT.Server.Common.csproj">
+      <Project>{6DF1D1C9-65CC-4664-8256-D765ED667097}</Project>
+      <Name>KSPDIGT.Server.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts.Update\KSPDIGT.IL.ServiceContracts.Update.csproj">
+      <Project>{821CB87E-F246-45C0-9D74-8EBCC43F024E}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts.Update</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SolutionFiles\CommonFiles\Symbol_CSSD_RWI.ttf">
+      <Link>Symbol_CSSD_RWI.ttf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Administration\AuthentificationServiceProxy\ASUPAuthentificationServiceProxy.config" />
+    <None Include="Administration\AuthentificationServiceProxy\generate_asup_proxyclass.cmd" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GOST_A.TTF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

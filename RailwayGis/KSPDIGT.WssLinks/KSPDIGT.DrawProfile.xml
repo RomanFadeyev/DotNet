@@ -1,0 +1,333 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+KSPDIGT.DrawProfile
+</name>
+</assembly>
+<members>
+<member name="M:KSPDIGT.DrawProfile.Excegraph.Arrow(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Int32)">
+	<summary>
+ Отрисовка стрелки.
+ </summary>
+	<param name="row1">Верхняя строка стрелки(включительно).Минимальное значение 1.</param>
+	<param name="row2">Нижняя строка стрелки(ислючительно).Минимальное значение 1.</param>
+	<param name="column1">Крайний левый столбец стрелки(включительно).Минимальное значение 1.</param>
+	<param name="column2">Крайний правый столбец стрелки(ислючительно).Минимальное значение 1.</param>
+	<param name="color">Цвет.0-чёрный, 10-красный,12-синий,17-зеленый,20-фиолетовый,40-голубой,45-розовый.</param>
+	<param name="direction">Направление.0-вниз-вправо ,1-вверх-влево.</param>
+	<param name="type">Тип линии.1-нормальная ,7-штрих.</param>
+	<param name="weight">Толщина линии, пт.</param>
+	<param name="line2">Вторая линия, параллельная стрелке. 0-нет, 1-обычная, 2-штрих </param>
+	<remarks></remarks>
+</member><member name="M:KSPDIGT.DrawProfile.Excegraph.Rectangle(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Отрисовка ромба.
+ </summary>
+	<param name="row1">Строка начала ромба.Минимальное значение 1.</param>
+	<param name="column1">Столбец начала ромба.Минимальное значение 1.</param>
+	<param name="row2">Строка окончания ромба.Минимальное значение 1.</param>
+	<param name="column2">Столбец окончания ромба.Минимальное значение 1.</param>
+	<param name="color">Цвет.0-чёрный, 5-жёлтый, 10-красный,12-синий,17-зеленый,20-фиолетовый,40-голубой,45-розовый.</param>
+	<remarks></remarks>
+</member><member name="M:KSPDIGT.DrawProfile.Excegraph.Circle(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Отрисовка круга.
+ </summary>
+	<param name="row1">Строка начала круга.Минимальное значение 1.</param>
+	<param name="column1">Столбец начала круга.Минимальное значение 1.</param>
+	<param name="row2">Строка окончания круга.Минимальное значение 1.</param>
+	<param name="column2">Столбец окончания круга.Минимальное значение 1.</param>
+	<param name="color">Цвет.0-чёрный, 5-жёлтый, 10-красный,12-синий,17-зеленый,20-фиолетовый,40-голубой,45-розовый.</param>
+	<remarks></remarks>
+</member><member name="M:KSPDIGT.DrawProfile.Excegraph.Triangle(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Отрисовка треугольника.
+ </summary>
+	<param name="row1">Строка начала треугольника.Минимальное значение 1.</param>
+	<param name="column1">Столбец начала треугольника.Минимальное значение 1.</param>
+	<param name="row2">Строка окончания треугольника.Минимальное значение 1.</param>
+	<param name="column2">Столбец окончания треугольника.Минимальное значение 1.</param>
+	<param name="color">Цвет.0-чёрный, 5-жёлтый, 10-красный,12-синий,17-зеленый,20-фиолетовый,40-голубой,45-розовый.</param>
+	<param name="direction">Направление.0-влево, 1-вверх, 2-вправо,3-вниз.</param>
+	<remarks></remarks>
+</member><member name="M:KSPDIGT.DrawProfile.Excegraph.Cell(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Boolean,System.String,System.Int32)">
+	<summary>
+ Отрисовка ячейки.
+ </summary>
+	<param name="row1">Строка начала ячейки.Минимальное значение 1.</param>
+	<param name="column1">Столбец начала ячейки.Минимальное значение 1.</param>
+	<param name="row2">Строка окончания ячейки.Минимальное значение 1.</param>
+	<param name="column2">Столбец окончания ячейки.Минимальное значение 1.</param>
+	<param name="fill">Заливка.0-белый, 6-жёлтый, 8-голубой ,5-синий,10-зеленый.</param>
+	<param name="orientation">Направление текста.0-горизонтально, 1-вертикально.</param>
+	<param name="font_size">Размер шрифта.</param>
+	<param name="borders">Граница ячейки. False-нет, True-есть </param>
+	<param name="Alignment">Выравнивание текста. 1- по левому краю, 3 - по центру, 4- по правому </param>
+	<remarks></remarks>
+</member><member name="M:KSPDIGT.DrawProfile.Excegraph.Range_Cell(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Decimal,System.Boolean)">
+	<summary>
+ Раскрашивание интервала.
+ </summary>
+	<param name="row1">Строка начала интервала.Минимальное значение 1.</param>
+	<param name="column1">Столбец начала интервала.Минимальное значение 1.</param>
+	<param name="row2">Строка окончания интервала.Минимальное значение 1.</param>
+	<param name="column2">Столбец окончания интервала.Минимальное значение 1.</param>
+	<param name="fill">Заливка.0-белый, 6-жёлтый, 8-голубой ,5-синий,10-зеленый.</param>
+	<param name="orientation">Направление текста.0-горизонтально, 1-вертикально.</param>
+	<param name="font_size">Размер шрифта.</param>
+	<param name="borders">Границы ячеек интервала. False-нет, True-есть </param>
+	<remarks></remarks>
+</member><member name="M:KSPDIGT.DrawProfile.Excegraph.RowHeight(System.Int32,System.Double)">
+	<summary>
+ Изменение высоты строки.
+ </summary>
+	<param name="number">Номер изменямой строки.</param>
+	<param name="height">Новая высота строки.</param>
+	<remarks></remarks>
+</member><member name="M:KSPDIGT.DrawProfile.Excegraph.ColumnWidth(System.Int32,System.Double)">
+	<summary>
+ Изменение ширины столбца.
+ </summary>
+	<param name="number">Номер изменямого столбца.</param>
+	<param name="width">Новая ширина столбца.</param>
+	<remarks></remarks>
+</member><member name="P:KSPDIGT.DrawProfile.My.Resources.Resources.ResourceManager">
+	<summary>
+  Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+</summary>
+</member><member name="P:KSPDIGT.DrawProfile.My.Resources.Resources.Culture">
+	<summary>
+  Перезаписывает свойство CurrentUICulture текущего потока для всех
+  обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+</summary>
+</member><member name="P:KSPDIGT.DrawProfile.My.Resources.Resources.Putst">
+	<summary>
+  Ищет локализованную строку, похожую на 0.
+</summary>
+</member><member name="P:KSPDIGT.DrawProfile.My.Resources.Resources.Station">
+	<summary>
+  Ищет локализованную строку, похожую на 0.
+</summary>
+</member><member name="T:KSPDIGT.DrawProfile.My.Resources.Resources">
+	<summary>
+  Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+</summary>
+</member><member name="F:KSPDIGT.DrawProfile.GProfile.RailHeadMarks">
+	<summary>
+ Отметки головки рельса
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.GProfile.RailParameters">
+	<summary>
+ Отметки головки рельса
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.GProfile.SituationObjects">
+	<summary>
+ Объекты ситуации
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.GProfile.Curves">
+	<summary>
+ Кривые
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.GProfile.Kilometers">
+	<summary>
+ Километры
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.GProfile.TypePK">
+	<summary>
+ Тип пикетажа(0-строительный, 1-эксплуатационный)
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.RailParameter.Name">
+	<summary>
+ Наименование параметра
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.RailParameter.Unit">
+	<summary>
+ Единица измерения
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.RailParameter.RailParameters">
+	<summary>
+ Значения параметра
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KSPDIGT.DrawProfile.RailParameter">
+	<summary>
+ Произвольный параметр
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.ParameterValue.KM">
+	<summary>
+ Километр
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.ParameterValue.M">
+	<summary>
+ Метр
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.ParameterValue.Mark">
+	<summary>
+ Значение параметра
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KSPDIGT.DrawProfile.ParameterValue">
+	<summary>
+ Значение параметра
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.KM">
+	<summary>
+ Километр
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.M">
+	<summary>
+ Метр
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.Mark">
+	<summary>
+ Отметка головки рельса
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.Mark2">
+	<summary>
+ 2-я отметка головки рельса (для протяженных объектов)
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.Type">
+	<summary>
+ Тип объекта
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.Extensive">
+	<summary>
+ Признак протяжённости объекта(true - протяжённый объект)
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.N">
+	<summary>
+ Номер объекта или наменование объекта
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.Txt">
+	<summary>
+ Дополнительная информация по объекту
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.BKM">
+	<summary>
+ Километр начала для протяжённых объектов
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.BM">
+	<summary>
+ Метр начала для протяжённых объектов
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.EKM">
+	<summary>
+ Километр окончания для протяжённых объектов
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.EM">
+	<summary>
+ Метр окончания для протяжённых объектов
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.SObject.HorizontalDistance">
+	<summary>
+ Расстояние от оси пути(меньше 0 - слева, больше 0 - справа)
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KSPDIGT.DrawProfile.SObject">
+	<summary>
+ Объект ситуации
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Curve.KM">
+	<summary>
+ Километр начала
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Curve.M">
+	<summary>
+ Метр начала
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Curve.R">
+	<summary>
+ Радиус
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Curve.L1">
+	<summary>
+ Длина первой переходной кривой
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Curve.L2">
+	<summary>
+ Дина второй переходной кривой
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Curve.K">
+	<summary>
+ Длина круговой части кривой
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Curve.Angle">
+	<summary>
+ Длина круговой части кривой
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KSPDIGT.DrawProfile.Curve">
+	<summary>
+ Кривая
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Kilometer.KM">
+	<summary>
+ Километр расположения километрового столбика
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Kilometer.Pickets">
+	<summary>
+ Пикеты
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Kilometer.Txt">
+	<summary>
+ Дополнительная информация 
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KSPDIGT.DrawProfile.Kilometer">
+	<summary>
+ Километр
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Picket.PK">
+	<summary>
+ Номер пикета 
+ </summary>
+	<remarks></remarks>
+</member><member name="F:KSPDIGT.DrawProfile.Picket.S">
+	<summary>
+ Длина пикета
+ </summary>
+	<remarks></remarks>
+</member><member name="T:KSPDIGT.DrawProfile.Picket">
+	<summary>
+  Пикет
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

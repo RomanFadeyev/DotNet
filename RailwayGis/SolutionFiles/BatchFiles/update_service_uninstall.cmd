@@ -1,0 +1,2 @@
+sc stop KSPDUpdateService
+sc delete KSPDUpdateService

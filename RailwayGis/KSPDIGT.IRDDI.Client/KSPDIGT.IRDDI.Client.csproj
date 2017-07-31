@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F32FF7EC-E1A3-405F-8FAE-DDCC41A4EC3B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.IRDDI.Client</RootNamespace>
+    <AssemblyName>KSPDIGT.IRDDI.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <NoWarn>618</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DeprecatedAlignment\Aiding\Canting\Cpt4417.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\DesignStandard.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Plan\BendConnection.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Plan\EasementConnection.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Plan\PlanBuilder.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Plan\Problems\PlanDesignProblemList.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Plan\ReversedConnection.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Plan\TotalCurve.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Problems\DesignProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Problems\IProblemProvider.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Problems\ProblemClass.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Problems\StandardViolation.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Optimizer.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\AltitudeRestrictionViolation.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\GradientValueMultipicityProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\LevelDifferenceProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\MaxGradientDifferenceInSlopesChain.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\MaxGradientDifferenceProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\MaxGradientProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\MinSlopeLengthProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\MinSlopesChainLengthProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\NodeLocationMultiplicityProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\NodeProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\OverlappingRounding.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\ProfileProblemProvider.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\SlopeProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\VertCurveAndEasementOverlapping.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\Problems\VerticalCurveNecessityProblem.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\ProfileExtensions.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\Profile\SlopesGradientRounding.cs" />
+    <Compile Include="DeprecatedAlignment\Aiding\StandardStatus.cs" />
+    <Compile Include="DeprecatedAlignment\AlignmentAspect.cs" />
+    <Compile Include="DeprecatedAlignment\AlignmentMachine.cs" />
+    <Compile Include="DeprecatedAlignment\AlignmnetHelp.cs" />
+    <Compile Include="DeprecatedAlignment\ClearanceStandard.cs" />
+    <Compile Include="DeprecatedAlignment\CommonPreferences.cs" />
+    <Compile Include="DeprecatedAlignment\DesignService.cs" />
+    <Compile Include="DeprecatedAlignment\IO\AquilaCoordinatesDan.cs" />
+    <Compile Include="DeprecatedAlignment\IO\AquilaHonigbergSurvey.cs" />
+    <Compile Include="DeprecatedAlignment\IO\BuchkinIrregPickets.cs" />
+    <Compile Include="DeprecatedAlignment\IO\CantingDesignTable.cs" />
+    <Compile Include="DeprecatedAlignment\IO\Csv.cs" />
+    <Compile Include="DeprecatedAlignment\IO\CsvIrregPickets.cs" />
+    <Compile Include="DeprecatedAlignment\IO\CsvPlanSurvey.cs" />
+    <Compile Include="DeprecatedAlignment\IO\DxfExport.cs" />
+    <Compile Include="DeprecatedAlignment\IO\FileFormatException.cs" />
+    <Compile Include="DeprecatedAlignment\IO\HonigbergXml.cs" />
+    <Compile Include="DeprecatedAlignment\IO\KapremAlignmentRestrictionSet.cs" />
+    <Compile Include="DeprecatedAlignment\IO\KapremCorvusTask.cs" />
+    <Compile Include="DeprecatedAlignment\IO\KapremPlanCsv.cs" />
+    <Compile Include="DeprecatedAlignment\IO\KapremProfileCsv.cs" />
+    <Compile Include="DeprecatedAlignment\IO\LandXml.cs" />
+    <Compile Include="DeprecatedAlignment\IO\PicketageAltitudeRecord.cs" />
+    <Compile Include="DeprecatedAlignment\IO\PlanCoordinatesTable.cs" />
+    <Compile Include="DeprecatedAlignment\IO\PlanElementsTable.cs" />
+    <Compile Include="DeprecatedAlignment\IO\PlanSurveyReader.cs" />
+    <Compile Include="DeprecatedAlignment\IO\SimpleDxf.cs" />
+    <Compile Include="DeprecatedAlignment\IO\SlaviaKrv.cs" />
+    <Compile Include="DeprecatedAlignment\IO\SlaviaRailheadProfile.cs" />
+    <Compile Include="DeprecatedAlignment\ISettingsSubscriber.cs" />
+    <Compile Include="DeprecatedAlignment\Model\AlignmentProject.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Canting\CantingSpeeds.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Canting\CantingSpeedType.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Canting\ISpeedLimitation.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Canting\ISpeedLimitationExtensions.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Canting\TrackSpeeds.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Engine\DomainedList.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Engine\IChangeEventObservable.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Environment\NeighbourLineLevelDifference.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Environment\TrackProjection.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Environment\TracksEnvironment.cs" />
+    <Compile Include="DeprecatedAlignment\Model\IPicketagedLine.cs" />
+    <Compile Include="DeprecatedAlignment\Model\IPicketagePointObject.cs" />
+    <Compile Include="DeprecatedAlignment\Model\IPicketageRangeObject.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\CurveCantingExtensions.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\CurveCantingFeature.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\CurveSpecialSpeedsFeature.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\CurveSpeedsExtension.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\EasementLegthFixationContstraint.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\ElementConstraint.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\ElementEasementLegthFixationExtension.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\FixedElementConstraint.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\FixedElementConstraintExtension.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\FixedStraightConstraint.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\PointworkBendExtensions.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\PointworkPicketageFixationContstraint.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Features\SurveyBasedFixedStraightConstraint.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\PlanElementInfo.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\PointworkBend.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\PointworkMark.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\PointworkModel.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\PointworkOrientation.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\AroundTrackSpaceType.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\ClearanceLimitType.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\ClearanceObjectHeight.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\CurveSide.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\IntertrackMeasument.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\ObjectClearance.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\PlanRestrictionSet.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\ShiftGate.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\Standards\IntertrackDesignStandardsTable.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\Standards\IntertrackOperationalStandardsTable.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\Standards\IntertrackStandards.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\Standards\PolesClearanceStdsTable.cs" />
+    <Compile Include="DeprecatedAlignment\Model\Plan\Restrictions\Standards\TrackExtesions.cs" />
+    <Compile Include="DeprecatedAlignment\Model\TrackAlignment.cs" />
+    <Compile Include="DeprecatedAlignment\Model\TrainKindsSpeedSet.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\LevelDifference.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\ProfileDesign.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\ProfileDesignExtestions.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\ProfileSurvey.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\ProfileSurveyExtestions.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\Restrictions\AltitudeRangeRestriction.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\Restrictions\BallastRestriction.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\Restrictions\ContactWireRestriction.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\Restrictions\LevelDifferenceRestriction.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\Restrictions\ProfileRestrictionSet.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\Restrictions\ProfileRestrictionSetExtensions.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\Restrictions\SeparatedFormationInfo.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\Restrictions\VerticalShiftGate.cs" />
+    <Compile Include="DeprecatedAlignment\Model\VerticalProfile\TrackVerticalShifts.cs" />
+    <Compile Include="DeprecatedAlignment\PicketageRoundingConvertor.cs" />
+    <Compile Include="DeprecatedAlignment\PlanSettings.cs" />
+    <Compile Include="DeprecatedAlignment\ProfileStandards.cs" />
+    <Compile Include="DeprecatedAlignment\Settings.cs" />
+    <Compile Include="DeprecatedAlignment\SettingsLocation.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\Honigberg\DataException.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\Honigberg\HonigbergSurvey.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\Honigberg\Skeleton.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\Honigberg\SkeletonBuilder.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\SmoothedPlanSurvey.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\SplineExtensions.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\SplineFitting.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\SurveyExtensions2.cs" />
+    <Compile Include="DeprecatedAlignment\Survey\SyntheticSamples.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\BeginUpdateEndUpdate.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\ChoiceMethod.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\ColorGradient.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\DoubleExpression.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\FloatDictionary.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\ForkBound.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\InputBox.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\KeyboardInfo.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\KeyStateInfo.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\LongProcess.cs" />
+    <Compile Include="DeprecatedAlignment\Utils\Sequence.cs" />
+    <Compile Include="DeprecatedAlignment\VerticalDirection.cs" />
+    <Compile Include="DeprecatedAlignment\View\BackImage.cs" />
+    <Compile Include="DeprecatedAlignment\View\Button.cs" />
+    <Compile Include="DeprecatedAlignment\View\ButtonState.cs" />
+    <Compile Include="DeprecatedAlignment\View\ColorBar.cs" />
+    <Compile Include="DeprecatedAlignment\View\CommonUI\Diagram\IPlanDesignDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\CommonUI\Diagram\ProblemsIndicationDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\CommonUI\Diagram\SurveyDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\HonigbergSurveyExtensions.cs" />
+    <Compile Include="DeprecatedAlignment\View\HonigbergSurveyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeprecatedAlignment\View\ImportActionMode.cs" />
+    <Compile Include="DeprecatedAlignment\View\IOneTrackAlignmentView.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\CustomShiftGateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Diagram\CantingEditableDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Diagram\PlanSurveyDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Diagram\TrackAlignmented\PlanShiftsDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Diagram\TrackAlignmented\SpeedColorBarDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Diagram\TrackLined\PlanDesignDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Diagram\TrackLined\PlanSchematicDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Diagram\TrackLined\ShiftsInfoDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Interaction\EditCurveCantAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Interaction\EditCurveSpecialSpeedsAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Interaction\EditCurveSpecialSpeedsActionGroup.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Interaction\PlanKeyboardNavigationScanario.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\Interaction\TrackCurvatureDiagramAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\PlanUI\PlanDesignViewSet.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\AltitudeCoordSpace.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\AltitudeGrid.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Diagram\EasementsRangesDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Diagram\NeighbourProfileSurveyDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Diagram\ProfileDesignDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Diagram\ProfileSchematicDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Diagram\ProfileSurveyDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Diagram\VerticalShiftsDiagram.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\INodeImage.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\ArrowKeysShiftsScenario.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\DeleteAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\EditChainSlopesCountAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\EditSlopeGradientAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\EditSlopeLengthAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\FixProfileSelectionAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\InsertNodeAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\InsertSlopeAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\ManageSlopeChainAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\ManageVerticalCurveAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\NodeDraggingScenario.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\OptimizeLocalyAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\RemoveGapAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\RoundGradientsAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\SetChainSlopeSectionLengthAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\SetNodeAltitudeAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\SetNodePicketageAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\SetVerticalCurveRadiusAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\SetVerticalShiftsScaleAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\Interaction\StartEditParamsScenario.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\ISlopeImage.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\ProfileDesignViewSet.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\ProfileSelection.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\RailheadsAltititudePointerLabelProvider.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProfileUI\VerticalShiftsCoordSpace.cs" />
+    <Compile Include="DeprecatedAlignment\View\ProjectBrowser.cs" />
+    <Compile Include="DeprecatedAlignment\View\SecondTracksUI\CreateNewSecondTrackDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeprecatedAlignment\View\SecondTracksUI\MakeSecondTrackAction.cs" />
+    <Compile Include="DeprecatedAlignment\View\SecondTracksUI\SelectIntertrackDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeprecatedAlignment\View\SecondTracksUI\ValueProfileLine.cs" />
+    <Compile Include="DeprecatedAlignment\View\StartButton.cs" />
+    <Compile Include="DeprecatedAlignment\View\TopViewCoordSpace.cs" />
+    <Compile Include="DeprecatedAlignment\View\TrackElementInfo.cs" />
+    <Compile Include="DeprecatedAlignment\YesNoConvertor.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\ArtificialDefects\AkimaSpline.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\ArtificialDefects\LateralErrors.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\ArtificialDefects\LineDefect.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Curves\CurveCompareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Curves\CurveCompareForm.Designer.cs">
+      <DependentUpon>CurveCompareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Curves\CurvePassport.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Curves\CurvePassportData.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Geometry\PolyLine.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Passporting\AsuPPassportRecord.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Passporting\DouglasPeucker.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Passporting\PicketageElectronicMark.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Passporting\PicketLineExtension.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Curves\PassportsDiagramPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Curves\PassportsDiagramPanel.Designer.cs">
+      <DependentUpon>PassportsDiagramPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Reporting\ComplexCurveExtensions.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Reporting\CurveCard.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Reporting\CurveCardDiagramSet.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Reporting\CurveDisorderIndexValue.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Reporting\DiagramPoint.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Reporting\SapsanSpeeds.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\CardInfoReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\CardInfoReport.Designer.cs">
+      <DependentUpon>CardInfoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\CurveModelCardReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\CurveModelCardReport.Designer.cs">
+      <DependentUpon>CurveModelCardReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\CurveParametersReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\CurveParametersReport.Designer.cs">
+      <DependentUpon>CurveParametersReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\DiagramMark.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\SubcurveParametersReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\Reports\SubcurveParametersReport.Designer.cs">
+      <DependentUpon>SubcurveParametersReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeprecatedCurvePassportWorks\RigidShiftsTestScenario.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\SpecialGeometry\Optimizer.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\SpecialGeometry\RigidFitting.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\SpecialGeometry\RigidTransformations.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\SpecialGeometry\TrackLineShape.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\TableFile.cs" />
+    <Compile Include="DeprecatedCurvePassportWorks\WagonDataMachine.cs" />
+    <Compile Include="IO\LiveInteraction\CustomMessageFilter.cs" />
+    <Compile Include="IO\LiveInteraction\DataSection.cs" />
+    <Compile Include="IO\LiveInteraction\FileDirection.cs" />
+    <Compile Include="IO\LiveInteraction\LiveInteropLink.cs" />
+    <Compile Include="IO\LiveInteraction\NativeWindowListener.cs" />
+    <Compile Include="IO\LiveInteraction\TrackDataSectionRef.cs" />
+    <Compile Include="IO\LiveInteraction\WindowsUtilities.cs" />
+    <Compile Include="IO\ProjectImport.cs" />
+    <Compile Include="IrregularPicketsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="IO\ProjectImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCurve.cs" />
+    <Compile Include="SettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsPresetsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StationedValueProfileExtensions.cs" />
+    <Compile Include="Testing\DistanceMeter.cs" />
+    <Compile Include="Testing\Equation.cs" />
+    <Compile Include="Testing\ExportCantingDesignTable.cs" />
+    <Compile Include="Testing\ExportPlanShiftsToCsvAction.cs" />
+    <Compile Include="Testing\ExportPlanSurveyAction.cs" />
+    <Compile Include="Testing\ExportPlanToDxfAction.cs" />
+    <Compile Include="Testing\ExportPlanToKapremCsvAction.cs" />
+    <Compile Include="Testing\ExportProfileDesignToCsv.cs" />
+    <Compile Include="Testing\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing\PlanElementTableToClipboardAction.cs" />
+    <Compile Include="Testing\PlanExportAction.cs" />
+    <Compile Include="Testing\SagSurvey.cs" />
+    <Compile Include="Testing\SagSurveyExtensions.cs" />
+    <Compile Include="Testing\ShiftsToClipboardAction.cs" />
+    <Compile Include="Testing\TrainingDrawings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\SecretKeySequence.cs" />
+    <EmbeddedResource Include="DeprecatedAlignment\View\HonigbergSurveyForm.resx">
+      <DependentUpon>HonigbergSurveyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedAlignment\View\PlanUI\CustomShiftGateForm.resx">
+      <DependentUpon>CustomShiftGateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedAlignment\View\SecondTracksUI\CreateNewSecondTrackDlg.resx">
+      <DependentUpon>CreateNewSecondTrackDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedAlignment\View\SecondTracksUI\SelectIntertrackDlg.resx">
+      <DependentUpon>SelectIntertrackDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedCurvePassportWorks\Curves\CurveCompareForm.resx">
+      <DependentUpon>CurveCompareForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedCurvePassportWorks\Curves\PassportsDiagramPanel.resx">
+      <DependentUpon>PassportsDiagramPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedCurvePassportWorks\Reports\CardInfoReport.resx">
+      <DependentUpon>CardInfoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedCurvePassportWorks\Reports\CurveModelCardReport.resx">
+      <DependentUpon>CurveModelCardReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedCurvePassportWorks\Reports\CurveParametersReport.resx">
+      <DependentUpon>CurveParametersReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeprecatedCurvePassportWorks\Reports\SubcurveParametersReport.resx">
+      <DependentUpon>SubcurveParametersReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IrregularPicketsForm.resx">
+      <DependentUpon>IrregularPicketsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IO\ProjectImportForm.resx">
+      <DependentUpon>ProjectImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SettingsDialog.resx">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsPresetsDialog.resx">
+      <DependentUpon>SettingsPresetsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing\TrainingDrawings.resx">
+      <DependentUpon>TrainingDrawings.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intech.Common.Controls\Intech.Common.Controls.csproj">
+      <Project>{67B0A02A-E742-4ED8-8824-60CBE5F06B62}</Project>
+      <Name>Intech.Common.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intech.Common.Windows\Intech.Common.Windows.csproj">
+      <Project>{6E0F6D80-5C47-43E2-B09A-D71CC748FBD7}</Project>
+      <Name>Intech.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INTECH.Common\Intech.Common.csproj">
+      <Project>{d977c536-fe1f-431d-a17f-c358bf874dc2}</Project>
+      <Name>Intech.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Algorithms\KSPDIGT.Base.Algorithms.csproj">
+      <Project>{1f06a782-ae33-4244-b3e3-6ae00252c1bf}</Project>
+      <Name>KSPDIGT.Base.Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Common\KSPDIGT.Base.Common.csproj">
+      <Project>{b64afe83-045b-4f8a-913c-d5aa2704640d}</Project>
+      <Name>KSPDIGT.Base.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.DataContracts\KSPDIGT.Base.DataContracts.csproj">
+      <Project>{4abe9f10-671e-4e25-9ba4-a62e19230e5d}</Project>
+      <Name>KSPDIGT.Base.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.IL.ServiceContracts\KSPDIGT.IL.ServiceContracts.csproj">
+      <Project>{0c89cc33-21d1-48df-a043-d2437b7701e2}</Project>
+      <Name>KSPDIGT.IL.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.Track\KSPDIGT.Base.Track.csproj">
+      <Project>{b4424462-9fa9-41f0-ae22-2d6614e48253}</Project>
+      <Name>KSPDIGT.Base.Track</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Base.UI\KSPDIGT.Base.UI.csproj">
+      <Project>{fe6d3b2c-edfb-4143-b4cf-bc5ed3b82362}</Project>
+      <Name>KSPDIGT.Base.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSPDIGT.Client.Engine.DRM\KSPDIGT.Client.Engine.DRM.csproj">
+      <Project>{571da16b-3cf8-4f22-90b1-46b836c245a9}</Project>
+      <Name>KSPDIGT.Client.Engine.DRM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

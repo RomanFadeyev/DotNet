@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B17EB4EE-75AE-4777-8F53-FCDCFF50CEF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.FLC.DefaultChecker.v20131105</RootNamespace>
+    <AssemblyName>KSPDIGT.FLC.DefaultChecker.v20131105</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common\CheckHelper.cs">
+      <Link>FromCommon\CheckHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\Configuration\GDBObjectMetadata.cs">
+      <Link>FromCommon\GDBObjectMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\DefaultConstants.cs">
+      <Link>FromCommon\DefaultConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\Exceptions.cs">
+      <Link>FromCommon\Exceptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\Extensions.cs">
+      <Link>FromCommon\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\GeneralChecks\AxisAndRailsCheckerGeneral.cs">
+      <Link>FromCommon\AxisAndRailsCheckerGeneral.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\GeneralChecks\CrossingGeometryCheckerGeneral.cs">
+      <Link>FromCommon\CrossingGeometryCheckerGeneral.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\GeneralChecks\DuplicateCheckerGeneral.cs">
+      <Link>FromCommon\DuplicateCheckerGeneral.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\GeneralChecks\FixedStationingCheckerGeneral.cs">
+      <Link>FromCommon\FixedStationingCheckerGeneral.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\GeneralChecks\PerforatingStationingCheckerGeneral.cs">
+      <Link>FromCommon\PerforatingStationingCheckerGeneral.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\GeneralChecks\PointOfInterestCheckerGeneral.cs">
+      <Link>FromCommon\PointOfInterestCheckerGeneral.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\GeneralChecks\StationingCheckerGeneral.cs">
+      <Link>FromCommon\StationingCheckerGeneral.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\Stationing\StationingInfo.cs">
+      <Link>FromCommon\StationingInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\Stationing\StationingTypes.cs">
+      <Link>FromCommon\StationingTypes.cs</Link>
+    </Compile>
+    <Compile Include="Configuration\GDB.cs" />
+    <Compile Include="Configuration\GDB.FeatureClasses.cs" />
+    <Compile Include="Configuration\GDB.FeatureClasses.GEO.cs" />
+    <Compile Include="PerforatingStationingChecker.cs" />
+    <Compile Include="CrossingGeometryChecker.cs" />
+    <Compile Include="DuplicateChecker.cs" />
+    <Compile Include="FixedStationingChecker.cs" />
+    <Compile Include="PointOfInterestChecker.cs" />
+    <Compile Include="AxisAndRailsChecker.cs" />
+    <Compile Include="StationingChecker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KSPDIGT.FLC.Common\KSPDIGT.FLC.Common.csproj">
+      <Project>{368F02EA-0C8A-4779-A15D-DBBED9F490B2}</Project>
+      <Name>KSPDIGT.FLC.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

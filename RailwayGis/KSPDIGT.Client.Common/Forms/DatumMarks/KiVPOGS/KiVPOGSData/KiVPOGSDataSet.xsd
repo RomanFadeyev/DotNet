@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="KiVPOGSDataSet" targetNamespace="http://tempuri.org/KiVPOGSDataSet.xsd" xmlns:mstns="http://tempuri.org/KiVPOGSDataSet.xsd" xmlns="http://tempuri.org/KiVPOGSDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="KiVPOGSDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="KiVPOGSDataSet" msprop:Generator_UserDSName="KiVPOGSDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="KiVPOGS" msprop:Generator_TableClassName="KiVPOGSDataTable" msprop:Generator_TableVarName="tableKiVPOGS" msprop:Generator_TablePropName="KiVPOGS" msprop:Generator_RowDeletingName="KiVPOGSRowDeleting" msprop:Generator_UserTableName="KiVPOGS" msprop:Generator_RowChangingName="KiVPOGSRowChanging" msprop:Generator_RowEvHandlerName="KiVPOGSRowChangeEventHandler" msprop:Generator_RowDeletedName="KiVPOGSRowDeleted" msprop:Generator_RowEvArgName="KiVPOGSRowChangeEvent" msprop:Generator_RowChangedName="KiVPOGSRowChanged" msprop:Generator_RowClassName="KiVPOGSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Num" msprop:Generator_ColumnVarNameInTable="columnNum" msprop:Generator_ColumnPropNameInRow="Num" msprop:Generator_ColumnPropNameInTable="NumColumn" msprop:Generator_UserColumnName="Num" type="xs:int" minOccurs="0" />
+              <xs:element name="DatumNum" msprop:Generator_ColumnVarNameInTable="columnDatumNum" msprop:Generator_ColumnPropNameInRow="DatumNum" msprop:Generator_ColumnPropNameInTable="DatumNumColumn" msprop:Generator_UserColumnName="DatumNum" type="xs:string" minOccurs="0" />
+              <xs:element name="ClsType" msprop:Generator_ColumnVarNameInTable="columnClsType" msprop:Generator_ColumnPropNameInRow="ClsType" msprop:Generator_ColumnPropNameInTable="ClsTypeColumn" msprop:Generator_UserColumnName="ClsType" type="xs:string" minOccurs="0" />
+              <xs:element name="ClsCenterPosType" msprop:Generator_ColumnVarNameInTable="columnClsCenterPosType" msprop:Generator_ColumnPropNameInRow="ClsCenterPosType" msprop:Generator_ColumnPropNameInTable="ClsCenterPosTypeColumn" msprop:Generator_UserColumnName="ClsCenterPosType" type="xs:string" minOccurs="0" />
+              <xs:element name="DatumKm" msprop:Generator_ColumnVarNameInTable="columnDatumKm" msprop:Generator_ColumnPropNameInRow="DatumKm" msprop:Generator_ColumnPropNameInTable="DatumKmColumn" msprop:Generator_UserColumnName="DatumKm" type="xs:string" minOccurs="0" />
+              <xs:element name="DatumPk" msprop:Generator_ColumnVarNameInTable="columnDatumPk" msprop:Generator_ColumnPropNameInRow="DatumPk" msprop:Generator_ColumnPropNameInTable="DatumPkColumn" msprop:Generator_UserColumnName="DatumPk" type="xs:string" minOccurs="0" />
+              <xs:element name="DatumPlus" msprop:Generator_ColumnVarNameInTable="columnDatumPlus" msprop:Generator_ColumnPropNameInRow="DatumPlus" msprop:Generator_ColumnPropNameInTable="DatumPlusColumn" msprop:Generator_UserColumnName="DatumPlus" type="xs:decimal" minOccurs="0" />
+              <xs:element name="X" msprop:Generator_ColumnVarNameInTable="columnX" msprop:Generator_ColumnPropNameInRow="X" msprop:Generator_ColumnPropNameInTable="XColumn" msprop:Generator_UserColumnName="X" type="xs:double" minOccurs="0" />
+              <xs:element name="Y" msprop:Generator_ColumnVarNameInTable="columnY" msprop:Generator_ColumnPropNameInRow="Y" msprop:Generator_ColumnPropNameInTable="YColumn" msprop:Generator_UserColumnName="Y" type="xs:double" minOccurs="0" />
+              <xs:element name="H" msprop:Generator_ColumnVarNameInTable="columnH" msprop:Generator_ColumnPropNameInRow="H" msprop:Generator_ColumnPropNameInTable="HColumn" msprop:Generator_UserColumnName="H" type="xs:double" minOccurs="0" />
+              <xs:element name="DatumDescrPlace" msprop:Generator_ColumnVarNameInTable="columnDatumDescrPlace" msprop:Generator_ColumnPropNameInRow="DatumDescrPlace" msprop:Generator_ColumnPropNameInTable="DatumDescrPlaceColumn" msprop:Generator_UserColumnName="DatumDescrPlace" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IDs" msprop:Generator_TableClassName="IDsDataTable" msprop:Generator_TableVarName="tableIDs" msprop:Generator_TablePropName="IDs" msprop:Generator_RowDeletingName="IDsRowDeleting" msprop:Generator_UserTableName="IDs" msprop:Generator_RowChangingName="IDsRowChanging" msprop:Generator_RowEvHandlerName="IDsRowChangeEventHandler" msprop:Generator_RowDeletedName="IDsRowDeleted" msprop:Generator_RowEvArgName="IDsRowChangeEvent" msprop:Generator_RowChangedName="IDsRowChanged" msprop:Generator_RowClassName="IDsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" />
+              <xs:element name="NoteUp" msprop:Generator_ColumnVarNameInTable="columnNoteUp" msprop:Generator_ColumnPropNameInRow="NoteUp" msprop:Generator_ColumnPropNameInTable="NoteUpColumn" msprop:Generator_UserColumnName="NoteUp" type="xs:string" minOccurs="0" />
+              <xs:element name="NoteDown" msprop:Generator_ColumnVarNameInTable="columnNoteDown" msprop:Generator_ColumnPropNameInRow="NoteDown" msprop:Generator_ColumnPropNameInTable="NoteDownColumn" msprop:Generator_UserColumnName="NoteDown" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="IDsKey1">
+      <xs:selector xpath=".//mstns:IDs" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="IDs_KiVPOGS" msdata:parent="IDs" msdata:child="KiVPOGS" msdata:parentkey="ID" msdata:childkey="ID" msprop:Generator_UserChildTable="KiVPOGS" msprop:Generator_ChildPropName="GetKiVPOGSRows" msprop:Generator_UserParentTable="IDs" msprop:Generator_UserRelationName="IDs_KiVPOGS" msprop:Generator_RelationVarName="relationIDs_KiVPOGS" msprop:Generator_ParentPropName="IDsRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

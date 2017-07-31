@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8c3930f4-0dda-43ce-a057-b6921f1fbc42" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.144.13.156/TCService/Implementation.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Implementation.xsd" MetadataType="Schema" ID="1ab2c2f4-a752-40fd-9feb-00e014264a3f" SourceId="1" SourceUrl="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd0" />
+    <MetadataFile FileName="Implementation1.xsd" MetadataType="Schema" ID="06078ec8-3faf-41c3-83ee-d8bab639138c" SourceId="1" SourceUrl="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="3be20e58-c35b-46be-99df-9669b51f08c6" SourceId="1" SourceUrl="http://10.144.13.156/TCService/Implementation.svc?wsdl" />
+    <MetadataFile FileName="Implementation2.xsd" MetadataType="Schema" ID="827fbf9f-8c93-48ce-bfce-7af8ec208857" SourceId="1" SourceUrl="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd4" />
+    <MetadataFile FileName="Implementation.disco" MetadataType="Disco" ID="b609a5f9-8515-4d90-8f06-34206843c1b7" SourceId="1" SourceUrl="http://10.144.13.156/TCService/Implementation.svc?disco" />
+    <MetadataFile FileName="Implementation3.xsd" MetadataType="Schema" ID="c708ce78-7d92-49c1-b04b-4230441ce7a1" SourceId="1" SourceUrl="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd2" />
+    <MetadataFile FileName="Implementation4.xsd" MetadataType="Schema" ID="e72765ee-ac61-46c0-9aa0-4250f7e2fbbe" SourceId="1" SourceUrl="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

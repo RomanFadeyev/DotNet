@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Same User (Ru-Board) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="DATUMS">
+		<xs:annotation>
+			<xs:documentation>Сведения о реперах</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DATUM" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Сведение о репере</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="NUM">
+								<xs:annotation>
+									<xs:documentation>Номер репера</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="30"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="REC_LIFELINE_GID" type="tGID">
+								<xs:annotation>
+									<xs:documentation>GID жизненного цикла</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CLS_CENTER_POS_TYPE" type="tCLSX" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Тип закрепления центра по классификатору</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CLS_TYPE" type="tCLSX" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Тип репера по классификатору</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ASUP_DOR_KOD" type="tASUP">
+								<xs:annotation>
+									<xs:documentation>Идентификатор дороги в АСУ-П</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ASUP_DIST_ID" type="tASUP" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Идентификатор дистанции в АСУ-П</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ASUP_DIST_NAME" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Наименование дистанции в АСУ-П</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ASUP_PUTGL_ID" type="tASUP" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Идентификатор пути в АСУ-П</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="AREA" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Участок работ</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="KM" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Километр</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PK" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Пикет</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PLUS" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Плюс</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="DESCR_PLACE" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Описание местоположения</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CLS_PRIME_ORG" type="tCLSX" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Организация, заказавшая работы (генподрядчик)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CLS_SUB_ORG" type="tCLSX" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Организация, выполнившая работы (субподрядчик)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="FOUND_YEAR" type="xs:int" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Год закладки</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="COORDS" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Координаты репера</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="COORD" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Координата репера</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="COORD_SYS">
+														<xs:annotation>
+															<xs:documentation>Система координат</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="NAME">
+																	<xs:annotation>
+																		<xs:documentation>Наименование</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string"/>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="TYPE">
+																	<xs:annotation>
+																		<xs:documentation>Тип</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:byte">
+																			<xs:enumeration value="0"/>
+																			<xs:enumeration value="1"/>
+																			<xs:enumeration value="2"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="X" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>X (Пространственная прямоугольная)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="Y" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>Y (Пространственная прямоугольная)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="Z" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>Z (Пространственная прямоугольная)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="B" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>B (Геодезическая)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="L" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>L (Геодезическая)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="H" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>H (Геодезическая)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="XS" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>XS (Плоская прямоугольная)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="YS" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>YS (Плоская прямоугольная)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="HS" type="tCOORDINATE">
+														<xs:annotation>
+															<xs:documentation>HS (Плоская прямоугольная)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="IMAGES" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Образы</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="IMAGE" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Образы</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="FILENAME">
+														<xs:annotation>
+															<xs:documentation>Наименование файла</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string"/>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="TYPE">
+														<xs:annotation>
+															<xs:documentation>Тип</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:byte">
+																<xs:enumeration value="0"/>
+																<xs:enumeration value="1"/>
+																<xs:enumeration value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="RINEXES" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Показания RINEX</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="RINEX" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Показание RINEX</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="FILENAME">
+														<xs:annotation>
+															<xs:documentation>Имя файла с данными</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string"/>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="MEASURE_DATE" type="xs:date" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Дата съемки</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="ANTENNA_TYPE" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Тип используемой антенны</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string"/>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ANTENNA_H_POS" type="xs:double" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Высота установки антены (относительно репера), м</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="NOTES" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Примечания</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string"/>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="STATUS">
+								<xs:annotation>
+									<xs:documentation>Статус:
+0.Действующий
+1.Заявлен утраченным
+2.Утраченный
+3.Аннулированный
+4.Заявлен на восстановление</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:enumeration value="0"/>
+										<xs:enumeration value="1"/>
+										<xs:enumeration value="2"/>
+										<xs:enumeration value="3"/>
+										<xs:enumeration value="4"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:all>
+						<xs:attribute name="GID" type="tGID" use="required">
+							<xs:annotation>
+								<xs:documentation>GID репера</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="tASUP">
+		<xs:annotation>
+			<xs:documentation>Ссылка на АСУ-П</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	<xs:simpleType name="tCLS">
+		<xs:annotation>
+			<xs:documentation>Ссылка на классификатор</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="preserve"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tCOORDINATE">
+		<xs:annotation>
+			<xs:documentation>Координата</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="tGID">
+		<xs:annotation>
+			<xs:documentation>GID</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="40"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="tCLSX">
+		<xs:sequence>
+			<xs:element name="CODE">
+				<xs:annotation>
+					<xs:documentation>Классификационный код</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NAME">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

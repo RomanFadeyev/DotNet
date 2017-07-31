@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21DFAEB1-7331-432E-A692-1D605F81DB48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KSPDIGT.WssLinks</RootNamespace>
+    <AssemblyName>KSPDIGT.WssLinks</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\..\Libraries\Actual\ArcGIS\arcgisruntime10.2.7\Esri.ArcGISRuntime.dll">
+      <Link>Esri.ArcGISRuntime.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\ArcGIS\ESRI.ArcGIS.Version.dll">
+      <Link>ESRI.ArcGIS.Version.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\GProfile\GradeProfilePainter.dll">
+      <Link>GradeProfilePainter.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\Javascript\Noesis.Javascript.dll">
+      <Link>Noesis.Javascript.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\MathNet.Numerics\MathNet.Numerics.dll">
+      <Link>MathNet.Numerics.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\BruTile.Desktop.dll">
+      <Link>BruTile.Desktop.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\BruTile.dll">
+      <Link>BruTile.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\Common.Logging.dll">
+      <Link>Common.Logging.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\GeoAPI.dll">
+      <Link>GeoAPI.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\NetTopologySuite.dll">
+      <Link>NetTopologySuite.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\Newtonsoft.Json.dll">
+      <Link>Newtonsoft.Json.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\Newtonsoft.Json.xml">
+      <Link>Newtonsoft.Json.xml</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\PowerCollections.dll">
+      <Link>PowerCollections.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\ProjNet.dll">
+      <Link>ProjNet.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\SharpMap.dll">
+      <Link>SharpMap.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\SharpMap\SharpMap.UI.dll">
+      <Link>SharpMap.UI.dll</Link>
+    </Content>
+    <Content Include="..\..\Libraries\Actual\ZedGraph\ZedGraph.dll">
+      <Link>ZedGraph.dll</Link>
+    </Content>
+    <Content Include="KSPDIGT.DrawProfile.dll" />
+    <Content Include="KSPDIGT.DrawProfile.pdb" />
+    <Content Include="KSPDIGT.DrawProfile.xml" />
+    <Content Include="sqlceme35.dll" />
+    <Content Include="sqlceqp35.dll" />
+    <Content Include="sqlcese35.dll" />
+    <Content Include="System.Data.SqlServerCe.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Empty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\KSPDIGT.v2.sln.DotSettings">
+      <Link>KSPDIGT.v2.sln.DotSettings</Link>
+    </None>
+    <None Include="..\SolutionFiles\BatchFiles\license_service_install.cmd">
+      <Link>license_service_install.cmd</Link>
+    </None>
+    <None Include="..\SolutionFiles\BatchFiles\license_service_uninstall.cmd">
+      <Link>license_service_uninstall.cmd</Link>
+    </None>
+    <None Include="..\SolutionFiles\BatchFiles\prepare_license.cmd">
+      <Link>prepare_license.cmd</Link>
+    </None>
+    <None Include="..\SolutionFiles\LicenseSettings\KSPDIGT.License.config">
+      <Link>KSPDIGT.License.config</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

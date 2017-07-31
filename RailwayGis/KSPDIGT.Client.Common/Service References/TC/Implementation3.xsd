@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TCService.Interface" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TCService.Interface" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TCService" />
+  <xs:import schemaLocation="http://10.144.13.156/TCService/Implementation.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="LoginResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idUser" type="xs:int" />
+      <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginResult" nillable="true" type="tns:LoginResult" />
+  <xs:complexType name="TaskSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="route" nillable="true" type="tns:RouteDescription" />
+      <xs:element minOccurs="0" name="tasks" nillable="true" type="tns:ArrayOfTask" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="workDate" nillable="true" type="q1:WorkDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskSet" nillable="true" type="tns:TaskSet" />
+  <xs:complexType name="RouteDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data" nillable="true" type="tns:ArrayOfRoutePartDescription" />
+      <xs:element minOccurs="0" name="dataOverride" nillable="true" type="tns:ArrayOfCustomWayDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RouteDescription" nillable="true" type="tns:RouteDescription" />
+  <xs:complexType name="ArrayOfRoutePartDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoutePartDescription" nillable="true" type="tns:RoutePartDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoutePartDescription" nillable="true" type="tns:ArrayOfRoutePartDescription" />
+  <xs:complexType name="RoutePartDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="kmk" type="xs:int" />
+      <xs:element minOccurs="0" name="kmn" type="xs:int" />
+      <xs:element minOccurs="0" name="mk" type="xs:int" />
+      <xs:element minOccurs="0" name="mn" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+      <xs:element minOccurs="0" name="sid1" type="xs:int" />
+      <xs:element minOccurs="0" name="sid2" type="xs:int" />
+      <xs:element minOccurs="0" name="sname1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sname2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoutePartDescription" nillable="true" type="tns:RoutePartDescription" />
+  <xs:complexType name="ArrayOfCustomWayDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomWayDescription" nillable="true" type="tns:CustomWayDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomWayDescription" nillable="true" type="tns:ArrayOfCustomWayDescription" />
+  <xs:complexType name="CustomWayDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="attachment" nillable="true" type="tns:CustomWayAttachment" />
+      <xs:element minOccurs="0" name="elements" nillable="true" type="tns:ArrayOfCustomWayElement" />
+      <xs:element minOccurs="0" name="stations" nillable="true" type="tns:ArrayOfCustomStationAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomWayDescription" nillable="true" type="tns:CustomWayDescription" />
+  <xs:complexType name="CustomWayAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="direction" type="xs:boolean" />
+      <xs:element minOccurs="0" name="km" type="xs:int" />
+      <xs:element minOccurs="0" name="m" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomWayAttachment" nillable="true" type="tns:CustomWayAttachment" />
+  <xs:complexType name="ArrayOfCustomWayElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomWayElement" nillable="true" type="tns:CustomWayElement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomWayElement" nillable="true" type="tns:ArrayOfCustomWayElement" />
+  <xs:complexType name="CustomWayElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="i" type="xs:double" />
+      <xs:element minOccurs="0" name="length" type="xs:int" />
+      <xs:element minOccurs="0" name="r" type="xs:short" />
+      <xs:element minOccurs="0" name="vFreight" type="xs:short" />
+      <xs:element minOccurs="0" name="vLocal" type="xs:short" />
+      <xs:element minOccurs="0" name="vPassenger" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomWayElement" nillable="true" type="tns:CustomWayElement" />
+  <xs:complexType name="ArrayOfCustomStationAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomStationAttachment" nillable="true" type="tns:CustomStationAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomStationAttachment" nillable="true" type="tns:ArrayOfCustomStationAttachment" />
+  <xs:complexType name="CustomStationAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="position" type="xs:int" />
+      <xs:element minOccurs="0" name="sid" type="xs:int" />
+      <xs:element minOccurs="0" name="stopTimeSec" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomStationAttachment" nillable="true" type="tns:CustomStationAttachment" />
+  <xs:complexType name="ArrayOfTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTask" nillable="true" type="tns:ArrayOfTask" />
+  <xs:complexType name="Task">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="allowFastWarnings" type="xs:boolean" />
+      <xs:element minOccurs="0" name="calcOptions" nillable="true" type="tns:CalcOptions" />
+      <xs:element minOccurs="0" name="color" nillable="true" type="tns:TaskColor" />
+      <xs:element minOccurs="0" name="defSpeedPrm" nillable="true" type="tns:DefaultSpeedParam" />
+      <xs:element minOccurs="0" name="energyPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="fuelPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="initialSpeed" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="powerZones" nillable="true" type="tns:ArrayOfPowerZone" />
+      <xs:element minOccurs="0" name="schedule" nillable="true" type="tns:ArrayOfSchedPart" />
+      <xs:element minOccurs="0" name="scheduleAffectsBehaviour" type="xs:boolean" />
+      <xs:element minOccurs="0" name="start" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="temperature" type="xs:int" />
+      <xs:element minOccurs="0" name="train" nillable="true" type="tns:Train" />
+      <xs:element minOccurs="0" name="warnings" nillable="true" type="tns:ArrayOfWarning" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+  <xs:complexType name="CalcOptions">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="speedType" type="q2:SpeedOrderType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalcOptions" nillable="true" type="tns:CalcOptions" />
+  <xs:complexType name="TaskColor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="B" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="G" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="R" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskColor" nillable="true" type="tns:TaskColor" />
+  <xs:complexType name="DefaultSpeedParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="speed" type="xs:int" />
+      <xs:element minOccurs="0" name="width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DefaultSpeedParam" nillable="true" type="tns:DefaultSpeedParam" />
+  <xs:complexType name="ArrayOfPowerZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PowerZone" nillable="true" type="tns:PowerZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPowerZone" nillable="true" type="tns:ArrayOfPowerZone" />
+  <xs:complexType name="PowerZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="kmk" type="xs:int" />
+      <xs:element minOccurs="0" name="kmn" type="xs:int" />
+      <xs:element minOccurs="0" name="mk" type="xs:int" />
+      <xs:element minOccurs="0" name="mn" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+      <xs:element minOccurs="0" name="power" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PowerZone" nillable="true" type="tns:PowerZone" />
+  <xs:complexType name="ArrayOfSchedPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SchedPart" nillable="true" type="tns:SchedPart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSchedPart" nillable="true" type="tns:ArrayOfSchedPart" />
+  <xs:complexType name="SchedPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arrival" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="km" type="xs:int" />
+      <xs:element minOccurs="0" name="m" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+      <xs:element minOccurs="0" name="sid" type="xs:int" />
+      <xs:element minOccurs="0" name="stopTime" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SchedPart" nillable="true" type="tns:SchedPart" />
+  <xs:complexType name="Train">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="baseMoveType" type="q3:MoveTypeBase" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="defaulBehavType" type="q4:BehavType" />
+      <xs:element minOccurs="0" name="engine" nillable="true" type="tns:Engine" />
+      <xs:element minOccurs="0" name="groupWarningFactor" type="xs:double" />
+      <xs:element minOccurs="0" name="load" type="xs:double" />
+      <xs:element minOccurs="0" name="vagons" nillable="true" type="tns:Vagons" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Train" nillable="true" type="tns:Train" />
+  <xs:complexType name="Engine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="count" type="xs:double" />
+      <xs:element minOccurs="0" name="deter" type="xs:double" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="electroBreakType" type="q5:ElectroBreakType" />
+      <xs:element minOccurs="0" name="idEngine" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Engine" nillable="true" type="tns:Engine" />
+  <xs:complexType name="Vagons">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="axis" type="xs:int" />
+      <xs:element minOccurs="0" name="count" type="xs:int" />
+      <xs:element minOccurs="0" name="idVagon" type="xs:int" />
+      <xs:element minOccurs="0" name="l" type="xs:int" />
+      <xs:element minOccurs="0" name="m" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vagons" nillable="true" type="tns:Vagons" />
+  <xs:complexType name="ArrayOfWarning">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Warning" nillable="true" type="tns:Warning" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWarning" nillable="true" type="tns:ArrayOfWarning" />
+  <xs:complexType name="Warning">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateKd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateNd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="kmk" type="xs:int" />
+      <xs:element minOccurs="0" name="kmn" type="xs:int" />
+      <xs:element minOccurs="0" name="mk" type="xs:int" />
+      <xs:element minOccurs="0" name="mn" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+      <xs:element minOccurs="0" name="road" type="xs:short" />
+      <xs:element minOccurs="0" name="speed" type="xs:int" />
+      <xs:element minOccurs="0" name="wid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Warning" nillable="true" type="tns:Warning" />
+  <xs:complexType name="ArrayOfCalculationOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalculationOutput" nillable="true" type="tns:CalculationOutput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalculationOutput" nillable="true" type="tns:ArrayOfCalculationOutput" />
+  <xs:complexType name="CalculationOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="calcualtedAxis" type="xs:int" />
+      <xs:element minOccurs="0" name="calcualtedMass" type="xs:int" />
+      <xs:element minOccurs="0" name="engineP" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="moveType" type="q6:MoveType" />
+      <xs:element minOccurs="0" name="output" nillable="true" type="tns:ArrayOfOutputData" />
+      <xs:element minOccurs="0" name="vMid" type="xs:double" />
+      <xs:element minOccurs="0" name="vTeh" type="xs:double" />
+      <xs:element minOccurs="0" name="vUch" type="xs:double" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="wrnOnRoute" nillable="true" type="q7:ArrayOfint" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="wrnOnTime" nillable="true" type="q8:ArrayOfint" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="wrnOnUsage" nillable="true" type="q9:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalculationOutput" nillable="true" type="tns:CalculationOutput" />
+  <xs:complexType name="ArrayOfOutputData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutputData" nillable="true" type="tns:OutputData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOutputData" nillable="true" type="tns:ArrayOfOutputData" />
+  <xs:complexType name="OutputData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A" type="xs:double" />
+      <xs:element minOccurs="0" name="C" type="xs:double" />
+      <xs:element minOccurs="0" name="F" type="xs:double" />
+      <xs:element minOccurs="0" name="S" type="xs:double" />
+      <xs:element minOccurs="0" name="T" type="xs:double" />
+      <xs:element minOccurs="0" name="da" type="xs:double" />
+      <xs:element minOccurs="0" name="df" type="xs:double" />
+      <xs:element minOccurs="0" name="ds" type="xs:double" />
+      <xs:element minOccurs="0" name="dt" type="xs:double" />
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="kmk" type="xs:int" />
+      <xs:element minOccurs="0" name="kmmk" type="xs:int" />
+      <xs:element minOccurs="0" name="kmmn" type="xs:int" />
+      <xs:element minOccurs="0" name="kmn" type="xs:int" />
+      <xs:element minOccurs="0" name="mk" type="xs:int" />
+      <xs:element minOccurs="0" name="mn" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+      <xs:element minOccurs="0" name="sid1" type="xs:int" />
+      <xs:element minOccurs="0" name="sid2" type="xs:int" />
+      <xs:element minOccurs="0" name="srtDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="stopTimeEnd" type="xs:double" />
+      <xs:element minOccurs="0" name="stopTimeSrt" type="xs:double" />
+      <xs:element minOccurs="0" name="stopTimeTot" type="xs:double" />
+      <xs:element minOccurs="0" name="vMid" type="xs:double" />
+      <xs:element minOccurs="0" name="vSrt" type="xs:double" />
+      <xs:element minOccurs="0" name="vTeh" type="xs:double" />
+      <xs:element minOccurs="0" name="vUch" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutputData" nillable="true" type="tns:OutputData" />
+  <xs:complexType name="DrawSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdx" type="xs:float" />
+      <xs:element minOccurs="0" name="cdy" type="xs:float" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="compositeDrawModeTypes" nillable="true" type="q10:ArrayOfOutputType" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="compositeHintModeTypes" nillable="true" type="q11:ArrayOfOutputType" />
+      <xs:element minOccurs="0" name="createHintArray" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawBehaviour" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawCaption" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawCurves" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawLegendBox" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawSpeedBar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawSpeedLines" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawSpeedLinesMix" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawSpeedOneColor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawSpeedSignes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawUnselected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawVSrVzv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawVUchTeh" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawVert" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawVertKM" type="xs:boolean" />
+      <xs:element minOccurs="0" name="drawVertProf" type="xs:boolean" />
+      <xs:element minOccurs="0" name="height" type="xs:int" />
+      <xs:element minOccurs="0" name="index" type="xs:int" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="outType" type="q12:OutputType" />
+      <xs:element minOccurs="0" name="width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DrawSettings" nillable="true" type="tns:DrawSettings" />
+  <xs:complexType name="DrawResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hints" nillable="true" type="tns:ArrayOfHint" />
+      <xs:element minOccurs="0" name="scale" type="xs:int" />
+      <xs:element minOccurs="0" name="xMax" type="xs:int" />
+      <xs:element minOccurs="0" name="xPos" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DrawResult" nillable="true" type="tns:DrawResult" />
+  <xs:complexType name="ArrayOfHint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hint" nillable="true" type="tns:Hint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHint" nillable="true" type="tns:ArrayOfHint" />
+  <xs:complexType name="Hint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bottom" type="xs:float" />
+      <xs:element minOccurs="0" name="left" type="xs:float" />
+      <xs:element minOccurs="0" name="right" type="xs:float" />
+      <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="top" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hint" nillable="true" type="tns:Hint" />
+  <xs:complexType name="ArrayOfEngineMetaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EngineMetaInfo" nillable="true" type="tns:EngineMetaInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEngineMetaInfo" nillable="true" type="tns:ArrayOfEngineMetaInfo" />
+  <xs:complexType name="EngineMetaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idEngine" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" nillable="true" type="tns:ArrayOfSeriesMetaInfo" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="type" type="q13:EngineType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EngineMetaInfo" nillable="true" type="tns:EngineMetaInfo" />
+  <xs:complexType name="ArrayOfSeriesMetaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeriesMetaInfo" nillable="true" type="tns:SeriesMetaInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeriesMetaInfo" nillable="true" type="tns:ArrayOfSeriesMetaInfo" />
+  <xs:complexType name="SeriesMetaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idEngine" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="series" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeriesMetaInfo" nillable="true" type="tns:SeriesMetaInfo" />
+  <xs:complexType name="ArrayOfWayMetaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WayMetaInfo" nillable="true" type="tns:WayMetaInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWayMetaInfo" nillable="true" type="tns:ArrayOfWayMetaInfo" />
+  <xs:complexType name="WayMetaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="kmk" type="xs:int" />
+      <xs:element minOccurs="0" name="kmn" type="xs:int" />
+      <xs:element minOccurs="0" name="mk" type="xs:int" />
+      <xs:element minOccurs="0" name="mn" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+      <xs:element minOccurs="0" name="stations" nillable="true" type="tns:ArrayOfStationMetaInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WayMetaInfo" nillable="true" type="tns:WayMetaInfo" />
+  <xs:complexType name="ArrayOfStationMetaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StationMetaInfo" nillable="true" type="tns:StationMetaInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStationMetaInfo" nillable="true" type="tns:ArrayOfStationMetaInfo" />
+  <xs:complexType name="StationMetaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="km" type="xs:int" />
+      <xs:element minOccurs="0" name="m" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StationMetaInfo" nillable="true" type="tns:StationMetaInfo" />
+  <xs:complexType name="ArrayOfPriceFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceFactor" nillable="true" type="tns:PriceFactor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceFactor" nillable="true" type="tns:ArrayOfPriceFactor" />
+  <xs:complexType name="PriceFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bCh" nillable="true" type="xs:double" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="fuelType" type="q14:FuelType" />
+      <xs:element minOccurs="0" name="lCh" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="lKm" nillable="true" type="xs:double" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="moveType" type="q15:MoveType" />
+      <xs:element minOccurs="0" name="pCh" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="tE" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="tKm" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="vCh" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="vKm" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceFactor" nillable="true" type="tns:PriceFactor" />
+  <xs:complexType name="ArrayOfAnalyzePolygon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnalyzePolygon" nillable="true" type="tns:AnalyzePolygon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnalyzePolygon" nillable="true" type="tns:ArrayOfAnalyzePolygon" />
+  <xs:complexType name="AnalyzePolygon">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AnalyzeRange">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="links" nillable="true" type="tns:ArrayOfAnalyzeLink" />
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AnalyzePolygon" nillable="true" type="tns:AnalyzePolygon" />
+  <xs:complexType name="AnalyzeRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="km1" type="xs:int" />
+      <xs:element minOccurs="0" name="km2" type="xs:int" />
+      <xs:element minOccurs="0" name="m1" type="xs:int" />
+      <xs:element minOccurs="0" name="m2" type="xs:int" />
+      <xs:element minOccurs="0" name="pid1" type="xs:int" />
+      <xs:element minOccurs="0" name="pid2" type="xs:int" />
+      <xs:element minOccurs="0" name="result" nillable="true" type="tns:AnalyzeResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnalyzeRange" nillable="true" type="tns:AnalyzeRange" />
+  <xs:complexType name="AnalyzeResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A1" type="xs:double" />
+      <xs:element minOccurs="0" name="A2" type="xs:double" />
+      <xs:element minOccurs="0" name="C1" type="xs:double" />
+      <xs:element minOccurs="0" name="C2" type="xs:double" />
+      <xs:element minOccurs="0" name="F1" type="xs:double" />
+      <xs:element minOccurs="0" name="F2" type="xs:double" />
+      <xs:element minOccurs="0" name="P1" type="xs:double" />
+      <xs:element minOccurs="0" name="P2" type="xs:double" />
+      <xs:element minOccurs="0" name="S1" type="xs:double" />
+      <xs:element minOccurs="0" name="S2" type="xs:double" />
+      <xs:element minOccurs="0" name="T1" type="xs:double" />
+      <xs:element minOccurs="0" name="T2" type="xs:double" />
+      <xs:element minOccurs="0" name="accConDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="accConTime" type="xs:double" />
+      <xs:element minOccurs="0" name="accDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="accTime" type="xs:double" />
+      <xs:element minOccurs="0" name="breakingTime" type="xs:double" />
+      <xs:element minOccurs="0" name="idlingTime" type="xs:double" />
+      <xs:element minOccurs="0" name="slwConDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="slwConTime" type="xs:double" />
+      <xs:element minOccurs="0" name="slwDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="slwTime" type="xs:double" />
+      <xs:element minOccurs="0" name="stopTimeEnd" type="xs:double" />
+      <xs:element minOccurs="0" name="stopTimeSrt" type="xs:double" />
+      <xs:element minOccurs="0" name="stopTimeTot" type="xs:double" />
+      <xs:element minOccurs="0" name="tractionTime" type="xs:double" />
+      <xs:element minOccurs="0" name="vTeh" type="xs:double" />
+      <xs:element minOccurs="0" name="vUch" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnalyzeResult" nillable="true" type="tns:AnalyzeResult" />
+  <xs:complexType name="ArrayOfAnalyzeLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnalyzeLink" nillable="true" type="tns:AnalyzeLink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnalyzeLink" nillable="true" type="tns:ArrayOfAnalyzeLink" />
+  <xs:complexType name="AnalyzeLink">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AnalyzeRange">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sid1" type="xs:int" />
+          <xs:element minOccurs="0" name="sid2" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AnalyzeLink" nillable="true" type="tns:AnalyzeLink" />
+  <xs:complexType name="ArrayOfAnalyzeTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnalyzeTask" nillable="true" type="tns:AnalyzeTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnalyzeTask" nillable="true" type="tns:ArrayOfAnalyzeTask" />
+  <xs:complexType name="AnalyzeTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="calcualtedAxis" type="xs:int" />
+      <xs:element minOccurs="0" name="calcualtedMass" type="xs:int" />
+      <xs:element minOccurs="0" name="data" nillable="true" type="tns:ArrayOfAnalyzePolygon" />
+      <xs:element minOccurs="0" name="engineP" type="xs:int" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TCService" minOccurs="0" name="moveType" type="q16:MoveType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnalyzeTask" nillable="true" type="tns:AnalyzeTask" />
+  <xs:complexType name="ArrayOfArrayOfAnalyzeResultSlim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfAnalyzeResultSlim" nillable="true" type="tns:ArrayOfAnalyzeResultSlim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArrayOfAnalyzeResultSlim" nillable="true" type="tns:ArrayOfArrayOfAnalyzeResultSlim" />
+  <xs:complexType name="ArrayOfAnalyzeResultSlim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AnalyzeResultSlim" nillable="true" type="tns:AnalyzeResultSlim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnalyzeResultSlim" nillable="true" type="tns:ArrayOfAnalyzeResultSlim" />
+  <xs:complexType name="AnalyzeResultSlim">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="aTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="fDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="fTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="km" type="xs:int" />
+      <xs:element minOccurs="0" name="m" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+      <xs:element minOccurs="0" name="sDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="sTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="tDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="tTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="vDelta" type="xs:double" />
+      <xs:element minOccurs="0" name="vTotal" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AnalyzeResultSlim" nillable="true" type="tns:AnalyzeResultSlim" />
+  <xs:complexType name="ArrayOfWarningInfluence">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WarningInfluence" nillable="true" type="tns:WarningInfluence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWarningInfluence" nillable="true" type="tns:ArrayOfWarningInfluence" />
+  <xs:complexType name="WarningInfluence">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="enrg" type="xs:double" />
+      <xs:element minOccurs="0" name="enrgP" type="xs:double" />
+      <xs:element minOccurs="0" name="fuel" type="xs:double" />
+      <xs:element minOccurs="0" name="fuelP" type="xs:double" />
+      <xs:element minOccurs="0" name="imk" type="xs:int" />
+      <xs:element minOccurs="0" name="imn" type="xs:int" />
+      <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mk" type="xs:int" />
+      <xs:element minOccurs="0" name="mn" type="xs:int" />
+      <xs:element minOccurs="0" name="time" type="xs:double" />
+      <xs:element minOccurs="0" name="timeP" type="xs:double" />
+      <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="warnings" nillable="true" type="q17:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WarningInfluence" nillable="true" type="tns:WarningInfluence" />
+</xs:schema>

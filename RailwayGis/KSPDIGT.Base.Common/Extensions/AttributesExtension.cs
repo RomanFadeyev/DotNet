@@ -1,0 +1,6 @@
+//The contents of this file was removed due to copyright restrictions
+//Original file size: 15286 bytes
+//Originally declared classes/interfaces/structs:
+//class AttributesExtension
+//class AttributeNotFoundException : Exception
+//struct

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Same User (Ru-Board) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:simpleType name="FileType">
+		<xsd:annotation>
+			<xsd:documentation>Файловый тип</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Y-X-Z Tree File Database"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ContentDataType">
+		<xsd:annotation>
+			<xsd:documentation>Тип хранимых данных</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:byte">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CoordSysType">
+		<xsd:annotation>
+			<xsd:documentation>Тип системы координат</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Наименование</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Type" default="2">
+				<xsd:annotation>
+					<xsd:documentation>Тип:
+0.Пространственная прямоугольная система координат
+1.Геодезическая система координат
+2.Плоская прямоугольная система координат
+всегда "2"</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:byte">
+						<xsd:enumeration value="0"/>
+						<xsd:enumeration value="1"/>
+						<xsd:enumeration value="2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ExtentType">
+		<xsd:annotation>
+			<xsd:documentation>Тип протяженность</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="XMin" type="xsd:double"/>
+			<xsd:element name="YMin" type="xsd:double"/>
+			<xsd:element name="XMax" type="xsd:double"/>
+			<xsd:element name="YMax" type="xsd:double"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="YXZTreeRoot">
+		<xsd:annotation>
+			<xsd:documentation>БД точек трехмерного пространства</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Type" type="FileType">
+					<xsd:annotation>
+						<xsd:documentation>Файловый тип 
+всегда "Y-X-Z Tree File Database"</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="DataType" type="ContentDataType">
+					<xsd:annotation>
+						<xsd:documentation>Тип хранимых данных:
+0.Произвольные точки
+1.Вершины сетки высот</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="CoordSys" type="CoordSysType">
+					<xsd:annotation>
+						<xsd:documentation>Система координат</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="Depth" default="9">
+					<xsd:annotation>
+						<xsd:documentation>Количество разрядов в иерархии дерева (уровень вложенности)
+всегда "9"</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:byte">
+							<xsd:enumeration value="9"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="FracQty">
+					<xsd:annotation>
+						<xsd:documentation>Кол-во значащих разрядов после запятой в координатах
+всегда "0"</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:byte">
+							<xsd:enumeration value="0"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="Fractions" minOccurs="0" maxOccurs="1">
+				    <xsd:annotation>
+				        <xsd:documentation>Фракции. Список целочисленных значений, указывающих фракции («сита») дополнительно построенных данных из исходных. Число указывает коэффициент укрупнения относительно исходной точности.
+Для точечной БД исходная точность равна 1 мм. Таким образом, например, фракции 5, 10, 100 будут указывать на просеянные точки с точностью 5 мм, 10 мм и 100 мм</xsd:documentation>
+				    </xsd:annotation>
+				    <xsd:complexType>
+				        <xsd:sequence>
+				            <xsd:element name="Fraction" type="xsd:int" maxOccurs="unbounded" minOccurs="0"/>
+				        </xsd:sequence>
+				    </xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Extent" type="ExtentType">
+					<xsd:annotation>
+						<xsd:documentation>Протяженность</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="PointCount" type="xsd:unsignedLong"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
